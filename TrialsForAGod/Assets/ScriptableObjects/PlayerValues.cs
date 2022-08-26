@@ -9,10 +9,12 @@ public class PlayerValues : ScriptableObject
     public string playerName;
 
     [Header("Player Base Stats")]
-    public float maxHealth;
+    public float playerMaxHealth;
+    public float playerSpeed;
 
-    [Header("Player Invincibility")]
-    public float invincibilityTime;
+    [Header("Player Dodge Stats")]
+    public float dodgeDuration;
     public float dodgeSpeed;
+    public float dodgeCooldown;
 
 }
