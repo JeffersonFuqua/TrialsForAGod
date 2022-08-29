@@ -16,8 +16,8 @@ public class PlayerAttack : MonoBehaviour
     private float attackChainTimer = 1f;
     private bool bAttackChain;
 
-    public Transform aimTool;
-    private Vector3 aimDirection;
+    //public Transform aimTool;
+    //private Vector3 aimDirection;
 
     private bool bLocked;
 
@@ -76,26 +76,31 @@ public class PlayerAttack : MonoBehaviour
         bAttackChain = false;
         attackValueReset = attackChainTimer;
 
-        yield return new WaitForSeconds(weaponVal.lightAttackStartUp);
-
         if (!bLocked)
         {
             attackValue++;
             if (attackValue == 1)
             {
-                Debug.Log(attackValue);
+                //light 1 anim
+                Debug.Log(attackValue + " light");
             }
             else if (attackValue == 2)
             {
-                Debug.Log(attackValue);
+                //light 2 anim
+                Debug.Log(attackValue + " light");
             }
             else if (attackValue == 3)
             {
-                Debug.Log(attackValue);
+                //light 3 anim
+                Debug.Log(attackValue + " light");
             }
 
-            StartCoroutine(lightAttackCooldown());
         }
+
+        yield return new WaitForSeconds(weaponVal.lightAttackStartUp);
+
+        StartCoroutine(lightAttackCooldown());
+
         if (attackValue >= 3)
         {
             attackValue = 0;
@@ -116,26 +121,31 @@ public class PlayerAttack : MonoBehaviour
         bAttackChain = false;
         attackValueReset = attackChainTimer;
 
-        yield return new WaitForSeconds(weaponVal.heavyAttackStartUp);
-
         if (!bLocked)
         {
             attackValue++;
             if (attackValue == 1)
             {
-                Debug.Log(attackValue);
+                //heavy 1 anim
+                Debug.Log(attackValue + " heavy");
             }
             else if (attackValue == 2)
             {
-                Debug.Log(attackValue);
+                //heavy 2 anim
+                Debug.Log(attackValue + " heavy");
             }
             else if (attackValue == 3)
             {
-                Debug.Log(attackValue);
+                //heavy 3 anim
+                Debug.Log(attackValue + " heavy");
             }
 
-            StartCoroutine(heavyAttackCooldown());
         }
+
+        yield return new WaitForSeconds(weaponVal.heavyAttackStartUp);
+
+        StartCoroutine(heavyAttackCooldown());
+
         if (attackValue >= 3)
         {
             attackValue = 0;
