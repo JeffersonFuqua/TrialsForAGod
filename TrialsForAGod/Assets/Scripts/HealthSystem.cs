@@ -35,7 +35,10 @@ public class HealthSystem : MonoBehaviour
         {
             UpdateHealthUI(currentHealth / playerVal.playerMaxHealth);
         }
-        //Add in if for when currentHealth == 0
+        if(currentHealth == 0)
+        {
+            Debug.Log("Dead");
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
