@@ -39,10 +39,27 @@ public class PlayerAttack : MonoBehaviour
     */
     IEnumerator lightAttackAction()
     {
+        attackValue++;
+        if (attackValue == 1)
+        {
+            Debug.Log(attackValue);
+        }
+        else if (attackValue == 2)
+        {
+            Debug.Log(attackValue);
+        }
+        else if (attackValue == 3)
+        {
+            Debug.Log(attackValue);
+        }
+
+        if(attackValue >= 3)
+        {
+            attackValue = 0;
+        }
+
         pActions.PlayerControls.LightAttack.performed -= PlayerLightAttack;
         yield return new WaitForSeconds(0.3f);
-        attackValue++;
-        Debug.Log(attackValue);
         StartCoroutine(lightAttackCooldown());
     }
 
