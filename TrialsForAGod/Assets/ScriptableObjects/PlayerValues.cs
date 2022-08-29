@@ -17,10 +17,4 @@ public class PlayerValues : ScriptableObject
     public float dodgeSpeed;
     public float dodgeCooldown;
 
-    [Header("Player Attack Stats")]
-    public float lightattackDamage;
-    public float lightattackCooldown;
-    public float heavyattackDamage;
-    public float heavyattackCooldown;
-
 }

@@ -6,4 +6,6 @@ public class PlayerValueHolder : MonoBehaviour
 {
     //needed for all scripts
     public PlayerValues playerVal;
+
+    public Weapon currentWeaponVal;
 }
