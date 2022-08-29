@@ -16,6 +16,10 @@ public class PlayerAttack : MonoBehaviour
     private float attackChainTimer = 1f;
     private bool bAttackChain;
 
+    public Transform aimTool;
+    private Vector3 aimDirection;
+
+    private bool bLocked;
 
     private void OnEnable()
     {
@@ -53,6 +57,7 @@ public class PlayerAttack : MonoBehaviour
             attackValue = 0;
             Debug.Log("reset");
         }
+
     }
     private void PlayerLightAttack(InputAction.CallbackContext c)
     {
@@ -73,25 +78,28 @@ public class PlayerAttack : MonoBehaviour
 
         yield return new WaitForSeconds(weaponVal.lightAttackStartUp);
 
-        attackValue++;
-        if (attackValue == 1)
+        if (!bLocked)
         {
-            Debug.Log(attackValue);
-        }
-        else if (attackValue == 2)
-        {
-            Debug.Log(attackValue);
-        }
-        else if (attackValue == 3)
-        {
-            Debug.Log(attackValue);
-        }
+            attackValue++;
+            if (attackValue == 1)
+            {
+                Debug.Log(attackValue);
+            }
+            else if (attackValue == 2)
+            {
+                Debug.Log(attackValue);
+            }
+            else if (attackValue == 3)
+            {
+                Debug.Log(attackValue);
+            }
 
+            StartCoroutine(lightAttackCooldown());
+        }
         if (attackValue >= 3)
         {
             attackValue = 0;
         }
-        StartCoroutine(lightAttackCooldown());
     }
 
     IEnumerator lightAttackCooldown()
@@ -110,31 +118,49 @@ public class PlayerAttack : MonoBehaviour
 
         yield return new WaitForSeconds(weaponVal.heavyAttackStartUp);
 
-        attackValue++;
-        if (attackValue == 1)
+        if (!bLocked)
         {
-            Debug.Log(attackValue);
-        }
-        else if (attackValue == 2)
-        {
-            Debug.Log(attackValue);
-        }
-        else if (attackValue == 3)
-        {
-            Debug.Log(attackValue);
-        }
+            attackValue++;
+            if (attackValue == 1)
+            {
+                Debug.Log(attackValue);
+            }
+            else if (attackValue == 2)
+            {
+                Debug.Log(attackValue);
+            }
+            else if (attackValue == 3)
+            {
+                Debug.Log(attackValue);
+            }
 
+            StartCoroutine(heavyAttackCooldown());
+        }
         if (attackValue >= 3)
         {
             attackValue = 0;
         }
-        StartCoroutine(heavyAttackCooldown());
+
     }
 
     IEnumerator heavyAttackCooldown()
     {
         yield return new WaitForSeconds(weaponVal.heavyAttackCooldown);
         bAttackChain = true;
+        pActions.PlayerControls.HeavyAttack.performed += PlayerHeavyAttack;
+    }
+
+    //to lock and unlock player attack
+    public void Lock()
+    {
+        bLocked = true;
+        pActions.PlayerControls.LightAttack.performed -= PlayerLightAttack;
+        pActions.PlayerControls.HeavyAttack.performed -= PlayerHeavyAttack;
+    }
+    public void Unlock()
+    {
+        bLocked = false;
+        pActions.PlayerControls.LightAttack.performed += PlayerLightAttack;
         pActions.PlayerControls.HeavyAttack.performed += PlayerHeavyAttack;
     }
 }

@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
     private float speed;
     private MeshRenderer playerColor;
 
+    private float faceRotationSpeed = 8;
+
+    private bool bLocked;
+
     private void Start()
     {
         playerVal = GetComponent<PlayerValueHolder>().playerVal;
@@ -39,7 +43,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void Update()
     {
-        Movement();
+        if (!bLocked)
+        {
+            Movement();
+        }
     }
 
     public void Movement()
@@ -48,6 +55,11 @@ public class PlayerMovement : MonoBehaviour
         desiredDirection.z = pActions.PlayerControls.Movement.ReadValue<Vector2>().y;
 
         rb.MovePosition(rb.position + desiredDirection * speed * Time.fixedDeltaTime);
+
+        if (desiredDirection.x != 0 || desiredDirection.z != 0)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(desiredDirection.x, 0, desiredDirection.z)), Time.deltaTime * faceRotationSpeed);
+        }
     }
 
     public void Dodge(InputAction.CallbackContext c)
@@ -73,5 +85,17 @@ public class PlayerMovement : MonoBehaviour
         pActions.PlayerControls.Dodge.started -= Dodge;
         yield return new WaitForSeconds(playerVal.dodgeCooldown);
         pActions.PlayerControls.Dodge.started += Dodge;
+    }
+
+    //to lock and unlock player movement
+    public void Lock()
+    {
+        bLocked = true;
+        pActions.PlayerControls.Dodge.started += Dodge;
+    }
+    public void Unlock()
+    {
+        bLocked = false;
+        pActions.PlayerControls.Dodge.started -= Dodge;
     }
 }
