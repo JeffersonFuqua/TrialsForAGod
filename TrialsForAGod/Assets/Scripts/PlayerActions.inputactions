@@ -6,7 +6,7 @@
             "id": "d9d000c4-090d-4f03-ad1b-38e8825c092d",
             "actions": [
                 {
-                    "name": "PlayerMovement",
+                    "name": "Movement",
                     "type": "Value",
                     "id": "73c66cd7-0eef-439d-b193-e3de9fbe63ca",
                     "expectedControlType": "",
@@ -15,7 +15,16 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "PlayerLightAttack",
+                    "name": "Dodge",
+                    "type": "Button",
+                    "id": "1707e50e-9e69-4bcf-ae0d-4f176c3fe39c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LightAttack",
                     "type": "Button",
                     "id": "c7cdd124-a869-4754-bc94-7e9a01801060",
                     "expectedControlType": "Button",
@@ -24,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "PlayerHeavyAttack",
+                    "name": "HeavyAttack",
                     "type": "Button",
                     "id": "bc8d928e-a9e8-42bb-94c1-972c5f52a4b7",
                     "expectedControlType": "Button",
@@ -41,7 +50,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PlayerMovement",
+                    "action": "Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -52,7 +61,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PlayerMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -63,7 +72,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PlayerMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -74,7 +83,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PlayerMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -85,7 +94,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PlayerMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -96,7 +105,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PlayerLightAttack",
+                    "action": "LightAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -107,7 +116,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PlayerHeavyAttack",
+                    "action": "HeavyAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "84c44a29-4756-4648-9d90-84a2839b53cf",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

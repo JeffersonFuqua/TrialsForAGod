@@ -28,7 +28,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
             ""id"": ""d9d000c4-090d-4f03-ad1b-38e8825c092d"",
             ""actions"": [
                 {
-                    ""name"": ""PlayerMovement"",
+                    ""name"": ""Movement"",
                     ""type"": ""Value"",
                     ""id"": ""73c66cd7-0eef-439d-b193-e3de9fbe63ca"",
                     ""expectedControlType"": """",
@@ -37,7 +37,16 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""PlayerLightAttack"",
+                    ""name"": ""Dodge"",
+                    ""type"": ""Button"",
+                    ""id"": ""1707e50e-9e69-4bcf-ae0d-4f176c3fe39c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LightAttack"",
                     ""type"": ""Button"",
                     ""id"": ""c7cdd124-a869-4754-bc94-7e9a01801060"",
                     ""expectedControlType"": ""Button"",
@@ -46,7 +55,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""PlayerHeavyAttack"",
+                    ""name"": ""HeavyAttack"",
                     ""type"": ""Button"",
                     ""id"": ""bc8d928e-a9e8-42bb-94c1-972c5f52a4b7"",
                     ""expectedControlType"": ""Button"",
@@ -63,7 +72,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PlayerMovement"",
+                    ""action"": ""Movement"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -74,7 +83,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PlayerMovement"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -85,7 +94,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PlayerMovement"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -96,7 +105,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PlayerMovement"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -107,7 +116,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PlayerMovement"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -118,7 +127,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PlayerLightAttack"",
+                    ""action"": ""LightAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -129,7 +138,18 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PlayerHeavyAttack"",
+                    ""action"": ""HeavyAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""84c44a29-4756-4648-9d90-84a2839b53cf"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dodge"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -146,9 +166,10 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
 }");
         // PlayerControls
         m_PlayerControls = asset.FindActionMap("PlayerControls", throwIfNotFound: true);
-        m_PlayerControls_PlayerMovement = m_PlayerControls.FindAction("PlayerMovement", throwIfNotFound: true);
-        m_PlayerControls_PlayerLightAttack = m_PlayerControls.FindAction("PlayerLightAttack", throwIfNotFound: true);
-        m_PlayerControls_PlayerHeavyAttack = m_PlayerControls.FindAction("PlayerHeavyAttack", throwIfNotFound: true);
+        m_PlayerControls_Movement = m_PlayerControls.FindAction("Movement", throwIfNotFound: true);
+        m_PlayerControls_Dodge = m_PlayerControls.FindAction("Dodge", throwIfNotFound: true);
+        m_PlayerControls_LightAttack = m_PlayerControls.FindAction("LightAttack", throwIfNotFound: true);
+        m_PlayerControls_HeavyAttack = m_PlayerControls.FindAction("HeavyAttack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -208,16 +229,18 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     // PlayerControls
     private readonly InputActionMap m_PlayerControls;
     private IPlayerControlsActions m_PlayerControlsActionsCallbackInterface;
-    private readonly InputAction m_PlayerControls_PlayerMovement;
-    private readonly InputAction m_PlayerControls_PlayerLightAttack;
-    private readonly InputAction m_PlayerControls_PlayerHeavyAttack;
+    private readonly InputAction m_PlayerControls_Movement;
+    private readonly InputAction m_PlayerControls_Dodge;
+    private readonly InputAction m_PlayerControls_LightAttack;
+    private readonly InputAction m_PlayerControls_HeavyAttack;
     public struct PlayerControlsActions
     {
         private @PlayerActions m_Wrapper;
         public PlayerControlsActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @PlayerMovement => m_Wrapper.m_PlayerControls_PlayerMovement;
-        public InputAction @PlayerLightAttack => m_Wrapper.m_PlayerControls_PlayerLightAttack;
-        public InputAction @PlayerHeavyAttack => m_Wrapper.m_PlayerControls_PlayerHeavyAttack;
+        public InputAction @Movement => m_Wrapper.m_PlayerControls_Movement;
+        public InputAction @Dodge => m_Wrapper.m_PlayerControls_Dodge;
+        public InputAction @LightAttack => m_Wrapper.m_PlayerControls_LightAttack;
+        public InputAction @HeavyAttack => m_Wrapper.m_PlayerControls_HeavyAttack;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -227,28 +250,34 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_PlayerControlsActionsCallbackInterface != null)
             {
-                @PlayerMovement.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPlayerMovement;
-                @PlayerMovement.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPlayerMovement;
-                @PlayerMovement.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPlayerMovement;
-                @PlayerLightAttack.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPlayerLightAttack;
-                @PlayerLightAttack.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPlayerLightAttack;
-                @PlayerLightAttack.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPlayerLightAttack;
-                @PlayerHeavyAttack.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPlayerHeavyAttack;
-                @PlayerHeavyAttack.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPlayerHeavyAttack;
-                @PlayerHeavyAttack.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPlayerHeavyAttack;
+                @Movement.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnMovement;
+                @Dodge.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnDodge;
+                @Dodge.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnDodge;
+                @Dodge.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnDodge;
+                @LightAttack.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnLightAttack;
+                @LightAttack.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnLightAttack;
+                @LightAttack.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnLightAttack;
+                @HeavyAttack.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnHeavyAttack;
+                @HeavyAttack.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnHeavyAttack;
+                @HeavyAttack.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnHeavyAttack;
             }
             m_Wrapper.m_PlayerControlsActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @PlayerMovement.started += instance.OnPlayerMovement;
-                @PlayerMovement.performed += instance.OnPlayerMovement;
-                @PlayerMovement.canceled += instance.OnPlayerMovement;
-                @PlayerLightAttack.started += instance.OnPlayerLightAttack;
-                @PlayerLightAttack.performed += instance.OnPlayerLightAttack;
-                @PlayerLightAttack.canceled += instance.OnPlayerLightAttack;
-                @PlayerHeavyAttack.started += instance.OnPlayerHeavyAttack;
-                @PlayerHeavyAttack.performed += instance.OnPlayerHeavyAttack;
-                @PlayerHeavyAttack.canceled += instance.OnPlayerHeavyAttack;
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Dodge.started += instance.OnDodge;
+                @Dodge.performed += instance.OnDodge;
+                @Dodge.canceled += instance.OnDodge;
+                @LightAttack.started += instance.OnLightAttack;
+                @LightAttack.performed += instance.OnLightAttack;
+                @LightAttack.canceled += instance.OnLightAttack;
+                @HeavyAttack.started += instance.OnHeavyAttack;
+                @HeavyAttack.performed += instance.OnHeavyAttack;
+                @HeavyAttack.canceled += instance.OnHeavyAttack;
             }
         }
     }
@@ -264,8 +293,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     }
     public interface IPlayerControlsActions
     {
-        void OnPlayerMovement(InputAction.CallbackContext context);
-        void OnPlayerLightAttack(InputAction.CallbackContext context);
-        void OnPlayerHeavyAttack(InputAction.CallbackContext context);
+        void OnMovement(InputAction.CallbackContext context);
+        void OnDodge(InputAction.CallbackContext context);
+        void OnLightAttack(InputAction.CallbackContext context);
+        void OnHeavyAttack(InputAction.CallbackContext context);
     }
 }

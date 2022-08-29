@@ -7,7 +7,8 @@ using UnityEngine.InputSystem;
 public class PlayerAttack : MonoBehaviour
 {
     private PlayerValues playerVal;
-    private bool bLightAttack, bHeavyAttack;
+    //private bool bLightAttack, bHeavyAttack;
+    private int attackValue;
 
     PlayerActions pActions;
 
@@ -16,41 +17,38 @@ public class PlayerAttack : MonoBehaviour
         pActions = new PlayerActions();
         pActions.Enable();
 
-        pActions.PlayerControls.PlayerLightAttack.performed += PlayerLightAttack;
-        pActions.PlayerControls.PlayerHeavyAttack.performed += PlayerHeavyAttack;
+        pActions.PlayerControls.LightAttack.performed += PlayerLightAttack;
+        //pActions.PlayerControls.PlayerHeavyAttack.performed += PlayerHeavyAttack;
     }
     private void OnDisable()
     {
         pActions.Disable();
 
-        pActions.PlayerControls.PlayerLightAttack.performed -= PlayerLightAttack;
-        pActions.PlayerControls.PlayerHeavyAttack.performed -= PlayerHeavyAttack;
+        pActions.PlayerControls.LightAttack.performed -= PlayerLightAttack;
+        //pActions.PlayerControls.PlayerHeavyAttack.performed -= PlayerHeavyAttack;
     }
     private void PlayerLightAttack(InputAction.CallbackContext c)
     {
-        if (bLightAttack || bHeavyAttack) return;
-
-        bLightAttack = true;
-        StartCoroutine(nameof(AttackCooldown));
+        StartCoroutine(nameof(lightAttackAction));
     }
+    /*
     private void PlayerHeavyAttack(InputAction.CallbackContext c)
     {
-        if (bLightAttack || bHeavyAttack) return;
-
-        bHeavyAttack = true;
         StartCoroutine(nameof(AttackCooldown));
     }
-
-     IEnumerator AttackCooldown()
+    */
+    IEnumerator lightAttackAction()
     {
-        if(bLightAttack)
-            Debug.Log("Light Attack Performed");
+        pActions.PlayerControls.LightAttack.performed -= PlayerLightAttack;
+        yield return new WaitForSeconds(0.3f);
+        attackValue++;
+        Debug.Log(attackValue);
+        StartCoroutine(lightAttackCooldown());
+    }
 
-        if(bHeavyAttack)
-            Debug.Log("Heavy Attack Performed");
-
-        yield return new WaitForSeconds(0.5f);
-        bLightAttack = false;
-        bHeavyAttack = false;
+     IEnumerator lightAttackCooldown()
+    {
+        yield return new WaitForSeconds(0.2f);
+        pActions.PlayerControls.LightAttack.performed += PlayerLightAttack;
     }
 }
