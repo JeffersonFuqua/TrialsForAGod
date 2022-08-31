@@ -5,31 +5,28 @@ using UnityEngine.UI;
 
 public class WeaponUI : MonoBehaviour
 {
-    public GameObject Axe, Hammer, Whip;
+    public GameObject Sword, Hammer, Whip;
     private Weapon currentWeaponVal;
-
-    private void Start()
-    {
-       currentWeaponVal = GetComponent<PlayerValueHolder>().currentWeaponVal;
-    }
 
     private void OnTriggerEnter(Collider other)
     {
+        currentWeaponVal = GetComponent<PlayerValueHolder>().currentWeaponVal;
+
         if (currentWeaponVal.weaponName == "Love Whip") 
         {
-            Axe.SetActive(false);
+            Sword.SetActive(false);
             Hammer.SetActive(false);
             Whip.SetActive(true);
         }
         else if(currentWeaponVal.weaponName == "Fire Hammer")
         {
-            Axe.SetActive(false);
+            Sword.SetActive(false);
             Hammer.SetActive(true);
             Whip.SetActive(false);
 
-        } else if(currentWeaponVal.weaponName == "War Axe")
+        } else if(currentWeaponVal.weaponName == "War Sword")
         {
-            Axe.SetActive(true);
+            Sword.SetActive(true);
             Hammer.SetActive(false);
             Whip.SetActive(false);
         }

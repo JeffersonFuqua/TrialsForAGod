@@ -1,22 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using System;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public Image Healthbar;
+    public int currentHealth;
+    public static Action<float> UpdateHealthUI = delegate { };
+    private bool bInvincible;
 
-    private void OnEnable()
+    private PlayerValues playerVal;
+
+    private void Start()
     {
-        HealthSystem.UpdateHealthUI += UpdateHealthbar;
+        playerVal = GetComponent<PlayerValueHolder>().playerVal;
+        UpdateHealthUI(currentHealth / playerVal.playerMaxHealth);
     }
-    private void OnDisable()
+
+    public void UpdateHealth(int damageTaken)
     {
-        HealthSystem.UpdateHealthUI -= UpdateHealthbar;
+        if (bInvincible)
+            return;
+
+        currentHealth -= damageTaken;
+        UpdateHealthUI(currentHealth / playerVal.playerMaxHealth);
+
+        if (currentHealth <= 0)
+        {
+            Debug.Log("Dead");
+        }
     }
-    private void UpdateHealthbar(float currentHealth)
+    private void OnTriggerEnter(Collider other)
     {
-        Healthbar.fillAmount = currentHealth;
+
+        if (other.TryGetComponent(out TempDamage dVolume))
+        {
+            UpdateHealth(dVolume.Damage);
+        }
     }
 }
