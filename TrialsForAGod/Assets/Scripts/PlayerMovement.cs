@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         pActions.PlayerControls.Dodge.started -= Dodge;
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (!bLocked)
         {

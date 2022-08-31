@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerValueHolder : MonoBehaviour
 {
-    //needed for all scripts
+    //needed for all player scripts
     public PlayerValues playerVal;
 
     public Weapon currentWeaponVal;
