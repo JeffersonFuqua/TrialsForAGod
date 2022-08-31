@@ -648,9 +648,10 @@ GameObject:
   - component: {fileID: 1290853295}
   - component: {fileID: 1290853296}
   - component: {fileID: 1290853297}
+  - component: {fileID: 1290853298}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -758,6 +759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerVal: {fileID: 11400000, guid: 7c9c00529f0094348ad5f8a2575d24b9, type: 2}
+  currentWeaponVal: {fileID: 11400000, guid: d7b389d7dabe8144b8b304342778a8e4, type: 2}
 --- !u!54 &1290853296
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -787,6 +789,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 100
+--- !u!114 &1290853298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290853289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca498b40aa6fdaa4396039c053ff8d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Axe: {fileID: 467653936}
+  Hammer: {fileID: 497791487}
+  Whip: {fileID: 2080677017}
 --- !u!1 &1510470698
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,7 +1015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2080677018
 RectTransform:
   m_ObjectHideFlags: 0
