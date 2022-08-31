@@ -15,8 +15,8 @@ public class PlayerHealth : MonoBehaviour
     {
         HealthSystem.UpdateHealthUI -= UpdateHealthbar;
     }
-    private void UpdateHealthbar(float value)
+    private void UpdateHealthbar(float currentHealth)
     {
-        Healthbar.fillAmount = value;
+        Healthbar.fillAmount = currentHealth;
     }
 }
