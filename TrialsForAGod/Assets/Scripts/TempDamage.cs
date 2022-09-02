@@ -9,5 +9,13 @@ public class TempDamage : MonoBehaviour
     protected int damage;
     */
 
-    public int Damage;
+    public int damage;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+        }
+    }
 }

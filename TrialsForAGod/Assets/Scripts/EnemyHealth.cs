@@ -34,7 +34,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (other.TryGetComponent(out TempDamage dVolume))
         {
-            UpdateHealth(dVolume.Damage);
+            UpdateHealth(dVolume.damage);
         }
 
     }

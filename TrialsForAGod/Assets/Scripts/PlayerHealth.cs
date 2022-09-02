@@ -1,41 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int currentHealth;
-    public static Action<float> UpdateHealthUI = delegate { };
-    private bool bInvincible;
-
+    public Slider playerHealthBar;
     private PlayerValues playerVal;
+
+    private float maxHealth;
+    public float currentHealth;
 
     private void Start()
     {
         playerVal = GetComponent<PlayerValueHolder>().playerVal;
-        UpdateHealthUI(currentHealth / playerVal.playerMaxHealth);
+        maxHealth = playerVal.playerMaxHealth;
+        currentHealth = maxHealth;
+        playerHealthBar.maxValue = maxHealth;
+        playerHealthBar.value = currentHealth;
     }
 
-    public void UpdateHealth(int damageTaken)
+    public void TakeDamage(float damage)
     {
-        if (bInvincible)
-            return;
+        currentHealth -= damage;
+        playerHealthBar.value = currentHealth;
+        Debug.Log("ouch");
 
-        currentHealth -= damageTaken;
-        UpdateHealthUI(currentHealth / playerVal.playerMaxHealth);
-
-        if (currentHealth <= 0)
+        if(currentHealth <= 0)
         {
-            Debug.Log("Dead");
+            Debug.Log("dead");
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
 
-        if (other.TryGetComponent(out TempDamage dVolume))
-        {
-            UpdateHealth(dVolume.Damage);
-        }
+    public void GainHealth(float heal)
+    {
+        currentHealth += heal;
+        playerHealthBar.value = currentHealth;
+        Debug.Log("yum");
     }
+
+
 }
