@@ -47,6 +47,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Movement();
         }
+        //cancels any generated velocity
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 
     public void Movement()
