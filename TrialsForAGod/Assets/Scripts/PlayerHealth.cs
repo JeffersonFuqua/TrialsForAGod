@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
 
     private float maxHealth;
     public float currentHealth;
+    public bool bInvincible;
 
     private void Start()
     {
@@ -22,9 +23,11 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (bInvincible)
+            return;
+
         currentHealth -= damage;
         playerHealthBar.value = currentHealth;
-        Debug.Log("ouch");
 
         if(currentHealth <= 0)
         {
