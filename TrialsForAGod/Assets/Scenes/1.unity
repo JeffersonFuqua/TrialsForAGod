@@ -538,6 +538,14 @@ MonoBehaviour:
   lightHitBox1: {fileID: 95859163}
   lightHitBox2: {fileID: 1705022097}
   lightHitBox3: {fileID: 1001935834}
+  heavyHitBox1: {fileID: 3982207063511223249}
+  heavyHitBox2: {fileID: 3982207063511223248}
+  heavyHitBox3: {fileID: 3982207063511223247}
+--- !u!95 &645768251 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9036980633323257398, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
+  m_PrefabInstance: {fileID: 662491495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &662491495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1171,6 +1179,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3982207063303920233, guid: ae1a6bba6e2a97a4d9317397890a572f, type: 3}
+      propertyPath: tempAnim
+      value: 
+      objectReference: {fileID: 645768251}
     - target: {fileID: 3982207063303920236, guid: ae1a6bba6e2a97a4d9317397890a572f, type: 3}
       propertyPath: m_Name
       value: tempPlayer
@@ -1185,6 +1197,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae1a6bba6e2a97a4d9317397890a572f, type: 3}
+--- !u!1 &3982207063511223247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7720591730587149454, guid: ae1a6bba6e2a97a4d9317397890a572f, type: 3}
+  m_PrefabInstance: {fileID: 3982207063511223246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3982207063511223248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4272539271211479876, guid: ae1a6bba6e2a97a4d9317397890a572f, type: 3}
+  m_PrefabInstance: {fileID: 3982207063511223246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3982207063511223249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7608306657069170133, guid: ae1a6bba6e2a97a4d9317397890a572f, type: 3}
+  m_PrefabInstance: {fileID: 3982207063511223246}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7728858789009801484
 PrefabInstance:
   m_ObjectHideFlags: 0

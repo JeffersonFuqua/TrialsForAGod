@@ -21,6 +21,9 @@ public class PlayerAttack : MonoBehaviour
 
     private bool bLocked;
 
+
+    public Animator tempAnim;
+
     private void OnEnable()
     {
         pActions = new PlayerActions();
@@ -82,16 +85,19 @@ public class PlayerAttack : MonoBehaviour
             if (attackValue == 1)
             {
                 //light 1 anim
+                tempAnim.SetTrigger("light1");
                 Debug.Log(attackValue + " light");
             }
             else if (attackValue == 2)
             {
                 //light 2 anim
+                tempAnim.SetTrigger("light2");
                 Debug.Log(attackValue + " light");
             }
             else if (attackValue == 3)
             {
                 //light 3 anim
+                tempAnim.SetTrigger("light3");
                 Debug.Log(attackValue + " light");
             }
 
@@ -112,6 +118,8 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(weaponVal.lightAttackCooldown);
         bAttackChain = true;
         pActions.PlayerControls.LightAttack.performed += PlayerLightAttack;
+
+        tempAnim.SetTrigger("hitboxoff");
     }
 
     IEnumerator heavyAttackAction()
