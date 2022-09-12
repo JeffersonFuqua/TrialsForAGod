@@ -58,6 +58,7 @@ public class PlayerAttack : MonoBehaviour
             bAttackChain = false;
             attackValueReset = attackChainTimer;
             attackValue = 0;
+            tempAnim.SetTrigger("timer");
             Debug.Log("reset");
         }
 
@@ -118,8 +119,6 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(weaponVal.lightAttackCooldown);
         bAttackChain = true;
         pActions.PlayerControls.LightAttack.performed += PlayerLightAttack;
-
-        tempAnim.SetTrigger("hitboxoff");
     }
 
     IEnumerator heavyAttackAction()
