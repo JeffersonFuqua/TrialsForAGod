@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Interacter : MonoBehaviour
 {
     PlayerActions pActions;
-    private bool bNear;
+    private bool bInteract;
 
     private void OnEnable()
     {
@@ -23,22 +23,32 @@ public class Interacter : MonoBehaviour
         pActions.PlayerControls.Interact.started -= Interact;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Interact"))
+        if (other.CompareTag("Interact") && bInteract)
         {
-            Debug.Log("Trying to Interact");
+            //  Debug.Log("Trying to Interact");
+            other.gameObject.GetComponent<InteractTalk>().Interacting();
+            bInteract = false;
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Interact")
         {
-
+              Debug.Log("Left Interactable");
         }
     }
     private void Interact(InputAction.CallbackContext c)
     {
+        Debug.Log("Interacting");
+        StartCoroutine(InteractCooldown());
+    }
 
+    IEnumerator InteractCooldown()
+    {
+        bInteract = true;
+        yield return new WaitForSeconds(0.1f);
+        bInteract = false;
     }
 }

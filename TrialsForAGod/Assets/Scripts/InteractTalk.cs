@@ -6,8 +6,47 @@ public class InteractTalk : MonoBehaviour
 {
     //public GameObject Dialogue;
 
-    public void talk()
+    public int type;
+
+    public void Interacting()
     {
-       // Dialogue.SetActive(true);
+        switch(type)
+        {
+            case 1:
+                //talk
+                Talk();
+                break;
+            case 2:
+                //pickup
+                Pickup();
+                break;
+            case 3:
+                //heal
+                Heal();
+                break;
+            case 4:
+                //door
+                Door();
+                break;
+        }   
+    }
+    public void Talk()
+    {
+        // Dialogue.SetActive(true);
+
+        Debug.Log("Talk");
+
+    }
+    public void Pickup()
+    {
+        Debug.Log("pickup");
+    }
+    public void Heal()
+    {
+        Debug.Log("heal");
+    }
+    public void Door()
+    {
+        Debug.Log("door");
     }
 }
