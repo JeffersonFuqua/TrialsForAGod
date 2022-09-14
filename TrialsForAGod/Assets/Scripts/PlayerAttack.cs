@@ -134,16 +134,19 @@ public class PlayerAttack : MonoBehaviour
             if (attackValue == 1)
             {
                 //heavy 1 anim
+                tempAnim.SetTrigger("heavy1");
                 Debug.Log(attackValue + " heavy");
             }
             else if (attackValue == 2)
             {
                 //heavy 2 anim
+                tempAnim.SetTrigger("heavy2");
                 Debug.Log(attackValue + " heavy");
             }
             else if (attackValue == 3)
             {
                 //heavy 3 anim
+                tempAnim.SetTrigger("heavy3");
                 Debug.Log(attackValue + " heavy");
             }
 
