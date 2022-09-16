@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class InteractTalk : MonoBehaviour
 {
-    //public GameObject Dialogue;
-
     public int type;
 
     public void Interacting()
@@ -32,10 +30,7 @@ public class InteractTalk : MonoBehaviour
     }
     public void Talk()
     {
-        // Dialogue.SetActive(true);
-
         Debug.Log("Talk");
-
     }
     public void Pickup()
     {

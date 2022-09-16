@@ -8,47 +8,40 @@ public class Interacter : MonoBehaviour
     PlayerActions pActions;
     private bool bInteract;
 
+    private GameObject interactableObj;
+
     private void OnEnable()
     {
         pActions = new PlayerActions();
         pActions.Enable();
-
-        pActions.PlayerControls.Interact.started += Interact;
-
     }
     private void OnDisable()
     {
         pActions.Disable();
-
         pActions.PlayerControls.Interact.started -= Interact;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Interact") && bInteract)
+        if (other.CompareTag("Interact"))
         {
-            //  Debug.Log("Trying to Interact");
-            other.gameObject.GetComponent<InteractTalk>().Interacting();
-            bInteract = false;
+            interactableObj = other.gameObject;
+            pActions.PlayerControls.Interact.started += Interact;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Interact")
+        if (other.CompareTag("Interact"))
         {
-              Debug.Log("Left Interactable");
+            pActions.PlayerControls.Interact.started -= Interact;
+            Debug.Log("Left Interactable");
         }
     }
     private void Interact(InputAction.CallbackContext c)
     {
-        Debug.Log("Interacting");
-        StartCoroutine(InteractCooldown());
-    }
+        pActions.PlayerControls.Interact.started -= Interact;
 
-    IEnumerator InteractCooldown()
-    {
-        bInteract = true;
-        yield return new WaitForSeconds(0.1f);
-        bInteract = false;
+        interactableObj.GetComponent<InteractTalk>().Interacting();
+        Debug.Log("Interacting");
     }
 }
