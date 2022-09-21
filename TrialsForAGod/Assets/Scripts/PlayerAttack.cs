@@ -75,6 +75,7 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator lightAttackAction()
     {
         pActions.PlayerControls.LightAttack.performed -= PlayerLightAttack;
+        GetComponent<PlayerMovement>().bIsAttacking = true;
 
         //reset timer when called
         bAttackChain = false;
@@ -118,12 +119,14 @@ public class PlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(weaponVal.lightAttackCooldown);
         bAttackChain = true;
+        GetComponent<PlayerMovement>().bIsAttacking = false;
         pActions.PlayerControls.LightAttack.performed += PlayerLightAttack;
     }
 
     IEnumerator heavyAttackAction()
     {
         pActions.PlayerControls.HeavyAttack.performed -= PlayerHeavyAttack;
+        GetComponent<PlayerMovement>().bIsAttacking = true;
 
         bAttackChain = false;
         attackValueReset = attackChainTimer;
@@ -167,6 +170,7 @@ public class PlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(weaponVal.heavyAttackCooldown);
         bAttackChain = true;
+        GetComponent<PlayerMovement>().bIsAttacking = false;
         pActions.PlayerControls.HeavyAttack.performed += PlayerHeavyAttack;
     }
 

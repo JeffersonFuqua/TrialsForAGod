@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private MeshRenderer playerColor;
 
     private float faceRotationSpeed = 8;
+    [HideInInspector]public bool bIsAttacking;
 
     private bool bLocked;
 
@@ -59,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.MovePosition(rb.position + desiredDirection * speed * Time.fixedDeltaTime);
 
-        if (desiredDirection.x != 0 || desiredDirection.z != 0)
+        if ((desiredDirection.x != 0 || desiredDirection.z != 0)/* && !bIsAttacking*/)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(desiredDirection.x, 0, desiredDirection.z)), Time.deltaTime * faceRotationSpeed);
         }
