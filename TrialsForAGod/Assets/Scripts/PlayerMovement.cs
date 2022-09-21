@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private Vector3 desiredDirection;
     private float speed;
-    private MeshRenderer playerColor;
+    //private MeshRenderer playerColor;
 
     private float faceRotationSpeed = 8;
     [HideInInspector]public bool bIsAttacking;
@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         speed = playerVal.playerSpeed;
 
-        playerColor = GetComponent<MeshRenderer>();
+        //playerColor = GetComponent<MeshRenderer>();
     }
 
     private void OnEnable()
@@ -77,11 +77,11 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator dodgeAction()
     {
         speed += playerVal.dodgeSpeed;
-        playerColor.material.color = new Vector4(playerColor.material.color.r, playerColor.material.color.g, playerColor.material.color.b, 0.1f);
+        //playerColor.material.color = new Vector4(playerColor.material.color.r, playerColor.material.color.g, playerColor.material.color.b, 0.1f);
         GetComponent<PlayerHealth>().bInvincible = true;
         yield return new WaitForSeconds(playerVal.dodgeDuration);
         speed = playerVal.playerSpeed;
-        playerColor.material.color = new Vector4(playerColor.material.color.r, playerColor.material.color.g, playerColor.material.color.b, 1);
+        //playerColor.material.color = new Vector4(playerColor.material.color.r, playerColor.material.color.g, playerColor.material.color.b, 1);
         GetComponent<PlayerHealth>().bInvincible = false;
     }
     IEnumerator dodgeCooldown()
