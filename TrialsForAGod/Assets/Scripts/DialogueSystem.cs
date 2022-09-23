@@ -11,6 +11,8 @@ public class DialogueSystem : MonoBehaviour
 public struct Dialogue
 {
     public string charName;
+    public enum EmotionState { neutral, happy, sad, angry, sexy };
+    public EmotionState emotion;
     [TextArea(3, 10)]
     public string[] sentences;
     public bool choice;

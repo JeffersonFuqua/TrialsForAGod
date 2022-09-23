@@ -26,11 +26,15 @@ public class DialogueManager : MonoBehaviour
     public int afterChoiceVal;
 
     [Range(1, 10)]
-    public int typeSpeed = 3;
+    public float typeSpeed;
+    private float typeStart;
+    bool bIsTalking;
 
     private void Start()
     {
+        typeSpeed = 11 - typeSpeed;
         typeSpeed /= 100;
+        typeStart = typeSpeed;
     }
 
     public void StartDialogue(DialogueSystem dialogue)
@@ -52,13 +56,21 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentance(DialogueSystem dialogue)
     {
-        StopAllCoroutines();        
+        //StopAllCoroutines(); 
         if(dialogue.conversation[iName].choicePath == afterChoiceVal || dialogue.conversation[iName].choicePath == 0)
         {
             if (jSent < dialogue.conversation[iName].sentences.Length)
             {
-                StartCoroutine(ReadLine(dialogue));
-                jSent++;
+                if (bIsTalking)
+                {
+                    SkipLine(dialogue);
+                }
+                else
+                {
+                    EmotionImageSwap(dialogue);
+                    typeSpeed = typeStart;
+                    StartCoroutine(ReadLine(dialogue));
+                }
             }
             else if (jSent == dialogue.conversation[iName].sentences.Length)
             {
@@ -101,8 +113,20 @@ public class DialogueManager : MonoBehaviour
         
     }
 
+    private void SkipLine(DialogueSystem dialogue)
+    {
+        StopAllCoroutines();
+        sb.Clear();
+        sb.Append(dialogue.conversation[iName].sentences[jSent]);
+        sb.Replace("/name", pName.playerName);
+
+        dialogueText.text = sb.ToString();
+        bIsTalking = false;
+        jSent++;
+    }
     IEnumerator ReadLine(DialogueSystem dialogue)
     {
+        bIsTalking = true;
         dialogueText.text = "";
         sb.Clear();
 
@@ -113,7 +137,17 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return new WaitForSeconds(typeSpeed);
         }
+        bIsTalking = false;
+        jSent++;
+    }
 
+    private void EmotionImageSwap(DialogueSystem dialogue)
+    {
+        //for EVAN ;)
+        if (dialogue.conversation[iName].emotion == Dialogue.EmotionState.happy)
+        {
+            Debug.Log("happy");
+        }
     }
 
 
