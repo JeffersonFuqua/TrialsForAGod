@@ -15,6 +15,8 @@ public class PlayerAttack : MonoBehaviour
     private float attackValueReset;
     private float attackChainTimer = 0.4f;
     private bool bAttackChain;
+    [HideInInspector] public float currentAttackDamage;
+    [HideInInspector] public float currentAttackKnockback;
 
     //public Transform aimTool;
     //private Vector3 aimDirection;
@@ -59,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
             attackValueReset = attackChainTimer;
             attackValue = 0;
             tempAnim.SetTrigger("timer");
-            Debug.Log("reset");
+            //Debug.Log("reset");
         }
 
     }
@@ -87,20 +89,26 @@ public class PlayerAttack : MonoBehaviour
             if (attackValue == 1)
             {
                 //light 1 anim
+                currentAttackDamage = weaponVal.lightAttackDamage1;
+                currentAttackKnockback = weaponVal.lightKnockback1;
                 tempAnim.SetTrigger("light1");
-                Debug.Log(attackValue + " light");
+                //Debug.Log(attackValue + " light");
             }
             else if (attackValue == 2)
             {
                 //light 2 anim
+                currentAttackDamage = weaponVal.lightAttackDamage2;
+                currentAttackKnockback = weaponVal.lightKnockback2;
                 tempAnim.SetTrigger("light2");
-                Debug.Log(attackValue + " light");
+                //Debug.Log(attackValue + " light");
             }
             else if (attackValue == 3)
             {
                 //light 3 anim
+                currentAttackDamage = weaponVal.lightAttackDamage3;
+                currentAttackKnockback = weaponVal.lightKnockback3;
                 tempAnim.SetTrigger("light3");
-                Debug.Log(attackValue + " light");
+                //Debug.Log(attackValue + " light");
             }
 
         }
@@ -137,20 +145,26 @@ public class PlayerAttack : MonoBehaviour
             if (attackValue == 1)
             {
                 //heavy 1 anim
+                currentAttackDamage = weaponVal.heavyAttackDamage1;
+                currentAttackKnockback = weaponVal.heavyKnockback1;
                 tempAnim.SetTrigger("heavy1");
-                Debug.Log(attackValue + " heavy");
+                //Debug.Log(attackValue + " heavy");
             }
             else if (attackValue == 2)
             {
                 //heavy 2 anim
+                currentAttackDamage = weaponVal.heavyAttackDamage2;
+                currentAttackKnockback = weaponVal.heavyKnockback2;
                 tempAnim.SetTrigger("heavy2");
-                Debug.Log(attackValue + " heavy");
+                //Debug.Log(attackValue + " heavy");
             }
             else if (attackValue == 3)
             {
                 //heavy 3 anim
+                currentAttackDamage = weaponVal.heavyAttackDamage3;
+                currentAttackKnockback = weaponVal.heavyKnockback3;
                 tempAnim.SetTrigger("heavy3");
-                Debug.Log(attackValue + " heavy");
+                //Debug.Log(attackValue + " heavy");
             }
 
         }
