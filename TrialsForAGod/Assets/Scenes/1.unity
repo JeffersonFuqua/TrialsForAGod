@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 449072647}
   - component: {fileID: 449072653}
   - component: {fileID: 449072652}
+  - component: {fileID: 449072654}
   m_Layer: 8
   m_Name: Traning Dummy
   m_TagString: Untagged
@@ -376,6 +377,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyVal: {fileID: 11400000, guid: 5cbd66309cc2f6c498dc94c65d860f28, type: 2}
+--- !u!114 &449072654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449072646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7530ded3408c845abfe24228c39ae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 0
 --- !u!1 &504613139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,6 +1087,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9182824044689401265, guid: 9d8db0bfe1f189a4a8067f4bbe7f5daf, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182824044689401265, guid: 9d8db0bfe1f189a4a8067f4bbe7f5daf, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []

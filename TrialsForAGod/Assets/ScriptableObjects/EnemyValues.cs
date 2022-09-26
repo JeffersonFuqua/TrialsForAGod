@@ -15,6 +15,7 @@ public class EnemyValues : ScriptableObject
     [Header("Enemy Attack Stats")]
     public float attackDamage;
     public float attackStartUp;
+    public float attackEndLag;
     public float attackCooldown;
     
 }
