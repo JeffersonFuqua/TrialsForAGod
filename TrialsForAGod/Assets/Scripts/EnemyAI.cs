@@ -26,6 +26,7 @@ public class EnemyAI : MonoBehaviour
     private void FixedUpdate()
     {
         Chase();
+        CallAttack();
     }
 
     private void Chase()
@@ -55,12 +56,11 @@ public class EnemyAI : MonoBehaviour
     IEnumerator attackStartUp()
     {
         bAttacking = true;
-        GetComponent<SpriteRenderer>().color = Color.black;
         enemySpeed = 0;
         yield return new WaitForSeconds(enemyValues.attackStartUp);
         if (!bIsStunned)
         {
-            //GetComponent<EnemyAttack>().EnemySpecialAttack(player);
+            GetComponent<EnemyAttack>().EnemySpecialAttack(player);
             StartCoroutine(attackEndLag());
         }
         StartCoroutine(attackCooldown());
@@ -74,5 +74,27 @@ public class EnemyAI : MonoBehaviour
     {
         yield return new WaitForSeconds(enemyValues.attackCooldown);
         bAttacking = false;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        //uncomment to make enemy not attack through walls
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, other.transform.position - transform.position, 2, wallLayer);
+
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("touch");
+            difference = other.transform.position - transform.position;
+            if (bAttacking)
+            {
+                difference = difference.normalized * enemyValues.attackKnockback;
+                other.GetComponent<PlayerHealth>().TakeDamageAndKnockback(enemyValues.attackDamage, difference);
+            }
+            else
+            {
+                difference = difference.normalized * enemyValues.attackKnockback;
+                other.GetComponent<PlayerHealth>().TakeDamageAndKnockback(enemyValues.attackDamage, difference);
+            }
+        }
     }
 }

@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     public Slider playerHealthBar;
     private PlayerValues playerVal;
 
+    private Rigidbody rb;
+
     private float maxHealth;
     public float currentHealth;
     public bool bInvincible;
@@ -19,20 +21,39 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         playerHealthBar.maxValue = maxHealth;
         playerHealthBar.value = currentHealth;
+        rb = GetComponent<Rigidbody>();
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamageAndKnockback(float damage, Vector3 attackOrigin)
     {
         if (bInvincible)
             return;
 
+        StartCoroutine(invincible(1));
+        StartCoroutine(playerRecievedKnockback(attackOrigin));
+
         currentHealth -= damage;
         playerHealthBar.value = currentHealth;
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Debug.Log("dead");
         }
+    }
+    IEnumerator playerRecievedKnockback(Vector3 attackOrgin)
+    {
+        GetComponent<PlayerMovement>().enabled = false;
+        rb.AddForce(attackOrgin, ForceMode.Impulse);
+        yield return new WaitForSeconds(0.3f);
+        rb.velocity = Vector3.zero;
+        GetComponent<PlayerMovement>().enabled = true;
+    }
+    //Invincibility and knockback are seperate unlike with enemys as this will give the player a chance to escape
+    IEnumerator invincible(float c)
+    {
+        bInvincible = true;
+        yield return new WaitForSeconds(c);
+        bInvincible = false;
     }
 
     public void GainHealth(float heal)

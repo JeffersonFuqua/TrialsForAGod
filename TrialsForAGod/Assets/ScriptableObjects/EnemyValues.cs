@@ -17,5 +17,7 @@ public class EnemyValues : ScriptableObject
     public float attackStartUp;
     public float attackEndLag;
     public float attackCooldown;
+    public float attackKnockback;
+    public float tempHitBoxDuration;
     
 }
