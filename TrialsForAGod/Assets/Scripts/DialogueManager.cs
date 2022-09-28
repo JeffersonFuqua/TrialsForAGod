@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
 {
     //replaces all /name with the player name in the player info
     public PlayerValues pName;
+    public DialogueSystem dSystem;
     [HideInInspector]
     public StringBuilder sb = new StringBuilder();
 
@@ -29,6 +30,7 @@ public class DialogueManager : MonoBehaviour
     public float typeSpeed;
     private float typeStart;
     bool bIsTalking;
+    public RawImage leftPortrait, middlePortrait, rightPortrait;
 
     private void Start()
     {
@@ -143,10 +145,55 @@ public class DialogueManager : MonoBehaviour
 
     private void EmotionImageSwap(DialogueSystem dialogue)
     {
-        //for EVAN ;)
+        //for EVAN
+            switch(dialogue.conversation[iName].speakerCount)
+            {
+            case 0:
+                //stuff
+                leftPortrait.enabled = false;
+                middlePortrait.enabled = false;
+                rightPortrait.enabled = false;
+                break;
+            case 1:
+                //stuff
+                leftPortrait.enabled = false;
+                middlePortrait.enabled = true;
+                rightPortrait.enabled = false;
+                break;
+            case 2:
+                //stuff
+                leftPortrait.enabled = true;
+                middlePortrait.enabled = false;
+                rightPortrait.enabled = true;
+                break;
+            default:
+                //same as 0
+                leftPortrait.enabled = false;
+                middlePortrait.enabled = false;
+                rightPortrait.enabled = false;
+                Debug.Log("Hey we got default for the image switch case");
+                break;
+            }
         if (dialogue.conversation[iName].emotion == Dialogue.EmotionState.happy)
         {
             Debug.Log("happy");
+           // portrait.texture = 
+        }
+        else if (dialogue.conversation[iName].emotion == Dialogue.EmotionState.angry)
+        {
+            Debug.Log("angry");
+        }
+        else if (dialogue.conversation[iName].emotion == Dialogue.EmotionState.sad)
+        {
+            Debug.Log("sad");
+        }
+        else if (dialogue.conversation[iName].emotion == Dialogue.EmotionState.neutral)
+        {
+            Debug.Log("neutral");
+        }
+        else if (dialogue.conversation[iName].emotion == Dialogue.EmotionState.flirty)
+        {
+            Debug.Log("flirty");
         }
     }
 
