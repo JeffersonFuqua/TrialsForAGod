@@ -12,7 +12,7 @@ public struct Dialogue
 {
     public string charName;
     public enum EmotionState { neutral, happy, sad, angry, flirty };
-    public EmotionState emotion;
+    public EmotionState emotionOne, emotionTwo;
     [TextArea(3, 10)]
     public string[] sentences;
     public bool choice;

@@ -1187,21 +1187,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - charName: Billy
+  - charName: /Name
+    emotionOne: 0
+    emotionTwo: 0
     sentences:
-    - Hi!
-    - You good?
+    - How are you feeling?
     choice: 0
     choicePath: 0
     choices: []
-  - charName: James
+    speakerCount: 0
+  - charName: Ares
+    emotionOne: 0
+    emotionTwo: 0
     sentences:
-    - Sort of
-    - could be better
-    - but nah
+    - Neutral
     choice: 0
     choicePath: 0
     choices: []
+    speakerCount: 1
+  - charName: Ares
+    emotionOne: 1
+    emotionTwo: 0
+    sentences:
+    - Happy
+    choice: 0
+    choicePath: 0
+    choices: []
+    speakerCount: 1
+  - charName: Ares
+    emotionOne: 2
+    emotionTwo: 0
+    sentences:
+    - Sad
+    choice: 0
+    choicePath: 0
+    choices: []
+    speakerCount: 1
+  - charName: Ares
+    emotionOne: 3
+    emotionTwo: 0
+    sentences:
+    - Angry
+    choice: 0
+    choicePath: 0
+    choices: []
+    speakerCount: 1
+  - charName: Ares
+    emotionOne: 4
+    emotionTwo: 0
+    sentences:
+    - Flirty
+    choice: 0
+    choicePath: 0
+    choices: []
+    speakerCount: 1
 --- !u!114 &5936143788176369654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1230,9 +1269,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pName: {fileID: 11400000, guid: 7c9c00529f0094348ad5f8a2575d24b9, type: 2}
+  dSystem: {fileID: 0}
   dialogueCanvas: {fileID: 7603230904559517079}
   nameText: {fileID: 7603230904804979756}
   dialogueText: {fileID: 7603230903577689407}
+  speakerOneSO: {fileID: 0}
+  speakerTwoSo: {fileID: 0}
   iName: 0
   afterChoiceVal: 0
   typeSpeed: 3
+  leftPortrait: {fileID: 0}
+  middlePortrait: {fileID: 0}
+  rightPortrait: {fileID: 0}

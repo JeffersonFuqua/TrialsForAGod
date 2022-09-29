@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
 
     public TMPro.TextMeshProUGUI nameText;
     public TMPro.TextMeshProUGUI dialogueText;
+    public SpeakerValues speakerOneSO, speakerTwoSo;
 
     //speaker value
     [HideInInspector]
@@ -149,52 +150,92 @@ public class DialogueManager : MonoBehaviour
             switch(dialogue.conversation[iName].speakerCount)
             {
             case 0:
-                //stuff
                 leftPortrait.enabled = false;
                 middlePortrait.enabled = false;
                 rightPortrait.enabled = false;
                 break;
             case 1:
-                //stuff
                 leftPortrait.enabled = false;
                 middlePortrait.enabled = true;
                 rightPortrait.enabled = false;
                 break;
             case 2:
-                //stuff
                 leftPortrait.enabled = true;
                 middlePortrait.enabled = false;
                 rightPortrait.enabled = true;
                 break;
             default:
-                //same as 0
                 leftPortrait.enabled = false;
                 middlePortrait.enabled = false;
                 rightPortrait.enabled = false;
                 Debug.Log("Hey we got default for the image switch case");
                 break;
             }
-        if (dialogue.conversation[iName].emotion == Dialogue.EmotionState.happy)
+        if (dialogue.conversation[iName].emotionOne == Dialogue.EmotionState.happy)
         {
             Debug.Log("happy");
-           // portrait.texture = 
+            if(dialogue.conversation[iName].speakerCount == 1)
+                middlePortrait.texture = speakerOneSO.happy;
+            if (dialogue.conversation[iName].speakerCount == 2)
+                leftPortrait.texture = speakerOneSO.happy;
         }
-        else if (dialogue.conversation[iName].emotion == Dialogue.EmotionState.angry)
+        else if (dialogue.conversation[iName].emotionOne == Dialogue.EmotionState.angry)
         {
             Debug.Log("angry");
+            if (dialogue.conversation[iName].speakerCount == 1)
+                middlePortrait.texture = speakerOneSO.angry;
+            if (dialogue.conversation[iName].speakerCount == 2)
+                leftPortrait.texture = speakerOneSO.angry;
         }
-        else if (dialogue.conversation[iName].emotion == Dialogue.EmotionState.sad)
+        else if (dialogue.conversation[iName].emotionOne == Dialogue.EmotionState.sad)
         {
             Debug.Log("sad");
+            if (dialogue.conversation[iName].speakerCount == 1)
+                middlePortrait.texture = speakerOneSO.sad;
+            if (dialogue.conversation[iName].speakerCount == 2)
+                leftPortrait.texture = speakerOneSO.sad;
         }
-        else if (dialogue.conversation[iName].emotion == Dialogue.EmotionState.neutral)
+        else if (dialogue.conversation[iName].emotionOne == Dialogue.EmotionState.neutral)
         {
             Debug.Log("neutral");
+            if (dialogue.conversation[iName].speakerCount == 1)
+                middlePortrait.texture = speakerOneSO.neutral;
+            if (dialogue.conversation[iName].speakerCount == 2)
+                leftPortrait.texture = speakerOneSO.neutral;
         }
-        else if (dialogue.conversation[iName].emotion == Dialogue.EmotionState.flirty)
+        else if (dialogue.conversation[iName].emotionOne == Dialogue.EmotionState.flirty)
         {
             Debug.Log("flirty");
+            if (dialogue.conversation[iName].speakerCount == 1)
+                middlePortrait.texture = speakerOneSO.flirty;
+            if (dialogue.conversation[iName].speakerCount == 2)
+                leftPortrait.texture = speakerOneSO.flirty;
         }
+        if(dialogue.conversation[iName].speakerCount == 2)
+        {
+            Debug.Log("Hey There are 2 speakers");
+            if (dialogue.conversation[iName].emotionTwo == Dialogue.EmotionState.happy)
+            {
+                rightPortrait.texture = speakerTwoSo.happy;
+            }
+            else if (dialogue.conversation[iName].emotionTwo == Dialogue.EmotionState.angry)
+            {
+                rightPortrait.texture = speakerTwoSo.angry;
+            }
+            else if (dialogue.conversation[iName].emotionTwo == Dialogue.EmotionState.sad)
+            {
+                rightPortrait.texture = speakerTwoSo.sad;
+            }
+            else if (dialogue.conversation[iName].emotionTwo == Dialogue.EmotionState.neutral)
+            {
+                rightPortrait.texture = speakerTwoSo.neutral;
+            }
+            else if (dialogue.conversation[iName].emotionTwo == Dialogue.EmotionState.flirty)
+            {
+                rightPortrait.texture = speakerTwoSo.flirty;
+            }
+        }
+
     }
 
 
