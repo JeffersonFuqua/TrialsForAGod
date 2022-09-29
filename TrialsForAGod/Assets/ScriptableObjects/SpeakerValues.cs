@@ -6,5 +6,5 @@ using UnityEngine;
 public class SpeakerValues : ScriptableObject
 {
     public string speakerName;
-    public Texture angry, flirty, happy, neutral, sad;
+    public Texture angry, flirty, happy, neutral, dismissive;
 }

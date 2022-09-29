@@ -187,13 +187,13 @@ public class DialogueManager : MonoBehaviour
             if (dialogue.conversation[iName].speakerCount == 2)
                 leftPortrait.texture = speakerOneSO.angry;
         }
-        else if (dialogue.conversation[iName].emotionOne == Dialogue.EmotionState.sad)
+        else if (dialogue.conversation[iName].emotionOne == Dialogue.EmotionState.dismissive)
         {
             Debug.Log("sad");
             if (dialogue.conversation[iName].speakerCount == 1)
-                middlePortrait.texture = speakerOneSO.sad;
+                middlePortrait.texture = speakerOneSO.dismissive;
             if (dialogue.conversation[iName].speakerCount == 2)
-                leftPortrait.texture = speakerOneSO.sad;
+                leftPortrait.texture = speakerOneSO.dismissive;
         }
         else if (dialogue.conversation[iName].emotionOne == Dialogue.EmotionState.neutral)
         {
@@ -222,9 +222,9 @@ public class DialogueManager : MonoBehaviour
             {
                 rightPortrait.texture = speakerTwoSo.angry;
             }
-            else if (dialogue.conversation[iName].emotionTwo == Dialogue.EmotionState.sad)
+            else if (dialogue.conversation[iName].emotionTwo == Dialogue.EmotionState.dismissive)
             {
-                rightPortrait.texture = speakerTwoSo.sad;
+                rightPortrait.texture = speakerTwoSo.dismissive;
             }
             else if (dialogue.conversation[iName].emotionTwo == Dialogue.EmotionState.neutral)
             {
