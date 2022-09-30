@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
         }
         //keeps the player level
-        if(transform.position.y > 0 && transform.position.y < 0)
+        if(transform.position.y > 0 || transform.position.y < 0)
         {
             transform.position = new Vector3(transform.position.x, 0, transform.position.z);
         }
