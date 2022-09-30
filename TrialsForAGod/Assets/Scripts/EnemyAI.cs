@@ -24,9 +24,12 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
+    { 
         Chase();
-        CallAttack();
+        if (!enemyValues.doesNotAttack)
+        {
+            CallAttack();
+        }
     }
 
     private void Chase()

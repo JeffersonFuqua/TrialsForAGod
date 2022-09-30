@@ -9,12 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d5d1e880d83eb44c8a4c607e885cb9e, type: 3}
-  m_Name: PlayerBase
+  m_Script: {fileID: 11500000, guid: 00538a7e591b45b4e94924dbde20a377, type: 3}
+  m_Name: Dummy
   m_EditorClassIdentifier: 
-  playerName: Evan
-  playerMaxHealth: 100
-  playerSpeed: 9
-  dodgeDuration: 0.2
-  dodgeSpeed: 20
-  dodgeCooldown: 0.6
+  enemyName: Dummy
+  enemyMaxHealth: 100
+  enemySpeed: 0
+  attackDamage: 0
+  attackStartUp: 0
+  attackEndLag: 0
+  attackCooldown: 0
+  attackKnockback: 0
+  tempHitBoxDuration: 0
+  doesNotAttack: 1

@@ -62,8 +62,10 @@ public class PlayerMovement : MonoBehaviour
     {
         desiredDirection.x = pActions.PlayerControls.Movement.ReadValue<Vector2>().x;
         desiredDirection.z = pActions.PlayerControls.Movement.ReadValue<Vector2>().y;
+        desiredDirection = desiredDirection.normalized;
 
         rb.MovePosition(rb.position + desiredDirection * speed * Time.fixedDeltaTime);
+        //rb.position += desiredDirection * speed * Time.fixedDeltaTime;
 
         if ((desiredDirection.x != 0 || desiredDirection.z != 0)/* && !bIsAttacking*/)
         {
@@ -81,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
     }
     IEnumerator dodgeAction()
     {
-        speed += playerVal.dodgeSpeed;
+        speed = playerVal.dodgeSpeed;
         //playerColor.material.color = new Vector4(playerColor.material.color.r, playerColor.material.color.g, playerColor.material.color.b, 0.1f);
         GetComponent<PlayerHealth>().bInvincible = true;
         yield return new WaitForSeconds(playerVal.dodgeDuration);
