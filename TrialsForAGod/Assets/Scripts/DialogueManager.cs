@@ -38,6 +38,9 @@ public class DialogueManager : MonoBehaviour
         typeSpeed = 11 - typeSpeed;
         typeSpeed /= 100;
         typeStart = typeSpeed;
+        leftPortrait.enabled = false;
+        middlePortrait.enabled = false;
+        rightPortrait.enabled = false;
     }
 
     public void StartDialogue(DialogueSystem dialogue)
@@ -146,7 +149,6 @@ public class DialogueManager : MonoBehaviour
 
     private void EmotionImageSwap(DialogueSystem dialogue)
     {
-        //for EVAN
             switch(dialogue.conversation[iName].speakerCount)
             {
             case 0:

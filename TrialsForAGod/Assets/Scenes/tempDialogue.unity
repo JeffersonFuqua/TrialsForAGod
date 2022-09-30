@@ -537,11 +537,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[6].choices.Array.data[0]
-      value: clear
+      value: Path 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[6].choices.Array.data[1]
-      value: IDK
+      value: Path 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[7].choices.Array.data[0]
@@ -630,7 +630,7 @@ PrefabInstance:
     - target: {fileID: 4699376239120618117, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: speakerTwoSo
       value: 
-      objectReference: {fileID: 11400000, guid: 103d2a503d53d0a4fb4dfe645d5a156f, type: 2}
+      objectReference: {fileID: 11400000, guid: bb6663bb9e2d3234092b3b0fa79462e3, type: 2}
     - target: {fileID: 4699376239120618117, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: rightPortrait
       value: 
@@ -683,9 +683,25 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: DialogueSystem, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 7603230903193989355, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -321
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603230903193989355, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -196.9
+      objectReference: {fileID: 0}
     - target: {fileID: 7603230903568205186, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603230903577689406, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 251.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603230903577689406, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 39.1
       objectReference: {fileID: 0}
     - target: {fileID: 7603230903775084764, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
@@ -698,6 +714,14 @@ PrefabInstance:
     - target: {fileID: 7603230903775084764, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: m_Colors.m_SelectedColor.r
       value: 0.5943396
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603230903775084771, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 321.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603230903775084771, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -199.4
       objectReference: {fileID: 0}
     - target: {fileID: 7603230903864251780, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: m_DeselectOnBackgroundClick
@@ -810,6 +834,30 @@ PrefabInstance:
     - target: {fileID: 7603230904559517079, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603230904804979763, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603230904804979763, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 23.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603230904804979763, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -264.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603230904804979763, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 62.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603230904876915172, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603230904876915172, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 70.3
       objectReference: {fileID: 0}
     - target: {fileID: 7603230904876915179, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: m_IsActive
@@ -1158,13 +1206,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health_Weapon Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 4068613039406295770, guid: 35eae3e08d5c01449a37feded33e8156, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 4068613039275047260, guid: 35eae3e08d5c01449a37feded33e8156, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4068613039406295770, guid: 35eae3e08d5c01449a37feded33e8156, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068613039406295770, guid: 35eae3e08d5c01449a37feded33e8156, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4068613039739490636, guid: 35eae3e08d5c01449a37feded33e8156, type: 3}
       propertyPath: m_Name
