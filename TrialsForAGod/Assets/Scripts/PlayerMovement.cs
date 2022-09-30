@@ -47,10 +47,15 @@ public class PlayerMovement : MonoBehaviour
         if (!bLocked)
         {
             Movement();
+            //cancels any generated velocity
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
         }
-        //cancels any generated velocity
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
+        //keeps the player level
+        if(transform.position.y > 0 && transform.position.y < 0)
+        {
+            transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        }
     }
 
     public void Movement()

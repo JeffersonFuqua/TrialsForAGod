@@ -42,11 +42,11 @@ public class PlayerHealth : MonoBehaviour
     }
     IEnumerator playerRecievedKnockback(Vector3 attackOrgin)
     {
-        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<PlayerMovement>().Lock();
         rb.AddForce(attackOrgin, ForceMode.Impulse);
         yield return new WaitForSeconds(0.3f);
         rb.velocity = Vector3.zero;
-        GetComponent<PlayerMovement>().enabled = true;
+        GetComponent<PlayerMovement>().Unlock();
     }
     //Invincibility and knockback are seperate unlike with enemys as this will give the player a chance to escape
     IEnumerator invincible(float c)
