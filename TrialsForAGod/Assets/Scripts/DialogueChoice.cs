@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class DialogueChoice : MonoBehaviour
 {
     public GameObject nextButton;
     public GameObject choiceButton;
+    public GameObject ES;
 
     public Transform mainCanvas;
 
@@ -32,6 +34,8 @@ public class DialogueChoice : MonoBehaviour
             madeButtons.GetComponent<Button>().onClick.AddListener(() => bv.TriggerChoice());
             madeButtons.GetComponent<Button>().onClick.AddListener(delegate { GetComponent<DialogueManager>().StartDialogue(dialogue); });
             j++;
+            ES.GetComponent<EventSystem>().SetSelectedGameObject(madeButtons, null);
+
         }
         /*
         foreach(string choiceName in choices)
