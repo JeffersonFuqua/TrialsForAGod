@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public GameObject pauseMenu;
     public Slider playerHealthBar;
     private PlayerValues playerVal;
 
