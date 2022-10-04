@@ -170,12 +170,10 @@ public class DialogueManager : MonoBehaviour
                 leftPortrait.enabled = false;
                 middlePortrait.enabled = false;
                 rightPortrait.enabled = false;
-                Debug.Log("Hey we got default for the image switch case");
                 break;
             }
         if (dialogue.conversation[iName].emotionOne == Dialogue.EmotionState.happy)
         {
-            Debug.Log("happy");
             if(dialogue.conversation[iName].speakerCount == 1)
                 middlePortrait.texture = speakerOneSO.happy;
             if (dialogue.conversation[iName].speakerCount == 2)
@@ -183,7 +181,6 @@ public class DialogueManager : MonoBehaviour
         }
         else if (dialogue.conversation[iName].emotionOne == Dialogue.EmotionState.angry)
         {
-            Debug.Log("angry");
             if (dialogue.conversation[iName].speakerCount == 1)
                 middlePortrait.texture = speakerOneSO.angry;
             if (dialogue.conversation[iName].speakerCount == 2)
@@ -191,7 +188,6 @@ public class DialogueManager : MonoBehaviour
         }
         else if (dialogue.conversation[iName].emotionOne == Dialogue.EmotionState.dismissive)
         {
-            Debug.Log("sad");
             if (dialogue.conversation[iName].speakerCount == 1)
                 middlePortrait.texture = speakerOneSO.dismissive;
             if (dialogue.conversation[iName].speakerCount == 2)
@@ -199,7 +195,6 @@ public class DialogueManager : MonoBehaviour
         }
         else if (dialogue.conversation[iName].emotionOne == Dialogue.EmotionState.neutral)
         {
-            Debug.Log("neutral");
             if (dialogue.conversation[iName].speakerCount == 1)
                 middlePortrait.texture = speakerOneSO.neutral;
             if (dialogue.conversation[iName].speakerCount == 2)
@@ -207,7 +202,6 @@ public class DialogueManager : MonoBehaviour
         }
         else if (dialogue.conversation[iName].emotionOne == Dialogue.EmotionState.flirty)
         {
-            Debug.Log("flirty");
             if (dialogue.conversation[iName].speakerCount == 1)
                 middlePortrait.texture = speakerOneSO.flirty;
             if (dialogue.conversation[iName].speakerCount == 2)
@@ -215,7 +209,6 @@ public class DialogueManager : MonoBehaviour
         }
         if(dialogue.conversation[iName].speakerCount == 2)
         {
-            Debug.Log("Hey There are 2 speakers");
             if (dialogue.conversation[iName].emotionTwo == Dialogue.EmotionState.happy)
             {
                 rightPortrait.texture = speakerTwoSo.happy;
