@@ -5,7 +5,9 @@ using UnityEngine;
 public class CheckList : MonoBehaviour
 {
     public GameObject[] toDoList;
-    public int x = 0;
+    public GameObject ListCanvas;
+    private int x = 0;
+    private int y = 0;
     public void CheckOff(int item)
     {
       switch(item)
@@ -13,18 +15,30 @@ public class CheckList : MonoBehaviour
             case 0:
                 //light attack
                 check(toDoList[0]);
+                x++;
+                if (x == toDoList.Length)
+                    ListCanvas.SetActive(false);
                 break;
             case 1:
                 //heavy attack
                 check(toDoList[1]);
+                x++;
+                if (x == toDoList.Length)
+                    ListCanvas.SetActive(false);
                 break;
             case 2:
                 //dash
                 check(toDoList[2]);
+                x++;
+                if (x == toDoList.Length)
+                    ListCanvas.SetActive(false);
                 break;
             case 3:
                 //chain
                 check(toDoList[3]);
+                x++;
+                if (x == toDoList.Length)
+                    ListCanvas.SetActive(false);
                 break;
         }
     }
@@ -34,7 +48,7 @@ public class CheckList : MonoBehaviour
     }
     public void Increment()
     {
-        CheckOff(x);
-        x++;
+        CheckOff(y);
+        y++;
     }
 }
