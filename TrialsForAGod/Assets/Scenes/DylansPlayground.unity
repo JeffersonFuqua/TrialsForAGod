@@ -128,6 +128,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7706561083002824019, guid: 9d8db0bfe1f189a4a8067f4bbe7f5daf, type: 3}
   m_PrefabInstance: {fileID: 3612904857993584043}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &92535266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3984226166522838309, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
+  m_PrefabInstance: {fileID: 3602310240721323271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &102038288
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd87f306f0cb23c4ca0692670aa9da04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bAttackChain: 0
   currentAttackDamage: 0
   currentAttackKnockback: 0
   tempAnim: {fileID: 645768251}
@@ -565,7 +571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 92535266}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &893230177

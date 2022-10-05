@@ -5,17 +5,14 @@ using UnityEngine.InputSystem;
 
 public class CheckList : MonoBehaviour
 {
+    public PlayerAttack playerAttack;
     public GameObject[] toDoList;
     public GameObject ListCanvas;
     private int x = 0;
     private int y = 0;
-    private PlayerValues playerVal;
+    private bool bLat, bHat, bDas, bChain;
+    private int chainVal;
     PlayerActions pActions;
-
-    private void Start()
-    {
-        playerVal = GetComponent<PlayerValueHolder>().playerVal;
-    }
 
     private void OnEnable()
     {
@@ -39,32 +36,54 @@ public class CheckList : MonoBehaviour
       switch(item)
        {
             case 0:
-                //light attack
+                if (bLat)
+                    return;
+
                 check(toDoList[0]);
                 x++;
+
                 if (x == toDoList.Length)
                     ListCanvas.SetActive(false);
+
+                bLat = true;
                 break;
+
             case 1:
-                //heavy attack
+                if (bHat)
+                    return;
+
                 check(toDoList[1]);
                 x++;
+
                 if (x == toDoList.Length)
                     ListCanvas.SetActive(false);
+
+                bHat = true;
                 break;
+
             case 2:
-                //dash
+                if (bDas)
+                    return;
+
                 check(toDoList[2]);
                 x++;
+
                 if (x == toDoList.Length)
                     ListCanvas.SetActive(false);
+
+                bDas = true;
                 break;
+
             case 3:
-                //chain
+                if (bChain)
+                    return;
                 check(toDoList[3]);
                 x++;
+
                 if (x == toDoList.Length)
                     ListCanvas.SetActive(false);
+
+                bChain = true;
                 break;
         }
     }
@@ -74,11 +93,19 @@ public class CheckList : MonoBehaviour
     }
     private void Lattack(InputAction.CallbackContext c)
     {
-        CheckOff(0);
+
+        if (playerAttack.bAttackChain)
+            CheckOff(3);
+        else
+            CheckOff(0);
     }
     private void Hattack(InputAction.CallbackContext c)
     {
-        CheckOff(1);
+
+        if (playerAttack.bAttackChain)
+            CheckOff(3);
+        else
+            CheckOff(1);
     }
     private void Dodged(InputAction.CallbackContext c)
     {
