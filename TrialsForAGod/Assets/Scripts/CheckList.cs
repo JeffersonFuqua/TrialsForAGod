@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CheckList : MonoBehaviour
 {
@@ -8,6 +9,31 @@ public class CheckList : MonoBehaviour
     public GameObject ListCanvas;
     private int x = 0;
     private int y = 0;
+    private PlayerValues playerVal;
+    PlayerActions pActions;
+
+    private void Start()
+    {
+        playerVal = GetComponent<PlayerValueHolder>().playerVal;
+    }
+
+    private void OnEnable()
+    {
+        pActions = new PlayerActions();
+        pActions.Enable();
+        pActions.PlayerControls.Dodge.started += Dodged;
+        pActions.PlayerControls.LightAttack.started += Lattack;
+        pActions.PlayerControls.HeavyAttack.started += Hattack;
+    }
+
+    private void OnDisable()
+    {
+        pActions.Disable();
+        pActions.PlayerControls.Dodge.started -= Dodged;
+        pActions.PlayerControls.LightAttack.started -= Lattack;
+        pActions.PlayerControls.HeavyAttack.started -= Hattack;
+    }
+
     public void CheckOff(int item)
     {
       switch(item)
@@ -46,6 +72,19 @@ public class CheckList : MonoBehaviour
     {
         done.SetActive(false);
     }
+    private void Lattack(InputAction.CallbackContext c)
+    {
+        CheckOff(0);
+    }
+    private void Hattack(InputAction.CallbackContext c)
+    {
+        CheckOff(1);
+    }
+    private void Dodged(InputAction.CallbackContext c)
+    {
+        CheckOff(2);
+    }
+
     public void Increment()
     {
         CheckOff(y);
