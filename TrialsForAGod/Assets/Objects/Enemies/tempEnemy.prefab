@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 4832888060312888539}
   - component: {fileID: 4832888060312888537}
   - component: {fileID: 4832888060312888536}
+  - component: {fileID: 7988368502181168138}
   m_Layer: 8
   m_Name: tempEnemy
   m_TagString: Untagged
@@ -272,6 +273,20 @@ MonoBehaviour:
   aimTool: {fileID: 4832888060917569975}
   idleAttack: {fileID: 4832888060599034236}
   attackRange: {fileID: 4832888059930069920}
+--- !u!114 &7988368502181168138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4832888060312888529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65860f0b055a7614699d5fd41be0ebf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetPosition: {x: 0, y: 0, z: 0}
+  bUponReset: 0
 --- !u!1 &4832888060599034236
 GameObject:
   m_ObjectHideFlags: 0

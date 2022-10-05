@@ -7,7 +7,7 @@ public class EnemyAI : MonoBehaviour
     private EnemyValues enemyValues;
 
     private GameObject player;
-    private bool bChase;
+    public bool bChase;
 
     private Vector3 difference;
     [HideInInspector] public float enemySpeed;
