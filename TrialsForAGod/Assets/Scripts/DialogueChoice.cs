@@ -29,7 +29,7 @@ public class DialogueChoice : MonoBehaviour
             ButtonsValue bv = madeButtons.GetComponent<ButtonsValue>();
             bv.dChoice = this;
             bv.index = j;
-            madeButtons.GetComponent<Transform>().position += new Vector3(400, (i * 40) - 135, -1);
+            madeButtons.GetComponent<Transform>().position += new Vector3(400, (i * 60) - 165, -1);
             madeButtons.GetComponentInChildren<TextMeshProUGUI>().text = choices[i];
             madeButtons.GetComponent<Button>().onClick.AddListener(() => bv.TriggerChoice());
             madeButtons.GetComponent<Button>().onClick.AddListener(delegate { GetComponent<DialogueManager>().StartDialogue(dialogue); });

@@ -41,6 +41,7 @@ public class DialogueManager : MonoBehaviour
         leftPortrait.enabled = false;
         middlePortrait.enabled = false;
         rightPortrait.enabled = false;
+        StartDialogue(dSystem);
     }
 
     public void StartDialogue(DialogueSystem dialogue)
