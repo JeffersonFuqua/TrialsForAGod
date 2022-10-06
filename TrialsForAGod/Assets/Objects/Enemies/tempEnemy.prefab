@@ -146,7 +146,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4832888060312888529}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 2120824691732617020, guid: ab6ed48f0764b03428c0d1c03d6b795a, type: 3}
 --- !u!23 &4832888060312888542
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -200,9 +200,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
-  m_Height: 2
+  m_Height: 1.0000002
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.000000059604645, y: -0.16521657, z: -0.00000011920929}
 --- !u!54 &4832888060312888528
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7530ded3408c845abfe24228c39ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bChase: 0
   enemySpeed: 0
 --- !u!114 &4832888060312888536
 MonoBehaviour:
@@ -328,7 +329,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4832888060599034236}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 2120824691732617020, guid: ab6ed48f0764b03428c0d1c03d6b795a, type: 3}
 --- !u!23 &4832888060599034233
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -382,9 +383,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.06602867, z: 0}
 --- !u!1 &4832888060917569928
 GameObject:
   m_ObjectHideFlags: 0
