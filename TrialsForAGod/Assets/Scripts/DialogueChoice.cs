@@ -63,5 +63,6 @@ public class DialogueChoice : MonoBehaviour
         {
             this.transform.GetChild(i).gameObject.SetActive(false);
         }
+        ES.GetComponent<EventSystem>().SetSelectedGameObject(nextButton, null);
     }
 }
