@@ -44,7 +44,7 @@ public class EnemyAI : MonoBehaviour
 
         if (bChase)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, enemySpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, 0, player.transform.position.z), enemySpeed * Time.deltaTime);
         }
     }
 

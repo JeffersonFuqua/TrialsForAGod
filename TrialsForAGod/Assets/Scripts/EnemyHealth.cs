@@ -57,6 +57,7 @@ public class EnemyHealth : MonoBehaviour
             //applies knockback
             recievedKnockback = player.GetComponent<PlayerAttack>().currentAttackKnockback;
             difference = transform.position - player.position;
+            difference.y = 0;
             difference = difference.normalized * recievedKnockback;
             UpdateHealth(other.transform.root.GetComponent<PlayerAttack>().currentAttackDamage);
         }
