@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PauseMenu : MonoBehaviour
     PlayerActions pActions;
 
     bool bIsPaused;
+    public GameObject eSystem;
+    public GameObject continueButton;
+
 
     private void OnEnable()
     {
@@ -17,6 +21,8 @@ public class PauseMenu : MonoBehaviour
         pActions.Enable();
 
         pActions.PlayerControls.Pause.started += CallPause;
+
+        eSystem.GetComponent<EventSystem>().SetSelectedGameObject(continueButton, null);
     }
 
     private void OnDisable()
@@ -29,6 +35,7 @@ public class PauseMenu : MonoBehaviour
     private void CallPause(InputAction.CallbackContext c)
     {
         //just another way to pause and unpause, the buttons can only call Pause();
+        eSystem.GetComponent<EventSystem>().SetSelectedGameObject(continueButton, null);
         Pause();
     }
     public void Pause()
