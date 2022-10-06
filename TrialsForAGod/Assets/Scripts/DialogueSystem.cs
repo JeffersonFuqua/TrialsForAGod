@@ -13,7 +13,7 @@ public struct Dialogue
     public string charName;
     public enum EmotionState { neutral, happy, dismissive, angry, flirty };
     public EmotionState emotionOne, emotionTwo;
-    [TextArea(3, 10)]
+    [TextArea(5, 10)]
     public string[] sentences;
     public bool choice;
     public int choicePath;
