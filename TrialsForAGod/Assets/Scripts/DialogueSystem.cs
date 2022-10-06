@@ -20,4 +20,5 @@ public struct Dialogue
     public string[] choices;
     [Range(0, 2)]
     public int speakerCount;
+    public bool bNextScene;
 }
