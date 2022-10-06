@@ -91,7 +91,7 @@ public class DialogueManager : MonoBehaviour
             {
                 if (iName == dialogue.conversation.Count - 1)
                 {
-                    EndDialogue();
+                    EndDialogue(dialogue);
                     return;
                 }
                 iName++;
@@ -116,7 +116,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (iName == dialogue.conversation.Count - 1)
             {
-                EndDialogue();
+                EndDialogue(dialogue);
                 return;
             }
             iName++;
@@ -242,8 +242,12 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void EndDialogue()
+    public void EndDialogue(DialogueSystem dialogue)
     {
+        if (dialogue.conversation[iName].bNextScene)
+        {
+            GetComponent<NextScene>().ChangeScene();
+        }
         Debug.Log("End");
         dialogueCanvas.SetActive(false);
     }
