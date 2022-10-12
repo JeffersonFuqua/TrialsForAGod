@@ -8,4 +8,6 @@ public class PlayerValueHolder : MonoBehaviour
     public PlayerValues playerVal;
 
     public Weapon currentWeaponVal;
+
+    public Animator playerAnim;
 }

@@ -18,12 +18,17 @@ public class PlayerMovement : MonoBehaviour
 
     private bool bLocked;
 
+    private Animator playerAnim;
+    private bool bIsRunning;
+
+
     private void Start()
     {
         playerVal = GetComponent<PlayerValueHolder>().playerVal;
         rb = GetComponent<Rigidbody>();
         speed = playerVal.playerSpeed;
 
+        playerAnim = GetComponent<PlayerValueHolder>().playerAnim;
         //playerColor = GetComponent<MeshRenderer>();
     }
 
@@ -70,6 +75,19 @@ public class PlayerMovement : MonoBehaviour
         if ((desiredDirection.x != 0 || desiredDirection.z != 0)/* && !bIsAttacking*/)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(desiredDirection.x, 0, desiredDirection.z)), Time.deltaTime * faceRotationSpeed);
+            if(!bIsRunning)
+            {
+                playerAnim.SetTrigger("running");
+                bIsRunning = true;
+            }
+        }
+        else
+        {
+            if (bIsRunning)
+            {
+                playerAnim.SetTrigger("walking");
+                bIsRunning = false;
+            }
         }
     }
 
