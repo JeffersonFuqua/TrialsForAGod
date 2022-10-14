@@ -7,6 +7,7 @@ public class CheckList : MonoBehaviour
 {
     public PlayerAttack playerAttack;
     public GameObject[] toDoList;
+    public GameObject[] listImages;
     public GameObject ListCanvas;
     private int x = 0;
     private int y = 0;
@@ -117,4 +118,21 @@ public class CheckList : MonoBehaviour
         CheckOff(y);
         y++;
     }
+    private void Update()
+    {
+        string[] controller = Input.GetJoystickNames();
+        for(int j = 0; j < controller.Length; j++)
+        {
+            if(controller[j].Length != 0)
+            {
+                DisplayInputs();
+            }
+        }
+    }
+    public void DisplayInputs()
+    {
+        Debug.Log("Controller Detected");
+
+    }
+
 }
