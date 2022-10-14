@@ -416,11 +416,6 @@ MonoBehaviour:
   heavyHitBox1: {fileID: 89273077}
   heavyHitBox2: {fileID: 418305288}
   heavyHitBox3: {fileID: 222340981}
---- !u!95 &645768251 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9036980633323257398, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
-  m_PrefabInstance: {fileID: 662491495}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &645768253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +431,6 @@ MonoBehaviour:
   bAttackChain: 0
   currentAttackDamage: 0
   currentAttackKnockback: 0
-  tempAnim: {fileID: 645768251}
 --- !u!114 &645768254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerVal: {fileID: 11400000, guid: 7c9c00529f0094348ad5f8a2575d24b9, type: 2}
   currentWeaponVal: {fileID: 11400000, guid: 799d22d48e87a2542a9f7a57ea6380d9, type: 2}
+  playerAnim: {fileID: 0}
 --- !u!114 &645768255
 MonoBehaviour:
   m_ObjectHideFlags: 0

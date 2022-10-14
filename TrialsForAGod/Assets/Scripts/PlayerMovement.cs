@@ -15,11 +15,11 @@ public class PlayerMovement : MonoBehaviour
 
     private float faceRotationSpeed = 8;
     [HideInInspector]public bool bIsAttacking;
+    [HideInInspector]public bool bIsRunning;
 
     private bool bLocked;
 
     private Animator playerAnim;
-    private bool bIsRunning;
 
 
     private void Start()
@@ -62,7 +62,6 @@ public class PlayerMovement : MonoBehaviour
             transform.position = new Vector3(transform.position.x, 0, transform.position.z);
         }
     }
-
     public void Movement()
     {
         desiredDirection.x = pActions.PlayerControls.Movement.ReadValue<Vector2>().x;
@@ -83,9 +82,9 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (bIsRunning)
+            if (bIsRunning && !bIsAttacking)
             {
-                playerAnim.SetTrigger("walking");
+                playerAnim.SetTrigger("timer");
                 bIsRunning = false;
             }
         }

@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
     private int attackValue;
     //time if no buttons are pressed to reset the value to 0 to start chain over again
     private float attackValueReset;
-    private float attackChainTimer = 0.4f;
+    private float attackChainTimer = 0.3f;
     [HideInInspector] public bool bAttackChain;
     [HideInInspector] public float currentAttackDamage;
     [HideInInspector] public float currentAttackKnockback;
@@ -62,7 +62,14 @@ public class PlayerAttack : MonoBehaviour
             bAttackChain = false;
             attackValueReset = attackChainTimer;
             attackValue = 0;
-            playerAnim.SetTrigger("timer");
+            if (GetComponent<PlayerMovement>().bIsRunning)
+            {
+                playerAnim.SetTrigger("running");
+            }
+            else
+            {
+                playerAnim.SetTrigger("timer");
+            }
             //Debug.Log("reset");
         }
 
