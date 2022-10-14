@@ -24,7 +24,9 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void FixedUpdate()
-    { 
+    {
+        //GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         Chase();
         if (!enemyValues.doesNotAttack)
         {
@@ -45,6 +47,10 @@ public class EnemyAI : MonoBehaviour
         if (bChase)
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, 0, player.transform.position.z), enemySpeed * Time.deltaTime);
+            Vector3 lookVector = transform.position - player.transform.position;
+            lookVector.y = transform.position.y;
+            Quaternion rot = Quaternion.LookRotation(lookVector);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
         }
     }
 
