@@ -101,11 +101,18 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator dodgeAction()
     {
         speed = playerVal.dodgeSpeed;
-        //playerColor.material.color = new Vector4(playerColor.material.color.r, playerColor.material.color.g, playerColor.material.color.b, 0.1f);
         GetComponent<PlayerHealth>().bInvincible = true;
+        playerAnim.SetTrigger("dodge");
         yield return new WaitForSeconds(playerVal.dodgeDuration);
+        if (bIsRunning)
+        {
+            playerAnim.SetTrigger("running");
+        }
+        else
+        {
+            playerAnim.SetTrigger("timer");
+        }
         speed = playerVal.playerSpeed;
-        //playerColor.material.color = new Vector4(playerColor.material.color.r, playerColor.material.color.g, playerColor.material.color.b, 1);
         GetComponent<PlayerHealth>().bInvincible = false;
     }
     IEnumerator dodgeCooldown()
