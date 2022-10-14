@@ -61,7 +61,7 @@ public class DialogueChoice : MonoBehaviour
         
         for(int i = 0; i < numberofButtons; i++)
         {
-            this.transform.GetChild(i).gameObject.SetActive(false);
+            Destroy(this.transform.GetChild(i).gameObject);
         }
         ES.GetComponent<EventSystem>().SetSelectedGameObject(nextButton, null);
     }
