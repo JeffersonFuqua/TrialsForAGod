@@ -126,11 +126,11 @@ public class PlayerMovement : MonoBehaviour
     public void Lock()
     {
         bLocked = true;
-        pActions.PlayerControls.Dodge.started += Dodge;
+        pActions.PlayerControls.Dodge.started -= Dodge;
     }
     public void Unlock()
     {
         bLocked = false;
-        pActions.PlayerControls.Dodge.started -= Dodge;
+        pActions.PlayerControls.Dodge.started += Dodge;
     }
 }
