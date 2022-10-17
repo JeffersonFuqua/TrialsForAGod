@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class CheckList : MonoBehaviour
 {
     public PlayerAttack playerAttack;
     public GameObject[] toDoList;
-    public GameObject[] listImages;
-    public GameObject ListCanvas;
+    public RawImage[] listImages;
+    public GameObject listCanvas;
     private int x = 0;
     private int y = 0;
     private bool bLat, bHat, bDas, bChain;
-    private int chainVal;
+  //  private int chainVal;
     PlayerActions pActions;
+    public ControllerImages keyboard;
+    public ControllerImages control;
 
     private void OnEnable()
     {
@@ -40,11 +43,11 @@ public class CheckList : MonoBehaviour
                 if (bLat)
                     return;
 
-                check(toDoList[0]);
+                check(toDoList[0], listImages[0]);
                 x++;
 
                 if (x == toDoList.Length)
-                    ListCanvas.SetActive(false);
+                    listCanvas.SetActive(false);
 
                 bLat = true;
                 break;
@@ -53,11 +56,11 @@ public class CheckList : MonoBehaviour
                 if (bHat)
                     return;
 
-                check(toDoList[1]);
+                check(toDoList[1], listImages[1]);
                 x++;
 
                 if (x == toDoList.Length)
-                    ListCanvas.SetActive(false);
+                    listCanvas.SetActive(false);
 
                 bHat = true;
                 break;
@@ -66,11 +69,11 @@ public class CheckList : MonoBehaviour
                 if (bDas)
                     return;
 
-                check(toDoList[2]);
+                check(toDoList[2], listImages[2]);
                 x++;
 
                 if (x == toDoList.Length)
-                    ListCanvas.SetActive(false);
+                    listCanvas.SetActive(false);
 
                 bDas = true;
                 break;
@@ -78,19 +81,20 @@ public class CheckList : MonoBehaviour
             case 3:
                 if (bChain)
                     return;
-                check(toDoList[3]);
+                check(toDoList[3], listImages[3]);
                 x++;
 
                 if (x == toDoList.Length)
-                    ListCanvas.SetActive(false);
+                    listCanvas.SetActive(false);
 
                 bChain = true;
                 break;
         }
     }
-    private void check(GameObject done)
+    private void check(GameObject done, RawImage finish)
     {
         done.SetActive(false);
+        finish.enabled = false;
     }
     private void Lattack(InputAction.CallbackContext c)
     {
@@ -125,14 +129,23 @@ public class CheckList : MonoBehaviour
         {
             if(controller[j].Length != 0)
             {
-                DisplayInputs();
+                listImages[0].texture = keyboard.light;
+                listImages[1].texture = keyboard.heavy;
+                listImages[2].texture = keyboard.dash;
+                listImages[3].texture = keyboard.chain;
+            }
+            else
+            {
+                listImages[0].texture = control.light;
+                listImages[1].texture = control.heavy;
+                listImages[2].texture = control.dash;
+                listImages[3].texture = control.chain;
             }
         }
     }
-    public void DisplayInputs()
+    public void DisplayInputs(int value)
     {
         Debug.Log("Controller Detected");
 
     }
-
 }
