@@ -216,7 +216,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.size
-      value: 17
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[3].choice
@@ -288,11 +288,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[14].charName
-      value: 
+      value: /name
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[15].charName
       value: Ares
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[16].charName
+      value: /name
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[17].charName
+      value: Ares
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[18].charName
+      value: /name
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[19].charName
+      value: Ares
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[20].charName
+      value: /name
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[21].charName
+      value: Ares
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[22].charName
+      value: Ares
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[23].charName
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[0].choicePath
@@ -400,7 +432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[11].emotionOne
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[12].bNextScene
@@ -408,7 +440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[12].emotionOne
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[13].bNextScene
@@ -416,7 +448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[13].emotionOne
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[14].bNextScene
@@ -432,7 +464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[15].emotionOne
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[16].bNextScene
@@ -441,6 +473,70 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[16].emotionOne
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[17].bNextScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[17].emotionOne
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[18].bNextScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[18].emotionOne
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[19].bNextScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[19].emotionOne
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[20].bNextScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[20].emotionOne
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[21].bNextScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[21].emotionOne
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[22].bNextScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[22].emotionOne
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[23].bNextScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[23].emotionOne
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[24].bNextScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[24].emotionOne
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[0].speakerCount
@@ -508,6 +604,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[16].speakerCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[17].speakerCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[18].speakerCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[19].speakerCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[20].speakerCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[21].speakerCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[22].speakerCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[23].speakerCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[24].speakerCount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
@@ -580,14 +708,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[14].sentences.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[15].sentences.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[16].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[17].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[18].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[19].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[20].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[21].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[22].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[23].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[24].sentences.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
@@ -652,7 +812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[3].sentences.Array.data[0]
-      value: Boss!
+      value: B...Boss!
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[3].sentences.Array.data[1]
@@ -702,7 +862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[8].sentences.Array.data[0]
-      value: "Who you know as you employer technically doesn\u2019t exist."
+      value: "Who you know as your employer technically doesn\u2019t exist."
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[8].sentences.Array.data[1]
@@ -727,7 +887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[11].sentences.Array.data[0]
-      value: "You\u2019re not technically in the underworld yet."
+      value: "Because you\u2019re not technically in the underworld yet."
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[11].sentences.Array.data[1]
@@ -735,7 +895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[12].sentences.Array.data[0]
-      value: Fair enough.
+      value: I have a bad feeling about this.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[12].sentences.Array.data[1]
@@ -743,7 +903,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[13].sentences.Array.data[0]
-      value: It is dangerous to go alone. Take this.
+      value: Shut it! You are to traverse the depths of the underworld and defeat
+        the Titan of time, Cronus.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[13].sentences.Array.data[1]
@@ -751,7 +912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[14].sentences.Array.data[0]
-      value: Ares reaches into his back pocket and pulls out a large crimson blade.
+      value: "Cronus? Don\u2019t suppose I have a choice."
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[14].sentences.Array.data[1]
@@ -759,11 +920,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[15].sentences.Array.data[0]
-      value: Go. I will meet you at end of this sewer.
+      value: No.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[15].sentences.Array.data[1]
       value: Don't keep me waiting.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[16].sentences.Array.data[0]
+      value: I have to defeat Cronus, a titan, as a normal human?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[16].sentences.Array.data[1]
+      value: "Not just Cronus, there\u2019s a couple others in the underworld who
+        have been of particular annoyance. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[17].sentences.Array.data[0]
+      value: "Not just Cronus, there\u2019s a couple others in the underworld who
+        have been of particular annoyance."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[17].sentences.Array.data[1]
+      value: "So as our arbiter, you\u2019re in the position to deal with these problems."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[18].sentences.Array.data[0]
+      value: "I know you said this is my job but why can\u2019t you go down and take
+        care of Cronus yourself? You know, being a god and all."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[18].sentences.Array.data[1]
+      value: Don't keep me waiting.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[19].sentences.Array.data[0]
+      value: "I have to fight a war and another to keep going, so cool god things
+        to do. You wouldn\u2019t understand a god\u2019s motives, so that leaves
+        you kid."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[19].sentences.Array.data[1]
+      value: Don't keep me waiting.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[20].sentences.Array.data[0]
+      value: "So I\u2019m on my own with no help. Great."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[20].sentences.Array.data[1]
+      value: Don't keep me waiting.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[21].sentences.Array.data[0]
+      value: "Did I say you\u2019d receive no help? "
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[21].sentences.Array.data[1]
+      value: "I\u2019m lending you one of my swords, a magical weapon crafted by
+        that idiot of a god, the divine smith himself. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[22].sentences.Array.data[0]
+      value: The power of the sword is linked to the user and their soul. The better
+        you get, the better the sword will become.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[23].sentences.Array.data[0]
+      value: Taking hold of the sword, I feel the power flowing within me. My strength
+        and stamina feel far beyond they ever have before.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[24].sentences.Array.data[0]
+      value: Practice on this dummy, though I won't be surprised if the training
+        dummy kills you. I'll meet you at the end of the sewer.
       objectReference: {fileID: 0}
     - target: {fileID: 4699376239120618117, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: typeSpeed
