@@ -124,6 +124,11 @@ public class CheckList : MonoBehaviour
     }
     private void Update()
     {
+        listImages[0].texture = keyboard.light;
+        listImages[1].texture = keyboard.heavy;
+        listImages[2].texture = keyboard.dash;
+        listImages[3].texture = keyboard.chain;
+
         string[] controller = Input.GetJoystickNames();
         for(int j = 0; j < controller.Length; j++)
         {
@@ -142,10 +147,5 @@ public class CheckList : MonoBehaviour
                 listImages[3].texture = control.chain;
             }
         }
-    }
-    public void DisplayInputs(int value)
-    {
-        Debug.Log("Controller Detected");
-
     }
 }
