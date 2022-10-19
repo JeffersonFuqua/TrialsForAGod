@@ -127,7 +127,7 @@ public class CheckList : MonoBehaviour
         string[] controller = Input.GetJoystickNames();
         for(int j = 0; j < controller.Length; j++)
         {
-            if(controller[j].Length != 0)
+            if(controller[j].Length == 0)
             {
                 listImages[0].texture = keyboard.light;
                 listImages[1].texture = keyboard.heavy;
