@@ -43,6 +43,10 @@ public class EnemyAI : MonoBehaviour
                 bChase = true;
             }
         }
+        else if(Vector3.Distance(transform.position, player.transform.position) > 9)
+        {
+            bChase = false;
+        }
 
         if (bChase)
         {
