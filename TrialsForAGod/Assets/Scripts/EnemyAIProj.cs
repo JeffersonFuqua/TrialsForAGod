@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAIProj : MonoBehaviour
 {
-    private EnemyValues enemyValuesProj;
+    private ProjEnemyValues enemyValuesProj;
 
     private GameObject player;
 
@@ -22,7 +22,7 @@ public class EnemyAIProj : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        enemyValuesProj = GetComponent<EnemyValueHolder>().enemyVal;
+        enemyValuesProj = GetComponent<ProjEnemyValueHolder>().projEnemyVal;
         enemySpeed = enemyValuesProj.enemySpeed;
     }
     private void FixedUpdate()
