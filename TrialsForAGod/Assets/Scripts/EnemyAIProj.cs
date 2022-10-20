@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAIProj : MonoBehaviour
 {
-    private EnemyValues enemyValues;
+    private EnemyValues enemyValuesProj;
 
     private GameObject player;
 
@@ -22,8 +22,8 @@ public class EnemyAIProj : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        enemyValues = GetComponent<EnemyValueHolder>().enemyVal;
-        enemySpeed = enemyValues.enemySpeed;
+        enemyValuesProj = GetComponent<EnemyValueHolder>().enemyVal;
+        enemySpeed = enemyValuesProj.enemySpeed;
     }
     private void FixedUpdate()
     {
@@ -35,14 +35,14 @@ public class EnemyAIProj : MonoBehaviour
 
     private void WalkBack()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < 7)
+        if (Vector3.Distance(transform.position, player.transform.position) < 6)
         {
             if (!bNotice)
             {
                 bNotice = true;
             }
         }
-        else if (Vector3.Distance(transform.position, player.transform.position) > 12)
+        else if (Vector3.Distance(transform.position, player.transform.position) > 10)
         {
             bNotice = false;
         }
@@ -61,17 +61,17 @@ public class EnemyAIProj : MonoBehaviour
 
     private void CallProj()
     {
-        if ((Vector3.Distance(transform.position, player.transform.position) < 3 && Vector3.Distance(transform.position, player.transform.position) < 3) && !bIsStunned)
+        if ((Vector3.Distance(transform.position, player.transform.position) > 3 && bNotice) && !bIsStunned)
         {
-            //StartCoroutine(attackStartUp());
+            StartCoroutine(projStartUp());
         }
     }
-    /*
-    IEnumerator attackStartUp()
+    
+    IEnumerator projStartUp()
     {
         bAttacking = true;
         enemySpeed = 0;
-        yield return new WaitForSeconds(enemyValues.attackStartUp);
+        yield return new WaitForSeconds(enemyValuesProj.attackStartUp);
         if (!bIsStunned)
         {
             GetComponent<EnemyAttack>().EnemySpecialAttack(player);
@@ -81,13 +81,13 @@ public class EnemyAIProj : MonoBehaviour
     }
     IEnumerator attackEndLag()
     {
-        yield return new WaitForSeconds(enemyValues.attackEndLag);
-        enemySpeed = enemyValues.enemySpeed;
+        yield return new WaitForSeconds(enemyValuesProj.attackEndLag);
+        enemySpeed = enemyValuesProj.enemySpeed;
     }
     IEnumerator attackCooldown()
     {
-        yield return new WaitForSeconds(enemyValues.attackCooldown);
+        yield return new WaitForSeconds(enemyValuesProj.attackCooldown);
         bAttacking = false;
     }
-    */
+    
 }
