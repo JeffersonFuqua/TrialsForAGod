@@ -96,7 +96,7 @@ public class EnemyAI : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log("touch");
+            //Debug.Log("touch");
             difference = other.transform.position - transform.position;
             if (bAttacking)
             {

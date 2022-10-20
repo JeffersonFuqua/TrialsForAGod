@@ -35,7 +35,7 @@ public class EnemyAIProj : MonoBehaviour
 
     private void WalkBack()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < 6)
+        if (Vector3.Distance(transform.position, player.transform.position) < 7)
         {
             if (!bNotice)
             {
@@ -51,8 +51,8 @@ public class EnemyAIProj : MonoBehaviour
         {
             Vector3 backwardPos = transform.position - (player.transform.position - transform.position);
             transform.position = Vector3.MoveTowards(transform.position, backwardPos, enemySpeed * Time.deltaTime);
-            
-            Vector3 lookVector = transform.position - player.transform.position;
+
+            Vector3 lookVector = player.transform.position - transform.position;
             lookVector.y = transform.position.y;
             Quaternion rot = Quaternion.LookRotation(lookVector);
             transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
@@ -61,7 +61,7 @@ public class EnemyAIProj : MonoBehaviour
 
     private void CallProj()
     {
-        if ((Vector3.Distance(transform.position, player.transform.position) > 3 && bNotice) && !bIsStunned)
+        if ((Vector3.Distance(transform.position, player.transform.position) > 2 && bNotice) && !bIsStunned && !bAttacking)
         {
             StartCoroutine(projStartUp());
         }
@@ -74,7 +74,7 @@ public class EnemyAIProj : MonoBehaviour
         yield return new WaitForSeconds(enemyValuesProj.attackStartUp);
         if (!bIsStunned)
         {
-            GetComponent<EnemyAttack>().EnemySpecialAttack(player);
+            GetComponent<EnemyProjAttack>().EnemyProjSpecialAttack(player);
             StartCoroutine(attackEndLag());
         }
         StartCoroutine(attackCooldown());
