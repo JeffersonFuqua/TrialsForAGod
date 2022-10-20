@@ -17,10 +17,5 @@ public class EnemyProjAttack : MonoBehaviour
         proj.transform.position = transform.position;
         Rigidbody rbProj = proj.GetComponent<Rigidbody>();
         rbProj.AddForce(transform.forward * projEnemyVal.enemySpeed, ForceMode.Impulse);
-
-        Vector3 lookVector = transform.position - player.transform.position;
-        lookVector.y = transform.position.y;
-        Quaternion rot = Quaternion.LookRotation(lookVector);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
     }
 }

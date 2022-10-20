@@ -23,9 +23,14 @@ public class ProjBehavior : MonoBehaviour
             
             difference = difference.normalized * projVal.projKnocback;
             other.GetComponent<PlayerHealth>().TakeDamageAndKnockback(projVal.projDamage, difference);
+            //i like to delete things at the end of the frame to prevent any inconsistancies with deleting things at the same time as funtions running
             StartCoroutine(deleteProj());
             
         }
+
+        //if bone hits wall delete it as well
+
+
     }
     IEnumerator deleteProj()
     {
