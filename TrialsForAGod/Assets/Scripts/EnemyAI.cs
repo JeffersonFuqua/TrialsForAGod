@@ -97,17 +97,10 @@ public class EnemyAI : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //Debug.Log("touch");
-            difference = other.transform.position - transform.position;
-            if (bAttacking)
-            {
-                difference = difference.normalized * enemyValues.attackKnockback;
-                other.GetComponent<PlayerHealth>().TakeDamageAndKnockback(enemyValues.attackDamage, difference);
-            }
-            else
-            {
-                difference = difference.normalized * enemyValues.attackKnockback;
-                other.GetComponent<PlayerHealth>().TakeDamageAndKnockback(enemyValues.attackDamage, difference);
-            }
+            difference = player.transform.position - transform.position;
+            difference.y = player.transform.position.y;
+            difference = difference.normalized * enemyValues.attackKnockback;
+            other.GetComponent<PlayerHealth>().TakeDamageAndKnockback(enemyValues.attackDamage, difference);
         }
     }
 }

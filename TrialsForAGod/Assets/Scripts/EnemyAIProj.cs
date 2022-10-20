@@ -19,11 +19,16 @@ public class EnemyAIProj : MonoBehaviour
 
     private bool bAttacking;
 
+    //temp valiue
+    float startPosY;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         enemyValuesProj = GetComponent<ProjEnemyValueHolder>().projEnemyVal;
         enemySpeed = enemyValuesProj.enemySpeed;
+
+        startPosY = transform.position.y;
     }
     private void FixedUpdate()
     {
@@ -50,6 +55,7 @@ public class EnemyAIProj : MonoBehaviour
         if (bNotice)
         {
             Vector3 backwardPos = transform.position - (player.transform.position - transform.position);
+            backwardPos.y = startPosY;
             transform.position = Vector3.MoveTowards(transform.position, backwardPos, enemySpeed * Time.deltaTime);
 
             Vector3 lookVector = player.transform.position - transform.position;
@@ -89,5 +95,20 @@ public class EnemyAIProj : MonoBehaviour
         yield return new WaitForSeconds(enemyValuesProj.attackCooldown);
         bAttacking = false;
     }
-    
+
+    private void OnTriggerStay(Collider other)
+    {
+        //uncomment to make enemy not attack through walls
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, other.transform.position - transform.position, 2, wallLayer);
+
+        if (other.CompareTag("Player"))
+        {
+            //Debug.Log("touch");
+            difference = player.transform.position - transform.position;
+            difference.y = player.transform.position.y;
+            difference = difference.normalized * 5;
+            other.GetComponent<PlayerHealth>().TakeDamageAndKnockback(15, difference);
+        }
+    }
+
 }
