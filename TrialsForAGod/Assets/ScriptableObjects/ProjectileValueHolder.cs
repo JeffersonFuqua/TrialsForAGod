@@ -6,3 +6,4 @@ public class ProjectileValueHolder : MonoBehaviour
 {
     public Projectile projValues;
 }
+
