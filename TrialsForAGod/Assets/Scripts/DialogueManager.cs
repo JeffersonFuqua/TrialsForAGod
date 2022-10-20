@@ -31,7 +31,7 @@ public class DialogueManager : MonoBehaviour
     public float typeSpeed;
     private float typeStart;
     bool bIsTalking;
-    public RawImage leftPortrait, middlePortrait, rightPortrait;
+    public RawImage leftPortrait, middlePortrait, rightPortrait, bgImage;
 
     private void Start()
     {
@@ -83,6 +83,7 @@ public class DialogueManager : MonoBehaviour
                 else
                 {
                     EmotionImageSwap(dialogue);
+                    BackgroundSwap(dialogue);
                     typeSpeed = typeStart;
                     StartCoroutine(ReadLine(dialogue));
                 }
@@ -125,7 +126,6 @@ public class DialogueManager : MonoBehaviour
             StartDialogue(dialogue);
         }
         
-        
     }
 
     private void SkipLine(DialogueSystem dialogue)
@@ -154,6 +154,11 @@ public class DialogueManager : MonoBehaviour
         }
         bIsTalking = false;
         jSent++;
+    }
+
+    private void BackgroundSwap(DialogueSystem dialogue)
+    {
+        bgImage.texture = dialogue.conversation[iName].background;
     }
 
     private void EmotionImageSwap(DialogueSystem dialogue)
