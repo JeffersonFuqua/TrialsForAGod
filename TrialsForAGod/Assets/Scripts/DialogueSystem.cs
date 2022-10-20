@@ -20,5 +20,6 @@ public struct Dialogue
     public string[] choices;
     [Range(0, 2)]
     public int speakerCount;
+    public Texture background;
     public bool bNextScene;
 }
