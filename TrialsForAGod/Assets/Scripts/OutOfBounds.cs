@@ -10,7 +10,7 @@ public class OutOfBounds : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player = other.gameObject;
-            Debug.Log("oof");
+            Debug.Log("out of bounds");
             StartCoroutine(boundsLock());
         }
     }
