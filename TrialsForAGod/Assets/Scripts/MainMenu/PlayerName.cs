@@ -11,6 +11,8 @@ public class PlayerName : MonoBehaviour
     public GameObject pName;
     public Button bStart;
 
+    public GameObject noNameWarningText;
+
     private void Start()
     {
         pName.GetComponent<TextMeshProUGUI>().text = pVal.playerName;
@@ -25,9 +27,11 @@ public class PlayerName : MonoBehaviour
         if(pVal.playerName.Length <= 1)
         {
             Debug.Log("name isn't put in");
+            noNameWarningText.SetActive(true);
         }
         else
         {
+            noNameWarningText.SetActive(false);
             menu.GetComponent<MainMenuManager>().StartGame();
         }
     }
