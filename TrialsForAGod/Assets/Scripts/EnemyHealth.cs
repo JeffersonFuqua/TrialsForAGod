@@ -42,7 +42,6 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("ouch");
         currentHealth -= damageTaken;
         StartCoroutine(takeKnockback());
-        //UpdateHealthUI(currentHealth / playerVal.playerMaxHealth);
 
         if (currentHealth <= 0)
         {
