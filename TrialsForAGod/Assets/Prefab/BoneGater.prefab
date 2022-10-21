@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 2879499783866473603}
   - component: {fileID: 3221182509725243828}
   - component: {fileID: 9157266089425073978}
+  - component: {fileID: 654355232475949209}
   m_Layer: 0
   m_Name: BoneGater
   m_TagString: Untagged
@@ -272,6 +273,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a7e43cc80f7734e847769039626cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &654355232475949209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221182509725243823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65860f0b055a7614699d5fd41be0ebf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetPosition: {x: 0, y: 0, z: 0}
+  bUponReset: 0
 --- !u!1 &8912256155790590812
 GameObject:
   m_ObjectHideFlags: 0
