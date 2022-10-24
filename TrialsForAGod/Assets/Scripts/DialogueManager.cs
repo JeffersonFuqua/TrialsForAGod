@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Text;
+using UnityEngine.EventSystems;
 
 [System.Serializable]
 public class DialogueManager : MonoBehaviour
@@ -18,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     public TMPro.TextMeshProUGUI nameText;
     public TMPro.TextMeshProUGUI dialogueText;
     public SpeakerValues speakerOneSO, speakerTwoSo;
+    public EventSystem ES;
 
     //speaker value
     [HideInInspector]
@@ -33,7 +35,7 @@ public class DialogueManager : MonoBehaviour
     bool bIsTalking;
     public RawImage leftPortrait, middlePortrait, rightPortrait, bgImage;
 
-    public GameObject skipButton;
+    public GameObject skipButton, nextButton;
 
     private void Start()
     {
@@ -274,6 +276,7 @@ public class DialogueManager : MonoBehaviour
                 BackgroundSwap(dialogue);
                 jSent = 0;
                 StartCoroutine(ReadLine(dialogue));
+                ES.GetComponent<EventSystem>().SetSelectedGameObject(nextButton, null);
                 return;
             }
 
