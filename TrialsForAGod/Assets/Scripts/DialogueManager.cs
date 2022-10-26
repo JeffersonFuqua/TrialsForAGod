@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Text;
+using UnityEngine.EventSystems;
 
 [System.Serializable]
 public class DialogueManager : MonoBehaviour
@@ -18,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     public TMPro.TextMeshProUGUI nameText;
     public TMPro.TextMeshProUGUI dialogueText;
     public SpeakerValues speakerOneSO, speakerTwoSo;
+    public EventSystem ES;
 
     //speaker value
     [HideInInspector]
@@ -32,6 +34,8 @@ public class DialogueManager : MonoBehaviour
     private float typeStart;
     bool bIsTalking;
     public RawImage leftPortrait, middlePortrait, rightPortrait, bgImage;
+
+    public GameObject skipButton, nextButton;
 
     private void Start()
     {
@@ -124,6 +128,17 @@ public class DialogueManager : MonoBehaviour
             jSent = 0;
             sb.Clear();
             StartDialogue(dialogue);
+        }
+        if(iName != 0)
+        {
+            if (dialogue.conversation[iName].choice || dialogue.conversation[iName - 1].choice)
+            {
+                skipButton.SetActive(false);
+            }
+            else
+            {
+                skipButton.SetActive(true);
+            }
         }
         
     }
@@ -247,6 +262,30 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    public void SkipDialogue(DialogueSystem dialogue)
+    {
+        for(int i = iName; i < dialogue.conversation.Count; i++)
+        {
+            if (dialogue.conversation[i].choice)
+            {
+                iName = i - 1;
+                StopAllCoroutines();
+                sb.Clear();
+                DisplayNextSentance(dialogue);
+                EmotionImageSwap(dialogue);
+                BackgroundSwap(dialogue);
+                jSent = 0;
+                StartCoroutine(ReadLine(dialogue));
+                ES.GetComponent<EventSystem>().SetSelectedGameObject(nextButton, null);
+                return;
+            }
+
+            if(i == dialogue.conversation.Count - 1)
+            {
+                GetComponent<NextScene>().ChangeScene();
+            }
+        }
+    }
     public void EndDialogue(DialogueSystem dialogue)
     {
         if (dialogue.conversation[iName].bNextScene)

@@ -687,13 +687,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4991364102837029355}
-        m_TargetAssemblyTypeName: NextScene, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 1
+      - m_Target: {fileID: 4699376239120618117}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: SkipDialogue
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2674066677730054584}
+          m_ObjectArgumentAssemblyTypeName: DialogueSystem, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -885,8 +885,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 14.999999}
+  m_SizeDelta: {x: 0, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7603230903775084766
 CanvasRenderer:
@@ -1541,6 +1541,7 @@ MonoBehaviour:
   dialogueText: {fileID: 2769310070751184280}
   speakerOneSO: {fileID: 11400000, guid: 103d2a503d53d0a4fb4dfe645d5a156f, type: 2}
   speakerTwoSo: {fileID: 11400000, guid: bb6663bb9e2d3234092b3b0fa79462e3, type: 2}
+  ES: {fileID: 0}
   iName: 0
   afterChoiceVal: 0
   typeSpeed: 3
@@ -1548,6 +1549,8 @@ MonoBehaviour:
   middlePortrait: {fileID: 957165328}
   rightPortrait: {fileID: 1112218726}
   bgImage: {fileID: 0}
+  skipButton: {fileID: 4398843145288747051}
+  nextButton: {fileID: 7603230903775084770}
 --- !u!114 &4991364102837029355
 MonoBehaviour:
   m_ObjectHideFlags: 0

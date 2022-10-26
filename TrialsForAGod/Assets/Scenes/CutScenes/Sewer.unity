@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -207,6 +207,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &255199390 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7603230903864251781, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+  m_PrefabInstance: {fileID: 932852396}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &803197124 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7603230903568205308, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
@@ -1239,6 +1250,10 @@ PrefabInstance:
       value: Get going, you have a job to do!
       objectReference: {fileID: 0}
     - target: {fileID: 4699376239120618117, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: ES
+      value: 
+      objectReference: {fileID: 255199390}
+    - target: {fileID: 4699376239120618117, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: bgImage
       value: 
       objectReference: {fileID: 803197124}
@@ -1246,6 +1261,10 @@ PrefabInstance:
       propertyPath: typeSpeed
       value: 8.11
       objectReference: {fileID: 0}
+    - target: {fileID: 4699376239120618117, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: nextButton
+      value: 
+      objectReference: {fileID: 1232376517}
     - target: {fileID: 7603230903568205308, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: m_Color.a
       value: 1
