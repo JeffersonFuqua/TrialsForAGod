@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     private EnemyValues enemyVal;
+    private EnemySound enemySounds;
 
     private float maxHealth;
     public float currentHealth;
@@ -20,6 +21,7 @@ public class EnemyHealth : MonoBehaviour
     private void Start()
     {
         enemyVal = GetComponent<EnemyValueHolder>().enemyVal;
+        enemySounds = GetComponent<EnemyValueHolder>().enemySounds;
         maxHealth = enemyVal.enemyMaxHealth;
         currentHealth = maxHealth;
         //UpdateHealthUI(currentHealth / playerVal.playerMaxHealth);
@@ -45,9 +47,22 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            GetComponent<AudioSource>().clip = enemySounds.deathSound;
+            PlaySound();
             Die();
         }
+        else
+        {
+            GetComponent<AudioSource>().clip = enemySounds.tookDamage;
+            PlaySound();
+        }
     }
+
+    private void PlaySound()
+    {
+        GetComponent<AudioSource>().Play();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("PlayerHitBox") && !bInvincible)

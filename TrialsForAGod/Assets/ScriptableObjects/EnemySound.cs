@@ -7,6 +7,7 @@ public class EnemySound : ScriptableObject
 {
     [Header("Enemy Sounds")]
     public AudioClip idleSound;
-    public AudioSource attackSound;
-    public AudioSource deathSound;
+    public AudioClip attackSound;
+    public AudioClip tookDamage;
+    public AudioClip deathSound;
 }
