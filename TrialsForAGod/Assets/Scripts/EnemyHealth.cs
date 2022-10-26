@@ -91,7 +91,17 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        StopAllCoroutines();
+        StartCoroutine(deathDelay());
+    }
+    IEnumerator deathDelay()
+    {
+        for(int i = 0; i < transform.childCount; i++)
+        {
+
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+        yield return new WaitForSeconds(1);
         this.gameObject.SetActive(false);
+
     }
 }
