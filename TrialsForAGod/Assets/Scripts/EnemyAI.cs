@@ -6,6 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     private EnemyValues enemyValues;
 
+    public Transform aimTool;
     private GameObject player;
     public bool bChase;
 
@@ -48,7 +49,7 @@ public class EnemyAI : MonoBehaviour
             bChase = false;
         }
 
-        if (bChase)
+        if (bChase && !bAttacking)
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, 0, player.transform.position.z), enemySpeed * Time.deltaTime);
             Vector3 lookVector = transform.position - player.transform.position;
@@ -70,6 +71,13 @@ public class EnemyAI : MonoBehaviour
     {
         bAttacking = true;
         enemySpeed = 0;
+
+        //enemy aim
+        Vector3 lookVector = aimTool.position - player.transform.position;
+        lookVector.y = transform.position.y;
+        Quaternion rot = Quaternion.LookRotation(lookVector);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
+
         yield return new WaitForSeconds(enemyValues.attackStartUp);
         if (!bIsStunned)
         {

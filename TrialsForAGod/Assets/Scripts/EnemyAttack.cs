@@ -6,8 +6,6 @@ public class EnemyAttack : MonoBehaviour
 {
     private EnemyValues enemyVal;
 
-    public Transform aimTool;
-    private Vector3 aimDirection;
     public GameObject idleAttack;
     public GameObject attackRange;
 
@@ -18,10 +16,6 @@ public class EnemyAttack : MonoBehaviour
     }
     public void EnemySpecialAttack(GameObject player)
     {
-        Vector3 lookVector = aimTool.position - player.transform.position;
-        lookVector.y = transform.position.y;
-        Quaternion rot = Quaternion.LookRotation(lookVector);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
         StartCoroutine(hitboxDuration());
     }
 
