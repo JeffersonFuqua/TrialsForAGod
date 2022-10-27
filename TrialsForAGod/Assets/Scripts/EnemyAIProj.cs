@@ -15,7 +15,7 @@ public class EnemyAIProj : MonoBehaviour
     private Vector3 difference;
     [HideInInspector] public float enemySpeed;
 
-    private bool bIsStunned;
+    [HideInInspector] public bool bIsStunned;
 
     private bool bAttacking;
 

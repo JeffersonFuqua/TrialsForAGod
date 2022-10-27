@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4832888059930069920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1.356}
-  m_LocalScale: {x: 1.8581831, y: 1.8581831, z: 1.8581831}
+  m_LocalScale: {x: 2.3015456, y: 2.3015456, z: 2.3015456}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4832888060917569975}
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyVal: {fileID: 11400000, guid: 5cbd66309cc2f6c498dc94c65d860f28, type: 2}
-  enemySounds: {fileID: 0}
+  enemySounds: {fileID: 11400000, guid: 2ebdf4405dcd56348adc9a6869d2e7a0, type: 2}
 --- !u!114 &4832888060312888539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +262,7 @@ MonoBehaviour:
   aimTool: {fileID: 4832888060917569975}
   bChase: 0
   enemySpeed: 0
+  bIsStunned: 0
 --- !u!114 &4832888060312888536
 MonoBehaviour:
   m_ObjectHideFlags: 0

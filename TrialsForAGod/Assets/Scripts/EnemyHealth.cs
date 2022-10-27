@@ -40,27 +40,24 @@ public class EnemyHealth : MonoBehaviour
     {
         if (bInvincible)
             return;
-
         Debug.Log("ouch");
         currentHealth -= damageTaken;
         StartCoroutine(takeKnockback());
 
         if (currentHealth <= 0)
         {
-            GetComponent<AudioSource>().clip = enemySounds.deathSound;
-            PlaySound();
+            //PlaySound(GetComponent<AudioSource>().clip = enemySounds.deathSound);
             Die();
         }
         else
         {
-            GetComponent<AudioSource>().clip = enemySounds.tookDamage;
-            PlaySound();
+            //PlaySound(GetComponent<AudioSource>().clip = enemySounds.tookDamage);
         }
     }
 
-    private void PlaySound()
+    private void PlaySound(AudioClip currSound)
     {
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -81,12 +78,17 @@ public class EnemyHealth : MonoBehaviour
     IEnumerator takeKnockback()
     {
         bInvincible = true;
-        //rb.isKinematic = false;
+        StartCoroutine(stun());
         rb.AddForce(difference, ForceMode.Impulse);
         yield return new WaitForSeconds(0.2f);
         rb.velocity = Vector2.zero;
-        //rb.isKinematic = true;
         bInvincible = false;
+    }
+    IEnumerator stun()
+    {
+        GetComponent<EnemyAI>().bIsStunned = true;
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<EnemyAI>().bIsStunned = false;
     }
 
     public void Die()
@@ -97,7 +99,7 @@ public class EnemyHealth : MonoBehaviour
     {
         for(int i = 0; i < transform.childCount; i++)
         {
-
+            GetComponent<EnemyAI>().bIsStunned = true;
             transform.GetChild(i).gameObject.SetActive(false);
         }
         yield return new WaitForSeconds(1);

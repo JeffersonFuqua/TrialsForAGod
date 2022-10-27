@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     private Vector3 difference;
     [HideInInspector] public float enemySpeed;
 
-    private bool bIsStunned;
+    [HideInInspector] public bool bIsStunned;
 
     private bool bAttacking;
 
@@ -37,19 +37,19 @@ public class EnemyAI : MonoBehaviour
 
     private void Chase()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < 5)
+        if (Vector3.Distance(transform.position, player.transform.position) < 6)
         {
             if (!bChase)
             {
                 bChase = true;
             }
         }
-        else if(Vector3.Distance(transform.position, player.transform.position) > 9)
+        else if(Vector3.Distance(transform.position, player.transform.position) > 12)
         {
             bChase = false;
         }
 
-        if (bChase && !bAttacking)
+        if (bChase && !bAttacking && !bIsStunned)
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, 0, player.transform.position.z), enemySpeed * Time.deltaTime);
             Vector3 lookVector = transform.position - player.transform.position;
@@ -61,7 +61,7 @@ public class EnemyAI : MonoBehaviour
 
     private void CallAttack()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < 3 && !bAttacking && !bIsStunned)
+        if (Vector3.Distance(transform.position, player.transform.position) < 2 && !bAttacking && !bIsStunned)
         {
             StartCoroutine(attackStartUp());
         }
@@ -77,13 +77,12 @@ public class EnemyAI : MonoBehaviour
         lookVector.y = transform.position.y;
         Quaternion rot = Quaternion.LookRotation(lookVector);
         transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
-
         yield return new WaitForSeconds(enemyValues.attackStartUp);
         if (!bIsStunned)
         {
             GetComponent<EnemyAttack>().EnemySpecialAttack(player);
-            StartCoroutine(attackEndLag());
         }
+        StartCoroutine(attackEndLag());
         StartCoroutine(attackCooldown());
     }
     IEnumerator attackEndLag()

@@ -67,12 +67,18 @@ public class EnemyProjHealth : MonoBehaviour
     IEnumerator takeKnockback()
     {
         bInvincible = true;
-        //rb.isKinematic = false;
+        StartCoroutine(stun());
         rb.AddForce(difference, ForceMode.Impulse);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.35f);
         rb.velocity = Vector2.zero;
-        //rb.isKinematic = true;
         bInvincible = false;
+    }
+
+    IEnumerator stun()
+    {
+        GetComponent<EnemyAIProj>().bIsStunned = true;
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<EnemyAIProj>().bIsStunned = false;
     }
 
     public void Die()
