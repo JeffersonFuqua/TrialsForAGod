@@ -268,14 +268,17 @@ public class DialogueManager : MonoBehaviour
         {
             if (dialogue.conversation[i].choice)
             {
-                iName = i - 1;
+                //stops any current line reading and clears the sb
                 StopAllCoroutines();
                 sb.Clear();
-                DisplayNextSentance(dialogue);
+                //loads dialogue that has a choice in it NOTE: loads from the first sentence in string not right at options
+                iName = i;
+                jSent = 0;
+
+                //loads new dialogue scene
+                StartDialogue(dialogue);
                 EmotionImageSwap(dialogue);
                 BackgroundSwap(dialogue);
-                jSent = 0;
-                StartCoroutine(ReadLine(dialogue));
                 ES.GetComponent<EventSystem>().SetSelectedGameObject(nextButton, null);
                 return;
             }
