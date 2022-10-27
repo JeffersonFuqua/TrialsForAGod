@@ -2433,10 +2433,14 @@ PrefabInstance:
       propertyPath: eSystem
       value: 
       objectReference: {fileID: 2012057378}
+    - target: {fileID: 3602310239105544945, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3602310239105544959, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 91f4ad67e356a274aadb524d54112ede, type: 3}
+      objectReference: {fileID: 21300000, guid: 118a00bfe0d029b41af09376fda5aa4c, type: 3}
     - target: {fileID: 3602310239349147817, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2444,11 +2448,11 @@ PrefabInstance:
     - target: {fileID: 3602310239349147831, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8f768d96d399c414cb987cb878f2844f, type: 3}
+      objectReference: {fileID: 21300000, guid: 718eb9469e4270540b50bad45281282f, type: 3}
     - target: {fileID: 3602310239785173255, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ac7fdfe315f7e2e4abae1eaf9c6496b2, type: 3}
+      objectReference: {fileID: 21300000, guid: afac22ddbd57dda4ca81bb7fb2b299a9, type: 3}
     - target: {fileID: 3602310239785174776, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -368.9
@@ -6845,8 +6849,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7530ded3408c845abfe24228c39ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aimTool: {fileID: 0}
   bChase: 0
   enemySpeed: 0
+  bIsStunned: 0
 --- !u!114 &4832888059895557061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6859,7 +6865,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8b81bb854aabb42abe8fbe084b421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimTool: {fileID: 4832888059426494122}
   idleAttack: {fileID: 4832888059611278945}
   attackRange: {fileID: 4832888060280292541}
 --- !u!114 &4832888059895557062
