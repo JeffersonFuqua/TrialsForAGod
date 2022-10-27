@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private bool bLocked;
 
     private Animator playerAnim;
+    private bool bDodge;
 
 
     private void Start()
@@ -49,17 +50,18 @@ public class PlayerMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (!bLocked)
-        {
-            Movement();
-            //cancels any generated velocity
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-        }
+        //cancels any generated velocity
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
         //keeps the player level
         if(transform.position.y > 0 || transform.position.y < 0)
         {
             transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        }
+
+        if (!bLocked)
+        {
+            Movement();
         }
     }
     public void Movement()
@@ -74,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         if ((desiredDirection.x != 0 || desiredDirection.z != 0)/* && !bIsAttacking*/)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(desiredDirection.x, 0, desiredDirection.z)), Time.deltaTime * faceRotationSpeed);
-            if(!bIsRunning)
+            if(!bIsRunning && !bDodge)
             {
                 playerAnim.SetTrigger("running");
                 bIsRunning = true;
@@ -94,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((pActions.PlayerControls.Movement.ReadValue<Vector2>().x != 0 || pActions.PlayerControls.Movement.ReadValue<Vector2>().y != 0))
         {
+            bDodge = true;
             StartCoroutine(dodgeCooldown());
             StartCoroutine(dodgeAction());
         }
@@ -102,16 +105,22 @@ public class PlayerMovement : MonoBehaviour
     {
         speed = playerVal.dodgeSpeed;
         GetComponent<PlayerHealth>().bInvincible = true;
-        playerAnim.SetTrigger("dodge");
+        playerAnim.SetBool("dodge", true);
+        //playerAnim.SetLayerWeight(1, 1);
+        Debug.Log("dodge");
         yield return new WaitForSeconds(playerVal.dodgeDuration);
+        playerAnim.SetBool("dodge", false);
+       // playerAnim.SetLayerWeight(1, 0);
         if (bIsRunning)
         {
+            Debug.Log("run");
             playerAnim.SetTrigger("running");
         }
         else
         {
             playerAnim.SetTrigger("timer");
         }
+        bDodge = false;
         speed = playerVal.playerSpeed;
         GetComponent<PlayerHealth>().bInvincible = false;
     }
