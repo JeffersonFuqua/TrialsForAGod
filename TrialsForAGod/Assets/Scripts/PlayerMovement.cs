@@ -50,9 +50,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
-        //cancels any generated velocity
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
+        if (!bLocked)
+        {
+            //cancels any generated velocity
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
         //keeps the player level
         if(transform.position.y > 0 || transform.position.y < 0)
         {
