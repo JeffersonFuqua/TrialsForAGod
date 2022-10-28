@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Text;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 [System.Serializable]
 public class DialogueManager : MonoBehaviour
@@ -36,9 +37,15 @@ public class DialogueManager : MonoBehaviour
     public RawImage leftPortrait, middlePortrait, rightPortrait, bgImage;
 
     public GameObject skipButton, nextButton;
+    PlayerActions pActions;
 
     private void Start()
     {
+        pActions = new PlayerActions();
+        pActions.Enable();
+
+        pActions.PlayerControls.NextLine.performed += HitSpace;
+
         typeSpeed = 11 - typeSpeed;
         typeSpeed /= 100;
         typeStart = typeSpeed;
@@ -46,6 +53,12 @@ public class DialogueManager : MonoBehaviour
         middlePortrait.enabled = false;
         rightPortrait.enabled = false;
         StartDialogue(dSystem);
+    }
+
+    private void OnDisable()
+    {
+        pActions.Disable();
+        pActions.PlayerControls.NextLine.performed -= HitSpace;
     }
 
     public void StartDialogue(DialogueSystem dialogue)
@@ -288,6 +301,11 @@ public class DialogueManager : MonoBehaviour
                 GetComponent<NextScene>().ChangeScene();
             }
         }
+    }
+
+    private void HitSpace(InputAction.CallbackContext c)
+    {
+        DisplayNextSentance(dSystem);
     }
     public void EndDialogue(DialogueSystem dialogue)
     {
