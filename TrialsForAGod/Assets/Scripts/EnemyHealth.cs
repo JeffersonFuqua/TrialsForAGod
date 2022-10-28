@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    private EnemyValues enemyVal;
-    private EnemySound enemySounds;
+    private EnemyValues enemyValues;
 
     private float maxHealth;
     public float currentHealth;
-    //public static Action<float> UpdateHealthUI = delegate { };
     private bool bInvincible;
+    private float stunTime = 0.5f;
+    private bool bDead;
 
     private float recievedKnockback;
     private Vector3 difference;
@@ -20,9 +20,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void Start()
     {
-        enemyVal = GetComponent<EnemyValueHolder>().enemyVal;
-        enemySounds = GetComponent<EnemyValueHolder>().enemySounds;
-        maxHealth = enemyVal.enemyMaxHealth;
+        enemyValues = GetComponent<EnemyValueHolder>().enemyValues;
+        maxHealth = enemyValues.enemyMaxHealth;
         currentHealth = maxHealth;
         //UpdateHealthUI(currentHealth / playerVal.playerMaxHealth);
         rb = GetComponent<Rigidbody>();
@@ -38,26 +37,25 @@ public class EnemyHealth : MonoBehaviour
 
     public void UpdateHealth(float damageTaken)
     {
-        if (bInvincible)
+        if (bInvincible  || bDead)
             return;
-        Debug.Log("ouch");
         currentHealth -= damageTaken;
         StartCoroutine(takeKnockback());
 
         if (currentHealth <= 0)
         {
-            //PlaySound(GetComponent<AudioSource>().clip = enemySounds.deathSound);
             Die();
         }
         else
         {
-            //PlaySound(GetComponent<AudioSource>().clip = enemySounds.tookDamage);
+            PlaySound(enemyValues.tookDamageSound);
         }
     }
 
-    private void PlaySound(AudioClip currSound)
+    public void PlaySound(AudioClip currSound)
     {
-        //GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().clip = currSound;
+        GetComponent<AudioSource>().Play();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -78,31 +76,42 @@ public class EnemyHealth : MonoBehaviour
     IEnumerator takeKnockback()
     {
         bInvincible = true;
-        StartCoroutine(stun());
+        StartCoroutine(stun(stunTime));
         rb.AddForce(difference, ForceMode.Impulse);
         yield return new WaitForSeconds(0.2f);
         rb.velocity = Vector2.zero;
         bInvincible = false;
     }
-    IEnumerator stun()
+    IEnumerator stun(float sTime)
     {
         GetComponent<EnemyAI>().bIsStunned = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(sTime);
         GetComponent<EnemyAI>().bIsStunned = false;
     }
 
     public void Die()
     {
+        bDead = true;
         StartCoroutine(deathDelay());
     }
     IEnumerator deathDelay()
     {
+        PlaySound(enemyValues.deathSound);
+        if (TryGetComponent<EnemyAI>(out var enemyAI))
+        {
+            GetComponent<EnemyAI>().enabled = false;
+        }
+        else if(TryGetComponent<EnemyAIProj>(out var enemyAIProj))
+        {
+            GetComponent<EnemyAIProj>().enabled = false;
+        }
+        
+        
         for(int i = 0; i < transform.childCount; i++)
         {
-            GetComponent<EnemyAI>().bIsStunned = true;
             transform.GetChild(i).gameObject.SetActive(false);
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
 
     }

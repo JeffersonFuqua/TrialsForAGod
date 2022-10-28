@@ -21,4 +21,10 @@ public class EnemyValues : ScriptableObject
     public float tempHitBoxDuration;
     public bool doesNotAttack;
 
+    [Header("Enemy Sounds")]
+    public AudioClip idleSound;
+    public AudioClip attackSound;
+    public AudioClip tookDamageSound;
+    public AudioClip deathSound;
+
 }

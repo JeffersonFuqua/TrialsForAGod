@@ -20,7 +20,7 @@ public class EnemyAI : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        enemyValues = GetComponent<EnemyValueHolder>().enemyVal;
+        enemyValues = GetComponent<EnemyValueHolder>().enemyValues;
         enemySpeed = enemyValues.enemySpeed;
     }
 
@@ -28,9 +28,9 @@ public class EnemyAI : MonoBehaviour
     {
         //GetComponent<Rigidbody>().velocity = Vector3.zero;
         GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        Chase();
-        if (!enemyValues.doesNotAttack)
+        if (!enemyValues.doesNotAttack && !bIsStunned)
         {
+            Chase();
             CallAttack();
         }
     }
@@ -42,6 +42,7 @@ public class EnemyAI : MonoBehaviour
             if (!bChase)
             {
                 bChase = true;
+                GetComponent<EnemyHealth>().PlaySound(enemyValues.idleSound);
             }
         }
         else if(Vector3.Distance(transform.position, player.transform.position) > 12)

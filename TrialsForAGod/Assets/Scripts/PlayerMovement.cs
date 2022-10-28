@@ -107,13 +107,13 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<PlayerHealth>().bInvincible = true;
         playerAnim.SetBool("dodge", true);
         //playerAnim.SetLayerWeight(1, 1);
-        Debug.Log("dodge");
+        //Debug.Log("dodge");
         yield return new WaitForSeconds(playerVal.dodgeDuration);
         playerAnim.SetBool("dodge", false);
        // playerAnim.SetLayerWeight(1, 0);
         if (bIsRunning)
         {
-            Debug.Log("run");
+            //Debug.Log("run");
             playerAnim.SetTrigger("running");
         }
         else

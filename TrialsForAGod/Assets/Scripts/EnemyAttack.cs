@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    private EnemyValues enemyVal;
+    private EnemyValues enemyValues;
 
     public GameObject idleAttack;
     public GameObject attackRange;
@@ -12,7 +12,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void Start()
     {
-        enemyVal = GetComponent<EnemyValueHolder>().enemyVal;
+        enemyValues = GetComponent<EnemyValueHolder>().enemyValues;
     }
     public void EnemySpecialAttack(GameObject player)
     {
@@ -23,7 +23,8 @@ public class EnemyAttack : MonoBehaviour
     {
         idleAttack.SetActive(false);
         attackRange.SetActive(true);
-        yield return new WaitForSeconds(enemyVal.tempHitBoxDuration);
+        GetComponent<EnemyHealth>().PlaySound(enemyValues.attackSound);
+        yield return new WaitForSeconds(enemyValues.tempHitBoxDuration);
         attackRange.SetActive(false);
         idleAttack.SetActive(true);
     }

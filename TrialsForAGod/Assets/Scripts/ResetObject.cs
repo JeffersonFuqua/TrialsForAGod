@@ -33,7 +33,7 @@ public class ResetObject : MonoBehaviour
         }
         if (TryGetComponent<EnemyHealth>(out EnemyHealth enemyHealth) && TryGetComponent<EnemyValueHolder>(out EnemyValueHolder enemyMaxHealth))
         {
-            GetComponent<EnemyHealth>().currentHealth = GetComponent<EnemyValueHolder>().enemyVal.enemyMaxHealth;
+            GetComponent<EnemyHealth>().currentHealth = GetComponent<EnemyValueHolder>().enemyValues.enemyMaxHealth;
             GetComponent<EnemyAI>().bChase = false;
         }
         StartCoroutine(resetTimer());
