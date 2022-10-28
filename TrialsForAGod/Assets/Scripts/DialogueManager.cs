@@ -153,7 +153,6 @@ public class DialogueManager : MonoBehaviour
                 skipButton.SetActive(true);
             }
         }
-        
     }
 
     private void SkipLine(DialogueSystem dialogue)
@@ -305,6 +304,7 @@ public class DialogueManager : MonoBehaviour
 
     private void HitSpace(InputAction.CallbackContext c)
     {
+        if(nextButton.active == true)
         DisplayNextSentance(dSystem);
     }
     public void EndDialogue(DialogueSystem dialogue)
