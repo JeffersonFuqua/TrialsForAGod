@@ -10,15 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00538a7e591b45b4e94924dbde20a377, type: 3}
-  m_Name: rat
+  m_Name: Rat
   m_EditorClassIdentifier: 
   enemyName: Sewer Rat
   enemyMaxHealth: 50
   enemySpeed: 4
-  attackDamage: 10
-  attackStartUp: 0.3
+  attackDamage: 8
+  attackStartUp: 0.5
   attackEndLag: 0.4
   attackCooldown: 0.8
   attackKnockback: 8
   tempHitBoxDuration: 0.2
   doesNotAttack: 0
+  idleSound: {fileID: 8300000, guid: 56bbf31acd981ab41a8e174d019b27ad, type: 3}
+  attackSound: {fileID: 8300000, guid: c296f195ccfc0f349a859ccc9a292a51, type: 3}
+  tookDamageSound: {fileID: 8300000, guid: edf17c57e58cb6847bddb2a50c72c5de, type: 3}
+  deathSound: {fileID: 8300000, guid: 148480a7d49618b4bbb66935a0cc45b0, type: 3}

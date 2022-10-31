@@ -80,6 +80,15 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NextLine"",
+                    ""type"": ""Button"",
+                    ""id"": ""fabd98f3-3ff0-4f05-9286-f009af297a8e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -313,6 +322,17 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""376cbb5f-6635-4c7e-b68e-a9672cb04333"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextLine"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -333,6 +353,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_PlayerControls_HeavyAttack = m_PlayerControls.FindAction("HeavyAttack", throwIfNotFound: true);
         m_PlayerControls_Interact = m_PlayerControls.FindAction("Interact", throwIfNotFound: true);
         m_PlayerControls_Pause = m_PlayerControls.FindAction("Pause", throwIfNotFound: true);
+        m_PlayerControls_NextLine = m_PlayerControls.FindAction("NextLine", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -398,6 +419,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerControls_HeavyAttack;
     private readonly InputAction m_PlayerControls_Interact;
     private readonly InputAction m_PlayerControls_Pause;
+    private readonly InputAction m_PlayerControls_NextLine;
     public struct PlayerControlsActions
     {
         private @PlayerActions m_Wrapper;
@@ -408,6 +430,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         public InputAction @HeavyAttack => m_Wrapper.m_PlayerControls_HeavyAttack;
         public InputAction @Interact => m_Wrapper.m_PlayerControls_Interact;
         public InputAction @Pause => m_Wrapper.m_PlayerControls_Pause;
+        public InputAction @NextLine => m_Wrapper.m_PlayerControls_NextLine;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -435,6 +458,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @Pause.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPause;
+                @NextLine.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnNextLine;
+                @NextLine.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnNextLine;
+                @NextLine.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnNextLine;
             }
             m_Wrapper.m_PlayerControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -457,6 +483,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @NextLine.started += instance.OnNextLine;
+                @NextLine.performed += instance.OnNextLine;
+                @NextLine.canceled += instance.OnNextLine;
             }
         }
     }
@@ -478,5 +507,6 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         void OnHeavyAttack(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnNextLine(InputAction.CallbackContext context);
     }
 }

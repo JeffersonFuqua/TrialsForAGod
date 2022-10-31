@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    private EnemyValues enemyVal;
+    private EnemyValues enemyValues;
 
     private float maxHealth;
     public float currentHealth;
-    //public static Action<float> UpdateHealthUI = delegate { };
     private bool bInvincible;
+    private float stunTime = 0.5f;
+    private bool bDead;
 
     private float recievedKnockback;
     private Vector3 difference;
@@ -19,8 +20,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void Start()
     {
-        enemyVal = GetComponent<EnemyValueHolder>().enemyVal;
-        maxHealth = enemyVal.enemyMaxHealth;
+        enemyValues = GetComponent<EnemyValueHolder>().enemyValues;
+        maxHealth = enemyValues.enemyMaxHealth;
         currentHealth = maxHealth;
         //UpdateHealthUI(currentHealth / playerVal.playerMaxHealth);
         rb = GetComponent<Rigidbody>();
@@ -36,10 +37,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void UpdateHealth(float damageTaken)
     {
-        if (bInvincible)
+        if (bInvincible  || bDead)
             return;
-
-        Debug.Log("ouch");
         currentHealth -= damageTaken;
         StartCoroutine(takeKnockback());
 
@@ -47,7 +46,18 @@ public class EnemyHealth : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            PlaySound(enemyValues.tookDamageSound);
+        }
     }
+
+    public void PlaySound(AudioClip currSound)
+    {
+        GetComponent<AudioSource>().clip = currSound;
+        GetComponent<AudioSource>().Play();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("PlayerHitBox") && !bInvincible)
@@ -66,17 +76,43 @@ public class EnemyHealth : MonoBehaviour
     IEnumerator takeKnockback()
     {
         bInvincible = true;
-        //rb.isKinematic = false;
+        StartCoroutine(stun(stunTime));
         rb.AddForce(difference, ForceMode.Impulse);
         yield return new WaitForSeconds(0.2f);
         rb.velocity = Vector2.zero;
-        //rb.isKinematic = true;
         bInvincible = false;
+    }
+    IEnumerator stun(float sTime)
+    {
+        GetComponent<EnemyAI>().bIsStunned = true;
+        yield return new WaitForSeconds(sTime);
+        GetComponent<EnemyAI>().bIsStunned = false;
     }
 
     public void Die()
     {
-        StopAllCoroutines();
+        bDead = true;
+        StartCoroutine(deathDelay());
+    }
+    IEnumerator deathDelay()
+    {
+        PlaySound(enemyValues.deathSound);
+        if (TryGetComponent<EnemyAI>(out var enemyAI))
+        {
+            GetComponent<EnemyAI>().enabled = false;
+        }
+        else if(TryGetComponent<EnemyAIProj>(out var enemyAIProj))
+        {
+            GetComponent<EnemyAIProj>().enabled = false;
+        }
+        
+        
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+        yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
+
     }
 }

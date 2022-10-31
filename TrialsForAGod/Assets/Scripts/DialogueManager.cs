@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Text;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 [System.Serializable]
 public class DialogueManager : MonoBehaviour
@@ -36,9 +37,15 @@ public class DialogueManager : MonoBehaviour
     public RawImage leftPortrait, middlePortrait, rightPortrait, bgImage;
 
     public GameObject skipButton, nextButton;
+    PlayerActions pActions;
 
     private void Start()
     {
+        pActions = new PlayerActions();
+        pActions.Enable();
+
+        pActions.PlayerControls.NextLine.performed += HitSpace;
+
         typeSpeed = 11 - typeSpeed;
         typeSpeed /= 100;
         typeStart = typeSpeed;
@@ -46,6 +53,12 @@ public class DialogueManager : MonoBehaviour
         middlePortrait.enabled = false;
         rightPortrait.enabled = false;
         StartDialogue(dSystem);
+    }
+
+    private void OnDisable()
+    {
+        pActions.Disable();
+        pActions.PlayerControls.NextLine.performed -= HitSpace;
     }
 
     public void StartDialogue(DialogueSystem dialogue)
@@ -140,7 +153,6 @@ public class DialogueManager : MonoBehaviour
                 skipButton.SetActive(true);
             }
         }
-        
     }
 
     private void SkipLine(DialogueSystem dialogue)
@@ -268,14 +280,17 @@ public class DialogueManager : MonoBehaviour
         {
             if (dialogue.conversation[i].choice)
             {
-                iName = i - 1;
+                //stops any current line reading and clears the sb
                 StopAllCoroutines();
                 sb.Clear();
-                DisplayNextSentance(dialogue);
+                //loads dialogue that has a choice in it NOTE: loads from the first sentence in string not right at options
+                iName = i;
+                jSent = 0;
+
+                //loads new dialogue scene
+                StartDialogue(dialogue);
                 EmotionImageSwap(dialogue);
                 BackgroundSwap(dialogue);
-                jSent = 0;
-                StartCoroutine(ReadLine(dialogue));
                 ES.GetComponent<EventSystem>().SetSelectedGameObject(nextButton, null);
                 return;
             }
@@ -285,6 +300,12 @@ public class DialogueManager : MonoBehaviour
                 GetComponent<NextScene>().ChangeScene();
             }
         }
+    }
+
+    private void HitSpace(InputAction.CallbackContext c)
+    {
+        if(nextButton.active == true)
+        DisplayNextSentance(dSystem);
     }
     public void EndDialogue(DialogueSystem dialogue)
     {

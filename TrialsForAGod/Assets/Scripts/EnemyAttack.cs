@@ -4,24 +4,18 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    private EnemyValues enemyVal;
+    private EnemyValues enemyValues;
 
-    public Transform aimTool;
-    private Vector3 aimDirection;
     public GameObject idleAttack;
     public GameObject attackRange;
 
 
     private void Start()
     {
-        enemyVal = GetComponent<EnemyValueHolder>().enemyVal;
+        enemyValues = GetComponent<EnemyValueHolder>().enemyValues;
     }
     public void EnemySpecialAttack(GameObject player)
     {
-        Vector3 lookVector = aimTool.position - player.transform.position;
-        lookVector.y = transform.position.y;
-        Quaternion rot = Quaternion.LookRotation(lookVector);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
         StartCoroutine(hitboxDuration());
     }
 
@@ -29,7 +23,8 @@ public class EnemyAttack : MonoBehaviour
     {
         idleAttack.SetActive(false);
         attackRange.SetActive(true);
-        yield return new WaitForSeconds(enemyVal.tempHitBoxDuration);
+        GetComponent<EnemyHealth>().PlaySound(enemyValues.attackSound);
+        yield return new WaitForSeconds(enemyValues.tempHitBoxDuration);
         attackRange.SetActive(false);
         idleAttack.SetActive(true);
     }
