@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
 
     private float maxHealth;
     public float currentHealth;
+    public Slider healthBar;
     private bool bInvincible;
     private float stunTime = 0.5f;
     private bool bDead;
@@ -23,7 +25,8 @@ public class EnemyHealth : MonoBehaviour
         enemyValues = GetComponent<EnemyValueHolder>().enemyValues;
         maxHealth = enemyValues.enemyMaxHealth;
         currentHealth = maxHealth;
-        //UpdateHealthUI(currentHealth / playerVal.playerMaxHealth);
+        healthBar.maxValue = maxHealth;
+        healthBar.value = currentHealth;
         rb = GetComponent<Rigidbody>();
     }
     private void Update()
@@ -40,6 +43,7 @@ public class EnemyHealth : MonoBehaviour
         if (bInvincible  || bDead)
             return;
         currentHealth -= damageTaken;
+        healthBar.value = currentHealth;
         StartCoroutine(takeKnockback());
 
         if (currentHealth <= 0)
