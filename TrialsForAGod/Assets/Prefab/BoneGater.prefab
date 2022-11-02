@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a6af70d8847aa4db4b5531448d3150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noticeObject: {fileID: 4491484209623845011}
   bNotice: 0
   enemySpeed: 0
   bIsStunned: 0
@@ -449,7 +450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6268411984323407428, guid: a3ac693ca693c3e4caad2a39cb3e9032, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.283
+      value: -0.427
       objectReference: {fileID: 0}
     - target: {fileID: 6268411984323407428, guid: a3ac693ca693c3e4caad2a39cb3e9032, type: 3}
       propertyPath: m_LocalRotation.w
@@ -500,6 +501,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4491484209623845011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 751853210208937519, guid: a3ac693ca693c3e4caad2a39cb3e9032, type: 3}
+  m_PrefabInstance: {fileID: 3763860941487894204}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7117434438018892024 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6268411984323407428, guid: a3ac693ca693c3e4caad2a39cb3e9032, type: 3}

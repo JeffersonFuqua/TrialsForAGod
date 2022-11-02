@@ -263,6 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimTool: {fileID: 4832888060917569975}
   bChase: 0
+  noticeObject: {fileID: 7867162240536215049}
   enemySpeed: 0
   bIsStunned: 0
 --- !u!114 &4832888060312888536
@@ -698,7 +699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6268411984323407428, guid: a3ac693ca693c3e4caad2a39cb3e9032, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.283
+      value: 0.446
       objectReference: {fileID: 0}
     - target: {fileID: 6268411984323407428, guid: a3ac693ca693c3e4caad2a39cb3e9032, type: 3}
       propertyPath: m_LocalRotation.w
@@ -772,8 +773,8 @@ PositionConstraint:
   m_GameObject: {fileID: 6405590171098826597}
   m_Enabled: 1
   m_Weight: 1
-  m_TranslationAtRest: {x: -0.004, y: 0.812, z: -0.283}
-  m_TranslationOffset: {x: -0.004, y: 0.812, z: -0.283}
+  m_TranslationAtRest: {x: -0.004, y: 0.812, z: 0.446}
+  m_TranslationOffset: {x: -0.004, y: 0.812, z: 0.446}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
@@ -794,3 +795,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a57afb24f101d4f8527caa58739d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7867162240536215049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 751853210208937519, guid: a3ac693ca693c3e4caad2a39cb3e9032, type: 3}
+  m_PrefabInstance: {fileID: 7440748003507001382}
+  m_PrefabAsset: {fileID: 0}

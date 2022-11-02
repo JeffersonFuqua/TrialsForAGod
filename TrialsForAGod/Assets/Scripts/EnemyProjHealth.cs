@@ -42,7 +42,7 @@ public class EnemyProjHealth : MonoBehaviour
         if (bInvincible)
             return;
 
-        Debug.Log("ouch");
+        //Debug.Log("ouch");
         currentHealth -= damageTaken;
         healthBar.value = currentHealth;
         StartCoroutine(takeKnockback());

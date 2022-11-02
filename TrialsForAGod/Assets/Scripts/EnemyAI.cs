@@ -9,6 +9,8 @@ public class EnemyAI : MonoBehaviour
     public Transform aimTool;
     private GameObject player;
     public bool bChase;
+    public GameObject noticeObject;
+    private bool bNoticed;
 
     private Vector3 difference;
     [HideInInspector] public float enemySpeed;
@@ -41,6 +43,11 @@ public class EnemyAI : MonoBehaviour
         {
             if (!bChase)
             {
+                if (!bNoticed)
+                {
+                    StartCoroutine(noticeImage());
+                    bNoticed = true;
+                }
                 bChase = true;
                 GetComponent<EnemyHealth>().PlaySound(enemyValues.idleSound);
             }
@@ -48,6 +55,7 @@ public class EnemyAI : MonoBehaviour
         else if(Vector3.Distance(transform.position, player.transform.position) > 12)
         {
             bChase = false;
+            bNoticed = false;
         }
 
         if (bChase && !bAttacking && !bIsStunned)
@@ -110,5 +118,12 @@ public class EnemyAI : MonoBehaviour
             difference = difference.normalized * enemyValues.attackKnockback;
             other.GetComponent<PlayerHealth>().TakeDamageAndKnockback(enemyValues.attackDamage, difference);
         }
+    }
+
+    IEnumerator noticeImage()
+    {
+        noticeObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        noticeObject.SetActive(false);
     }
 }

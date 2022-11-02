@@ -7,10 +7,12 @@ public class EnemyAIProj : MonoBehaviour
     private ProjEnemyValues enemyValuesProj;
 
     private GameObject player;
-
+    public GameObject noticeObject;
 
 
     public bool bNotice;
+    //for exclimation mark
+    private bool bNoticed;
 
     private Vector3 difference;
     [HideInInspector] public float enemySpeed;
@@ -44,12 +46,18 @@ public class EnemyAIProj : MonoBehaviour
         {
             if (!bNotice)
             {
+                if (!bNoticed)
+                {
+                    StartCoroutine(noticeImage());
+                    bNoticed = true;
+                }
                 bNotice = true;
             }
         }
         else if (Vector3.Distance(transform.position, player.transform.position) > 10)
         {
             bNotice = false;
+            bNoticed = false;
         }
 
         if (bNotice)
@@ -111,4 +119,10 @@ public class EnemyAIProj : MonoBehaviour
         }
     }
 
+    IEnumerator noticeImage()
+    {
+        noticeObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        noticeObject.SetActive(false);
+    }
 }
