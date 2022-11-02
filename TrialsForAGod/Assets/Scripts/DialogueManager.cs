@@ -16,7 +16,7 @@ public class DialogueManager : MonoBehaviour
     public StringBuilder sb = new StringBuilder();
 
     public GameObject dialogueCanvas;
-
+    public RawImage nameColor;
     public TMPro.TextMeshProUGUI nameText;
     public TMPro.TextMeshProUGUI dialogueText;
     public SpeakerValues speakerOneSO, speakerTwoSo;
@@ -71,6 +71,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             nameText.transform.parent.gameObject.SetActive(true);
+         //   nameColor.color = speakerTwoSo.speakerColor;
         }
         sb.Append(dialogue.conversation[iName].charName);
         sb.Replace("/name", pName.playerName);
@@ -88,8 +89,20 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentance(DialogueSystem dialogue)
     {
+        if (nameText.text == speakerOneSO.speakerName || nameText.text == "Boss")
+        {
+            nameColor.color = speakerOneSO.speakerColor;
+        }
+        else if (nameText.text == speakerTwoSo.speakerName)
+        {
+            nameColor.color = speakerTwoSo.speakerColor;
+        }
+        else
+        {
+            nameColor.color = pName.playerColor;
+        }
         //StopAllCoroutines(); 
-        if(dialogue.conversation[iName].choicePath == afterChoiceVal || dialogue.conversation[iName].choicePath == 0)
+        if (dialogue.conversation[iName].choicePath == afterChoiceVal || dialogue.conversation[iName].choicePath == 0)
         {
             if (jSent < dialogue.conversation[iName].sentences.Length)
             {
