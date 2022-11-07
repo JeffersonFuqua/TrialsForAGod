@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public bool bInDialogue;
     PlayerActions pActions;
 
     bool bIsPaused;
@@ -42,12 +43,20 @@ public class PauseMenu : MonoBehaviour
     {
         if (!bIsPaused)
         {
+            if (bInDialogue)
+            {
+                GetComponent<DisableDialogue>().DisableDiaCanvas();
+            }
             pauseMenu.SetActive(true);
             bIsPaused = true;
             Time.timeScale = 0;
         }
         else
         {
+            if (bInDialogue)
+            {
+                GetComponent<DisableDialogue>().EnableDialogue();
+            }
             Time.timeScale = 1;
             pauseMenu.SetActive(false);
             bIsPaused = false;
