@@ -45,6 +45,7 @@ public class DialogueManager : MonoBehaviour
         pActions.Enable();
 
         pActions.PlayerControls.NextLine.performed += HitSpace;
+        pActions.PlayerControls.SkipLine.performed += HitSkip;
 
         typeSpeed = 11 - typeSpeed;
         typeSpeed /= 100;
@@ -59,6 +60,7 @@ public class DialogueManager : MonoBehaviour
     {
         pActions.Disable();
         pActions.PlayerControls.NextLine.performed -= HitSpace;
+        pActions.PlayerControls.SkipLine.performed -= HitSkip;
     }
 
     public void StartDialogue(DialogueSystem dialogue)
@@ -319,6 +321,10 @@ public class DialogueManager : MonoBehaviour
     {
         if(nextButton.active == true)
         DisplayNextSentance(dSystem);
+    }
+    private void HitSkip(InputAction.CallbackContext c)
+    {
+            SkipDialogue(dSystem);
     }
     public void EndDialogue(DialogueSystem dialogue)
     {
