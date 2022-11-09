@@ -89,6 +89,15 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkipLine"",
+                    ""type"": ""Button"",
+                    ""id"": ""f4658b61-98cb-4f87-b8f8-a0ae6fab9ded"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -344,6 +353,17 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""action"": ""NextLine"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa4f9e53-5bcd-4380-b593-7081450b9726"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkipLine"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -365,6 +385,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_PlayerControls_Interact = m_PlayerControls.FindAction("Interact", throwIfNotFound: true);
         m_PlayerControls_Pause = m_PlayerControls.FindAction("Pause", throwIfNotFound: true);
         m_PlayerControls_NextLine = m_PlayerControls.FindAction("NextLine", throwIfNotFound: true);
+        m_PlayerControls_SkipLine = m_PlayerControls.FindAction("SkipLine", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -431,6 +452,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerControls_Interact;
     private readonly InputAction m_PlayerControls_Pause;
     private readonly InputAction m_PlayerControls_NextLine;
+    private readonly InputAction m_PlayerControls_SkipLine;
     public struct PlayerControlsActions
     {
         private @PlayerActions m_Wrapper;
@@ -442,6 +464,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_PlayerControls_Interact;
         public InputAction @Pause => m_Wrapper.m_PlayerControls_Pause;
         public InputAction @NextLine => m_Wrapper.m_PlayerControls_NextLine;
+        public InputAction @SkipLine => m_Wrapper.m_PlayerControls_SkipLine;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -472,6 +495,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @NextLine.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnNextLine;
                 @NextLine.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnNextLine;
                 @NextLine.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnNextLine;
+                @SkipLine.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnSkipLine;
+                @SkipLine.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnSkipLine;
+                @SkipLine.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnSkipLine;
             }
             m_Wrapper.m_PlayerControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -497,6 +523,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @NextLine.started += instance.OnNextLine;
                 @NextLine.performed += instance.OnNextLine;
                 @NextLine.canceled += instance.OnNextLine;
+                @SkipLine.started += instance.OnSkipLine;
+                @SkipLine.performed += instance.OnSkipLine;
+                @SkipLine.canceled += instance.OnSkipLine;
             }
         }
     }
@@ -519,5 +548,6 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnNextLine(InputAction.CallbackContext context);
+        void OnSkipLine(InputAction.CallbackContext context);
     }
 }
