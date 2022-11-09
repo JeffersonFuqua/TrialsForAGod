@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     bool bIsPaused;
     public GameObject eSystem;
     public GameObject continueButton;
+    public GameObject nextButton;
 
 
     private void OnEnable()
@@ -56,6 +57,7 @@ public class PauseMenu : MonoBehaviour
             if (bInDialogue)
             {
                 GetComponent<DisableDialogue>().EnableDialogue();
+                eSystem.GetComponent<EventSystem>().SetSelectedGameObject(nextButton, null);
             }
             Time.timeScale = 1;
             pauseMenu.SetActive(false);
