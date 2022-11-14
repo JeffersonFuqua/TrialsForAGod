@@ -34,7 +34,7 @@ public class ProjBehavior : MonoBehaviour
             }
             
         }
-        if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Wall") || other.gameObject.layer == LayerMask.NameToLayer("PlayerHitBox"))
         {
             StartCoroutine(deleteProj());
         }
