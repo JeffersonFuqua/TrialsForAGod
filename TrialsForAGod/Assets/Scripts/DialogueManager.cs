@@ -328,11 +328,14 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialogue(DialogueSystem dialogue)
     {
+        Debug.Log("End");
         if (dialogue.conversation[iName].bNextScene)
         {
             GetComponent<NextScene>().ChangeScene();
         }
-        Debug.Log("End");
-        dialogueCanvas.SetActive(false);
+        else
+        {
+            dialogueCanvas.SetActive(false);
+        }
     }
 }
