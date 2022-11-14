@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     private float maxHealth;
     public float currentHealth;
     public bool bInvincible;
+    public bool bDead;
 
     private void Start()
     {
@@ -28,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamageAndKnockback(float damage, Vector3 attackOrigin)
     {
-        if (bInvincible)
+        if (bInvincible || bDead)
             return;
 
         StartCoroutine(invincible(1));
@@ -37,11 +38,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
         playerHealthBar.value = currentHealth;
 
-        if (currentHealth <= 0)
-        {
-            Debug.Log("dead");
-            GetComponent<ResetDelegate>().bcallReset = true;
-        }
+        
     }
     IEnumerator playerRecievedKnockback(Vector3 attackOrgin)
     {
@@ -49,6 +46,21 @@ public class PlayerHealth : MonoBehaviour
         rb.AddForce(attackOrgin, ForceMode.Impulse);
         yield return new WaitForSeconds(0.4f);
         rb.velocity = Vector3.zero;
+        GetComponent<PlayerMovement>().Unlock();
+        if (currentHealth <= 0)
+        {
+            bDead = true;
+            //StopAllCoroutines();
+            StartCoroutine(playerDies());
+        }
+    }
+    IEnumerator playerDies()
+    {
+        GetComponent<PlayerMovement>().Lock();
+        yield return new WaitForSeconds(2);
+        Debug.Log("dead");
+        bDead = false;
+        GetComponent<ResetDelegate>().bcallReset = true;
         GetComponent<PlayerMovement>().Unlock();
     }
     //Invincibility and knockback are seperate unlike with enemys as this will give the player a chance to escape
