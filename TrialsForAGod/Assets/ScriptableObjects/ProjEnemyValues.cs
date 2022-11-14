@@ -17,10 +17,4 @@ public class ProjEnemyValues : ScriptableObject
     public float attackStartUp;
     public float attackEndLag;
     public float attackCooldown;
-
-    [Header("Enemy Sounds")]
-    public AudioClip idleSound;
-    public AudioClip attackSound;
-    public AudioClip tookDamageSound;
-    public AudioClip deathSound;
 }

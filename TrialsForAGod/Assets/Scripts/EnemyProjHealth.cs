@@ -11,7 +11,6 @@ public class EnemyProjHealth : MonoBehaviour
     public float currentHealth;
     public Slider healthBar;
     private bool bInvincible;
-    private bool bDead;
 
     private float recievedKnockback;
     private Vector3 difference;
@@ -36,12 +35,11 @@ public class EnemyProjHealth : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
         }
-
     }
 
     public void UpdateHealth(float damageTaken)
     {
-        if (bInvincible || bDead)
+        if (bInvincible)
             return;
 
         //Debug.Log("ouch");
@@ -54,18 +52,7 @@ public class EnemyProjHealth : MonoBehaviour
         {
             Die();
         }
-        else
-        {
-            PlaySound(enemyProjVal.tookDamageSound);
-        }
     }
-
-    public void PlaySound(AudioClip currSound)
-    {
-        GetComponent<AudioSource>().clip = currSound;
-        GetComponent<AudioSource>().Play();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("PlayerHitBox") && !bInvincible)
@@ -101,29 +88,6 @@ public class EnemyProjHealth : MonoBehaviour
     public void Die()
     {
         StopAllCoroutines();
-        bDead = true;
-        StartCoroutine(deathDelay());
-    }
-
-    IEnumerator deathDelay()
-    {
-        PlaySound(enemyProjVal.deathSound);
-        if (TryGetComponent<EnemyAI>(out var enemyAI))
-        {
-            GetComponent<EnemyAI>().enabled = false;
-        }
-        else if (TryGetComponent<EnemyAIProj>(out var enemyAIProj))
-        {
-            GetComponent<EnemyAIProj>().enabled = false;
-        }
-
-
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            transform.GetChild(i).gameObject.SetActive(false);
-        }
-        yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
-
     }
 }
