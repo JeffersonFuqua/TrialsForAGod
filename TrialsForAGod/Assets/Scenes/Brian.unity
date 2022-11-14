@@ -6121,6 +6121,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1151299391}
@@ -6148,6 +6149,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_GameObject: {fileID: 747353865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464e63f315ae2d24d8084a1f028e499c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1147042069 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3221182509725243829, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
+  m_PrefabInstance: {fileID: 1694344519}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1001 &1177291349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9205,6 +9219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoneGater
       objectReference: {fileID: 0}
+    - target: {fileID: 3221182509725243823, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3221182509725243829, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -9249,6 +9267,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3341825016783454790, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
+      propertyPath: m_Sources.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341825016783454790, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
+      propertyPath: m_Sources.Array.data[0].weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341825016783454790, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
+      propertyPath: m_Sources.Array.data[0].sourceTransform
+      value: 
+      objectReference: {fileID: 1147042069}
     - target: {fileID: 3798649706929908534, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -9256,6 +9286,10 @@ PrefabInstance:
     - target: {fileID: 3798649706929908534, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891398054288582070, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
