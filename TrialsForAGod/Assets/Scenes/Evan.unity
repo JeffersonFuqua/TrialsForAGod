@@ -560,7 +560,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e074ea130f51788458da94e3fa8f4a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   dialogueCanvas: {fileID: 1071303250}
+  player: {fileID: 9182824044243013359}
 --- !u!4 &313537137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3605114933189504531, guid: a803cff758605fe4ebf3c169482a3fe6, type: 3}
@@ -6056,6 +6058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b8e40f81a2cfc43843a686bace6b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactVal: 0
 --- !u!23 &9187943037862376431
 MeshRenderer:
   m_ObjectHideFlags: 0
