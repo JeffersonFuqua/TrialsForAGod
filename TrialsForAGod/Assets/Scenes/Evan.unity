@@ -663,6 +663,8 @@ MonoBehaviour:
   player: {fileID: 9182824044243013359}
   keyboardText: {fileID: 1095099471}
   xboxText: {fileID: 1537315252}
+  bsingle: 1
+  bhasTalked: 0
 --- !u!4 &313537137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3605114933189504531, guid: a803cff758605fe4ebf3c169482a3fe6, type: 3}
@@ -675,17 +677,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[6].bCutscene
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4699376239120618117, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: ES
       value: 
       objectReference: {fileID: 1160858126}
     - target: {fileID: 4699376239120618117, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 9182824044243013359}
+    - target: {fileID: 4699376239120618117, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: bgImage
       value: 
       objectReference: {fileID: 797840170}
+    - target: {fileID: 4699376239120618117, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: heatlhCanvas
+      value: 
+      objectReference: {fileID: 2031655407}
     - target: {fileID: 4991364102837029355, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4991364102837029355, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: blackScreen

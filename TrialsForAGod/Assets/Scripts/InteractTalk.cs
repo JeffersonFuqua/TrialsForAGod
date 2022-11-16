@@ -10,13 +10,16 @@ public class InteractTalk : MonoBehaviour
     public GameObject player;
     public GameObject keyboardText;
     public GameObject xboxText;
+    public bool bsingle;
+    public bool bhasTalked;
 
     public void Interacting(int style)
     {
         switch(style)
         {
             case 1:
-                Talk();
+                if ((bsingle && !bhasTalked) || !bsingle)
+                    Talk();
                 break;
             case 2:
                 Pickup();
@@ -31,7 +34,7 @@ public class InteractTalk : MonoBehaviour
     }
     public void Talk()
     {
-        Debug.Log("Talk");
+        bhasTalked = true;
         keyboardText.SetActive(false);
         xboxText.SetActive(false);
         player.GetComponent<PlayerMovement>().Lock();
@@ -54,23 +57,18 @@ public class InteractTalk : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            player.GetComponent<Interacter>().interactVal = type;
-
-            string[] controller = Input.GetJoystickNames();
-            for (int j = 0; j < controller.Length; j++)
+        if ((bsingle && !bhasTalked) || !bsingle)
+            if (other.CompareTag("Player"))
             {
-                if (controller[j].Length == 0)
-                {
+                string[] controller = Input.GetJoystickNames();
+            
+                if (controller.Length == 0)
                     keyboardText.SetActive(true);
-                }
                 else
-                {
                     xboxText.SetActive(true);
-                }
+         
+                player.GetComponent<Interacter>().interactVal = type;
             }
-        }
     }
     private void OnTriggerExit(Collider other)
     {

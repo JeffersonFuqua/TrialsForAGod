@@ -23,4 +23,5 @@ public struct Dialogue
     public int speakerCount;
     public Texture background;
     public bool bNextScene;
+    public bool bCutscene;
 }
