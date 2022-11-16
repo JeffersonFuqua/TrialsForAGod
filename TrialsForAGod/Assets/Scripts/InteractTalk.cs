@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class InteractTalk : MonoBehaviour
 {
-    public int type;
-
-    public void Interacting()
+    // public int type;
+    public GameObject dialogueCanvas;
+    public void Interacting(int style)
     {
-        switch(type)
+        switch(style)
         {
             case 1:
                 //talk
@@ -31,6 +31,7 @@ public class InteractTalk : MonoBehaviour
     public void Talk()
     {
         Debug.Log("Talk");
+        dialogueCanvas.SetActive(true);
     }
     public void Pickup()
     {
