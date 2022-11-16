@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class InteractTalk : MonoBehaviour
 {
-    // public int type;
+    public int type;
     public GameObject dialogueCanvas;
+    public GameObject player;
+   
     public void Interacting(int style)
     {
         switch(style)
@@ -44,5 +46,13 @@ public class InteractTalk : MonoBehaviour
     public void Door()
     {
         Debug.Log("door");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            player.GetComponent<Interacter>().interactVal = type;
+        }
     }
 }

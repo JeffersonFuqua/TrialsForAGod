@@ -7,6 +7,7 @@ public class Interacter : MonoBehaviour
 {
     PlayerActions pActions;
     private bool bInteract;
+    public int interactVal;
 
     private GameObject interactableObj;
 
@@ -43,7 +44,7 @@ public class Interacter : MonoBehaviour
         pActions.PlayerControls.Interact.started -= Interact;
 
         Debug.Log("Interacting");
-        interactableObj.GetComponent<InteractTalk>().Interacting(1);
+        interactableObj.GetComponent<InteractTalk>().Interacting(interactVal);
 
     }
 }
