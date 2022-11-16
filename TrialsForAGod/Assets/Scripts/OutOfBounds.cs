@@ -5,7 +5,7 @@ using UnityEngine;
 public class OutOfBounds : MonoBehaviour
 {
     private GameObject player;
-    private float boundsLockTime = 0.15f;
+    private float boundsLockTime = 1; //0.15f
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
