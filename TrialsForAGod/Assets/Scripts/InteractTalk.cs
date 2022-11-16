@@ -6,26 +6,25 @@ public class InteractTalk : MonoBehaviour
 {
     public int type;
     public GameObject dialogueCanvas;
+    public GameObject healthCanvas;
     public GameObject player;
-   
+    public GameObject keyboardText;
+    public GameObject xboxText;
+
     public void Interacting(int style)
     {
         switch(style)
         {
             case 1:
-                //talk
                 Talk();
                 break;
             case 2:
-                //pickup
                 Pickup();
                 break;
             case 3:
-                //heal
                 Heal();
                 break;
             case 4:
-                //door
                 Door();
                 break;
         }   
@@ -33,6 +32,11 @@ public class InteractTalk : MonoBehaviour
     public void Talk()
     {
         Debug.Log("Talk");
+        keyboardText.SetActive(false);
+        xboxText.SetActive(false);
+        player.GetComponent<PlayerMovement>().Lock();
+        player.GetComponent<PlayerAttack>().Lock();
+        healthCanvas.SetActive(false);
         dialogueCanvas.SetActive(true);
     }
     public void Pickup()
@@ -53,6 +57,27 @@ public class InteractTalk : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player.GetComponent<Interacter>().interactVal = type;
+
+            string[] controller = Input.GetJoystickNames();
+            for (int j = 0; j < controller.Length; j++)
+            {
+                if (controller[j].Length == 0)
+                {
+                    keyboardText.SetActive(true);
+                }
+                else
+                {
+                    xboxText.SetActive(true);
+                }
+            }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            keyboardText.SetActive(false);
+            xboxText.SetActive(false);
         }
     }
 }
