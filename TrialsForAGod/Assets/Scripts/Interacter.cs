@@ -28,7 +28,7 @@ public class Interacter : MonoBehaviour
         {
             interactableObj = other.gameObject;
             pActions.PlayerControls.Interact.started += Interact;
-            Debug.Log("Entered Interactable");
+           // Debug.Log("Entered Interactable");
         }
     }
     private void OnTriggerExit(Collider other)
@@ -36,14 +36,14 @@ public class Interacter : MonoBehaviour
         if (other.CompareTag("Interact"))
         {
             pActions.PlayerControls.Interact.started -= Interact;
-            Debug.Log("Left Interactable");
+           // Debug.Log("Left Interactable");
         }
     }
     private void Interact(InputAction.CallbackContext c)
     {
         pActions.PlayerControls.Interact.started -= Interact;
 
-        Debug.Log("Interacting");
+       // Debug.Log("Interacting");
         interactableObj.GetComponent<InteractTalk>().Interacting(interactVal);
 
     }

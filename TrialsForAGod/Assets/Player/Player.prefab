@@ -3893,6 +3893,7 @@ GameObject:
   - component: {fileID: 1223745054597439013}
   - component: {fileID: 4420221952375788543}
   - component: {fileID: 7663221161838278924}
+  - component: {fileID: 2249567455843319461}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -4000,6 +4001,7 @@ MonoBehaviour:
   playerHealthBar: {fileID: 0}
   currentHealth: 100
   bInvincible: 0
+  bDead: 0
 --- !u!114 &4217542179781184789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4101,6 +4103,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resetPosition: {x: 0, y: 0, z: 0}
   bUponReset: 0
+--- !u!114 &2249567455843319461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182824044689401265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b8e40f81a2cfc43843a686bace6b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactVal: 0
 --- !u!1001 &7478228111470639676
 PrefabInstance:
   m_ObjectHideFlags: 0
