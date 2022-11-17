@@ -16,11 +16,13 @@ public class DialogueManager : MonoBehaviour
     public StringBuilder sb = new StringBuilder();
 
     public GameObject dialogueCanvas;
+    public GameObject heatlhCanvas;
     public RawImage nameColor;
     public TMPro.TextMeshProUGUI nameText;
     public TMPro.TextMeshProUGUI dialogueText;
     public SpeakerValues speakerOneSO, speakerTwoSo;
     public EventSystem ES;
+    public GameObject player;
 
     //speaker value
     [HideInInspector]
@@ -336,6 +338,12 @@ public class DialogueManager : MonoBehaviour
         else
         {
             dialogueCanvas.SetActive(false);
+           if(dialogue.conversation[iName].bCutscene == false)
+            {
+                player.GetComponent<PlayerMovement>().Unlock();
+                player.GetComponent<PlayerAttack>().Unlock();
+                heatlhCanvas.SetActive(true);
+            }
         }
     }
 }
