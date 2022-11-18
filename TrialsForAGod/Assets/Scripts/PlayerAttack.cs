@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
     private int attackValue;
     //time if no buttons are pressed to reset the value to 0 to start chain over again
     private float attackValueReset;
-    private float attackChainTimer = 0.3f;
+    private float attackChainTimer = 0.75f;
     [HideInInspector] public bool bAttackChain;
     [HideInInspector] public float currentAttackDamage;
     [HideInInspector] public float currentAttackKnockback;
