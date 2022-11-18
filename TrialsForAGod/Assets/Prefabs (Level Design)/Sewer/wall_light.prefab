@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7834252282608574405}
   - component: {fileID: 8947041760285336945}
+  - component: {fileID: 6566120848647644388}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -108,14 +109,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3326605491098949488}
-  m_LocalRotation: {x: 0.5294222, y: 2.2737368e-13, z: -0.0000031240459, w: 0.8483585}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.44490945, y: -0.00000026822087, z: -0.00000308454, w: 0.8955755}
+  m_LocalPosition: {x: -0.00000023841858, y: 0, z: -1.4210855e-14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2707106359949681394}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 63.933, y: 0, z: -0.001}
+  m_LocalEulerAnglesHint: {x: 52.835, y: 0, z: -0.001}
 --- !u!108 &8947041760285336945
 Light:
   m_ObjectHideFlags: 0
@@ -128,13 +129,13 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.9886838, b: 0.80566037, a: 1}
-  m_Intensity: 3.63
-  m_Range: 10
-  m_SpotAngle: 112
-  m_InnerSpotAngle: 21.80208
+  m_Intensity: 8.96
+  m_Range: 6.620123
+  m_SpotAngle: 86.051216
+  m_InnerSpotAngle: 53.277496
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -178,3 +179,23 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &6566120848647644388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326605491098949488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
