@@ -10,9 +10,14 @@ public class InteractTalk : MonoBehaviour
     public GameObject player;
     public GameObject keyboardText;
     public GameObject xboxText;
+    public GameObject canTalk;
     public bool bsingle;
     public bool bhasTalked;
 
+    public void Start()
+    {
+        canTalk.SetActive(true);
+    }
     public void Interacting(int style)
     {
         switch(style)
@@ -41,6 +46,9 @@ public class InteractTalk : MonoBehaviour
         player.GetComponent<PlayerAttack>().Lock();
         healthCanvas.SetActive(false);
         dialogueCanvas.SetActive(true);
+
+        if (bsingle && bhasTalked)
+            canTalk.SetActive(false);
     }
     public void Pickup()
     {
