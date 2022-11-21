@@ -25493,6 +25493,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5320641254476332318, guid: 9d8db0bfe1f189a4a8067f4bbe7f5daf, type: 3}
+      propertyPath: lineRender
+      value: 
+      objectReference: {fileID: 2145937695}
     - target: {fileID: 5349457366719770771, guid: 9d8db0bfe1f189a4a8067f4bbe7f5daf, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -28119,7 +28123,7 @@ MonoBehaviour:
   player: {fileID: 2142202081}
   keyboardText: {fileID: 1392887707}
   xboxText: {fileID: 1872021388}
-  canTalk: {fileID: 0}
+  canTalk: {fileID: 2114907221}
   bsingle: 1
   bhasTalked: 0
 --- !u!65 &2114907223
@@ -28773,6 +28777,11 @@ Transform:
 --- !u!1 &2142202081 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9182824044689401265, guid: 9d8db0bfe1f189a4a8067f4bbe7f5daf, type: 3}
+  m_PrefabInstance: {fileID: 1945220797}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2145937695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 365966088581664951, guid: 9d8db0bfe1f189a4a8067f4bbe7f5daf, type: 3}
   m_PrefabInstance: {fileID: 1945220797}
   m_PrefabAsset: {fileID: 0}
 --- !u!23 &19798573015733961

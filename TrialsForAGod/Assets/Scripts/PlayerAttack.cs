@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
     PlayerActions pActions;
     private PlayerValues playerVal;
     private Weapon weaponVal;
+    public GameObject lineRender;
 
     private int attackValue;
     //time if no buttons are pressed to reset the value to 0 to start chain over again
@@ -22,8 +23,6 @@ public class PlayerAttack : MonoBehaviour
     //private Vector3 aimDirection;
 
     private bool bLocked;
-
-
     private Animator playerAnim;
 
     private void OnEnable()
@@ -49,6 +48,8 @@ public class PlayerAttack : MonoBehaviour
         attackValueReset = attackChainTimer;
 
         playerAnim = GetComponent<PlayerValueHolder>().playerAnim;
+
+        lineRender.SetActive(false);
     }
 
     private void Update()
@@ -89,6 +90,7 @@ public class PlayerAttack : MonoBehaviour
         pActions.PlayerControls.HeavyAttack.performed -= PlayerHeavyAttack;
         GetComponent<PlayerMovement>().bIsAttacking = true;
 
+        lineRender.SetActive(true);
         //reset timer when called
         bAttackChain = false;
         attackValueReset = attackChainTimer;
@@ -136,6 +138,7 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator lightAttackCooldown()
     {
         yield return new WaitForSeconds(weaponVal.lightAttackCooldown);
+        lineRender.SetActive(false);
         bAttackChain = true;
         GetComponent<PlayerMovement>().bIsAttacking = false;
         pActions.PlayerControls.LightAttack.performed += PlayerLightAttack;
@@ -147,6 +150,8 @@ public class PlayerAttack : MonoBehaviour
         pActions.PlayerControls.LightAttack.performed -= PlayerLightAttack;
         pActions.PlayerControls.HeavyAttack.performed -= PlayerHeavyAttack;
         GetComponent<PlayerMovement>().bIsAttacking = true;
+
+        lineRender.SetActive(true);
 
         bAttackChain = false;
         attackValueReset = attackChainTimer;
@@ -195,6 +200,7 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator heavyAttackCooldown()
     {
         yield return new WaitForSeconds(weaponVal.heavyAttackCooldown);
+        lineRender.SetActive(false);
         bAttackChain = true;
         GetComponent<PlayerMovement>().bIsAttacking = false;
         pActions.PlayerControls.HeavyAttack.performed += PlayerHeavyAttack;
