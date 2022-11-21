@@ -86,6 +86,7 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator lightAttackAction()
     {
         pActions.PlayerControls.LightAttack.performed -= PlayerLightAttack;
+        pActions.PlayerControls.HeavyAttack.performed -= PlayerHeavyAttack;
         GetComponent<PlayerMovement>().bIsAttacking = true;
 
         //reset timer when called
@@ -138,10 +139,12 @@ public class PlayerAttack : MonoBehaviour
         bAttackChain = true;
         GetComponent<PlayerMovement>().bIsAttacking = false;
         pActions.PlayerControls.LightAttack.performed += PlayerLightAttack;
+        pActions.PlayerControls.HeavyAttack.performed += PlayerHeavyAttack;
     }
 
     IEnumerator heavyAttackAction()
     {
+        pActions.PlayerControls.LightAttack.performed -= PlayerLightAttack;
         pActions.PlayerControls.HeavyAttack.performed -= PlayerHeavyAttack;
         GetComponent<PlayerMovement>().bIsAttacking = true;
 
@@ -195,6 +198,7 @@ public class PlayerAttack : MonoBehaviour
         bAttackChain = true;
         GetComponent<PlayerMovement>().bIsAttacking = false;
         pActions.PlayerControls.HeavyAttack.performed += PlayerHeavyAttack;
+        pActions.PlayerControls.LightAttack.performed += PlayerLightAttack;
     }
 
     //to lock and unlock player attack
