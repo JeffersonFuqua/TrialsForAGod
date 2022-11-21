@@ -69,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Movement()
     {
+        //Debug.LogError("move");
         desiredDirection.x = pActions.PlayerControls.Movement.ReadValue<Vector2>().x;
         desiredDirection.z = pActions.PlayerControls.Movement.ReadValue<Vector2>().y;
         desiredDirection = desiredDirection.normalized;
