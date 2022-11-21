@@ -58,7 +58,7 @@ public class PlayerHealth : MonoBehaviour
     }
     IEnumerator playerDies()
     {
-        GetComponent<Animator>().SetBool("dead", true);
+        GetComponent<Animator>().SetTrigger("dead");
 
         GetComponent<PlayerMovement>().Lock();
         GetComponent<PlayerAttack>().Lock();
@@ -69,7 +69,7 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<PlayerAttack>().Unlock();
         GetComponent<PlayerMovement>().Unlock();
 
-        GetComponent<Animator>().SetBool("dead", false);
+        GetComponent<Animator>().SetTrigger("timer");
     }
     //Invincibility and knockback are seperate unlike with enemys as this will give the player a chance to escape
     IEnumerator invincible(float c)
