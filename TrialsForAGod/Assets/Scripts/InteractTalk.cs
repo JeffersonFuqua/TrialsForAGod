@@ -13,10 +13,15 @@ public class InteractTalk : MonoBehaviour
     public GameObject canTalk;
     public bool bsingle;
     public bool bhasTalked;
+    public GameObject dots;
 
     public void Start()
     {
         canTalk.SetActive(true);
+        if(bsingle && !bhasTalked || !bsingle)
+        {
+            dots.SetActive(true);
+        }
     }
     public void Interacting(int style)
     {
@@ -66,17 +71,21 @@ public class InteractTalk : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if ((bsingle && !bhasTalked) || !bsingle)
+        {
             if (other.CompareTag("Player"))
             {
                 string[] controller = Input.GetJoystickNames();
-            
+
                 if (controller.Length == 0)
                     keyboardText.SetActive(true);
                 else
                     xboxText.SetActive(true);
-         
+
                 player.GetComponent<Interacter>().interactVal = type;
             }
+        }
+        else
+            dots.SetActive(false);
     }
     private void OnTriggerExit(Collider other)
     {
