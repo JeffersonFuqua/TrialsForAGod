@@ -2647,6 +2647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5656152420057146248}
   - component: {fileID: 591993854486131611}
+  - component: {fileID: 6307341460329615532}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -2731,6 +2732,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &6307341460329615532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8222809139392713480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &8266403431850735213
 GameObject:
   m_ObjectHideFlags: 0
@@ -3734,6 +3755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd87f306f0cb23c4ca0692670aa9da04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineRender: {fileID: 0}
   bAttackChain: 0
   currentAttackDamage: 0
   currentAttackKnockback: 0
@@ -3877,6 +3899,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerModel
       objectReference: {fileID: 0}
+    - target: {fileID: 7117426172893762059, guid: a803cff758605fe4ebf3c169482a3fe6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f67ffbf0058c57a44beb3602d1459c26, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a803cff758605fe4ebf3c169482a3fe6, type: 3}
 --- !u!4 &6183424931388937263 stripped
