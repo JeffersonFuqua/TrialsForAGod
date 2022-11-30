@@ -53,7 +53,11 @@ public class InteractTalk : MonoBehaviour
         dialogueCanvas.SetActive(true);
 
         if (bsingle && bhasTalked)
+        {
             canTalk.SetActive(false);
+            dots.SetActive(false);
+        }
+
     }
     public void Pickup()
     {
@@ -84,8 +88,6 @@ public class InteractTalk : MonoBehaviour
                 player.GetComponent<Interacter>().interactVal = type;
             }
         }
-        else
-            dots.SetActive(false);
     }
     private void OnTriggerExit(Collider other)
     {
