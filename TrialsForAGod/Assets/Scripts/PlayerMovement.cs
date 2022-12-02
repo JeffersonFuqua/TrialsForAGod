@@ -108,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator dodgeAction()
     {
         speed = playerVal.dodgeSpeed;
+        gameObject.layer = LayerMask.NameToLayer("Dodge");
         GetComponent<PlayerHealth>().bInvincible = true;
         playerAnim.SetBool("dodge", true);
         //playerAnim.SetLayerWeight(1, 1);
@@ -126,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
         }
         bDodge = false;
         speed = playerVal.playerSpeed;
+        gameObject.layer = LayerMask.NameToLayer("Player");
         GetComponent<PlayerHealth>().bInvincible = false;
     }
     IEnumerator dodgeCooldown()
