@@ -77,10 +77,10 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + desiredDirection * speed * Time.fixedDeltaTime);
         //rb.position += desiredDirection * speed * Time.fixedDeltaTime;
 
-        if ((desiredDirection.x != 0 || desiredDirection.z != 0)/* && !bIsAttacking*/)
+        if ((desiredDirection.x != 0 || desiredDirection.z != 0) /*&& !bIsAttacking*/)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(desiredDirection.x, 0, desiredDirection.z)), Time.deltaTime * faceRotationSpeed);
-            if(!bIsRunning && !bDodge)
+            if(!bIsRunning && !bDodge && !bIsAttacking)
             {
                 playerAnim.SetTrigger("running");
                 bIsRunning = true;
