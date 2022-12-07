@@ -41,10 +41,14 @@ public class Interacter : MonoBehaviour
     }
     private void Interact(InputAction.CallbackContext c)
     {
-        pActions.PlayerControls.Interact.started -= Interact;
+        //protects player from taking damage while talkinh
+        GetComponent<PlayerHealth>().bInvincible = true;
 
+        pActions.PlayerControls.Interact.started -= Interact;
+        
        // Debug.Log("Interacting");
         interactableObj.GetComponent<InteractTalk>().Interacting(interactVal);
 
     }
 }
+

@@ -342,6 +342,7 @@ public class DialogueManager : MonoBehaviour
             {
                 player.GetComponent<PlayerMovement>().Unlock();
                 player.GetComponent<PlayerAttack>().Unlock();
+                player.GetComponent<PlayerHealth>().bInvincible = false;
                 heatlhCanvas.SetActive(true);
             }
         }
