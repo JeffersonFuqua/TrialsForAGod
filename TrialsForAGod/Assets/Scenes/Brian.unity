@@ -35517,18 +35517,6 @@ MonoBehaviour:
     background: {fileID: 0}
     bNextScene: 0
     bCutscene: 0
---- !u!114 &2751868130673840270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6539773809810717722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89a57afb24f101d4f8527caa58739d09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2769310069870983265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35786,7 +35774,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6539773809810717722}
-  m_LocalRotation: {x: -0.015222898, y: -0.8968092, z: -0.41009682, w: 0.1652937}
+  m_LocalRotation: {x: 0.07928567, y: -0.973068, z: -0.015796123, w: 0.21587753}
   m_LocalPosition: {x: 0, y: 0, z: 1.894}
   m_LocalScale: {x: 1.2999996, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -35794,7 +35782,7 @@ RectTransform:
   - {fileID: 1471135075}
   m_Father: {fileID: 882369233}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -47.782, y: -154.999, z: -9.272}
+  m_LocalEulerAnglesHint: {x: 0.2, y: -154.999, z: -9.272}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.615, y: 1.897}
@@ -36870,9 +36858,6 @@ GameObject:
   - component: {fileID: 6934666027635547847}
   - component: {fileID: 1080532408130775123}
   - component: {fileID: 5404728388497822304}
-  - component: {fileID: 2751868130673840270}
-  - component: {fileID: 6934666027635547849}
-  - component: {fileID: 6934666027635547848}
   m_Layer: 5
   m_Name: TalkUI
   m_TagString: Untagged
@@ -36901,37 +36886,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &6934666027635547848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6539773809810717722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89a57afb24f101d4f8527caa58739d09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1818360608 &6934666027635547849
-PositionConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6539773809810717722}
-  m_Enabled: 0
-  m_Weight: 1
-  m_TranslationAtRest: {x: 0.936, y: 1.897, z: 1.719}
-  m_TranslationOffset: {x: 0.936, y: 1.897, z: 1.719}
-  m_AffectTranslationX: 1
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 1
-  m_IsContraintActive: 1
-  m_IsLocked: 0
-  m_Sources:
-  - sourceTransform: {fileID: 882369233}
-    weight: 1
 --- !u!65 &7062875271059883990
 BoxCollider:
   m_ObjectHideFlags: 0
