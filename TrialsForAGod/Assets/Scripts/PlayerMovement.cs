@@ -77,10 +77,10 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + desiredDirection * speed * Time.fixedDeltaTime);
         //rb.position += desiredDirection * speed * Time.fixedDeltaTime;
 
-        if ((desiredDirection.x != 0 || desiredDirection.z != 0)/* && !bIsAttacking*/)
+        if ((desiredDirection.x != 0 || desiredDirection.z != 0) /*&& !bIsAttacking*/)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(desiredDirection.x, 0, desiredDirection.z)), Time.deltaTime * faceRotationSpeed);
-            if(!bIsRunning && !bDodge)
+            if(!bIsRunning && !bDodge && !bIsAttacking)
             {
                 playerAnim.SetTrigger("running");
                 bIsRunning = true;
@@ -108,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator dodgeAction()
     {
         speed = playerVal.dodgeSpeed;
+        gameObject.layer = LayerMask.NameToLayer("Dodge");
         GetComponent<PlayerHealth>().bInvincible = true;
         playerAnim.SetBool("dodge", true);
         //playerAnim.SetLayerWeight(1, 1);
@@ -126,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
         }
         bDodge = false;
         speed = playerVal.playerSpeed;
+        gameObject.layer = LayerMask.NameToLayer("Player");
         GetComponent<PlayerHealth>().bInvincible = false;
     }
     IEnumerator dodgeCooldown()

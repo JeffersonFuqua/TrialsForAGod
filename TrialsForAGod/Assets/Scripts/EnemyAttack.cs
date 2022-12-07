@@ -6,9 +6,8 @@ public class EnemyAttack : MonoBehaviour
 {
     private EnemyValues enemyValues;
 
-    public GameObject idleAttack;
+    //public GameObject idleAttack;
     public GameObject attackRange;
-
 
     private void Start()
     {
@@ -21,11 +20,11 @@ public class EnemyAttack : MonoBehaviour
 
     IEnumerator hitboxDuration()
     {
-        idleAttack.SetActive(false);
+        //idleAttack.SetActive(false);
         attackRange.SetActive(true);
         GetComponent<EnemyHealth>().PlaySound(enemyValues.attackSound);
         yield return new WaitForSeconds(enemyValues.tempHitBoxDuration);
         attackRange.SetActive(false);
-        idleAttack.SetActive(true);
+        //idleAttack.SetActive(true);
     }
 }

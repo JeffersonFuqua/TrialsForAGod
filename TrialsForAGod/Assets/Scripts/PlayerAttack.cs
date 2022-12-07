@@ -11,7 +11,7 @@ public class PlayerAttack : MonoBehaviour
     private Weapon weaponVal;
     public GameObject lineRender;
 
-    private int attackValue;
+    [HideInInspector]public int attackValue;
     //time if no buttons are pressed to reset the value to 0 to start chain over again
     private float attackValueReset;
     private float attackChainTimer = 0.75f;

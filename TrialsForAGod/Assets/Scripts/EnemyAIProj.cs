@@ -52,6 +52,7 @@ public class EnemyAIProj : MonoBehaviour
                     bNoticed = true;
                 }
                 bNotice = true;
+                GetComponent<EnemyProjHealth>().PlaySound(enemyValuesProj.idleSound);
             }
         }
         else if (Vector3.Distance(transform.position, player.transform.position) > 10)

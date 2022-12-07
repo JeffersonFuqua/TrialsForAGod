@@ -99,17 +99,19 @@ public class CheckList : MonoBehaviour
     private void Lattack(InputAction.CallbackContext c)
     {
 
-        if (playerAttack.bAttackChain)
+        if (playerAttack.attackValue == 2)
+        {
             CheckOff(3);
-        else
+        }
             CheckOff(0);
     }
     private void Hattack(InputAction.CallbackContext c)
     {
 
-        if (playerAttack.bAttackChain)
+        if (playerAttack.attackValue == 2)
+        {
             CheckOff(3);
-        else
+        }
             CheckOff(1);
     }
     private void Dodged(InputAction.CallbackContext c)
