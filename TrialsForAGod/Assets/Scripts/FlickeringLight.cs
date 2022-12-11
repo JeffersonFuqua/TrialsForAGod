@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class FlickeringLight : MonoBehaviour
 {
-    public bool bFlicker = false;
+    private bool bFlicker = false;
     public float timeDelay;
     public float minValue = 0.1f;
     public float maxValue = 1.0f;
+    public float offTime = 0.1f;
+    public float flickerIntensity = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +28,12 @@ public class FlickeringLight : MonoBehaviour
     IEnumerator Flicker()
     {
         bFlicker = true;
-        this.gameObject.GetComponent<Light>().enabled = false; //Disables the light
+        //this.gameObject.GetComponent<Light>().enabled = false; //Disables the light
+        this.gameObject.GetComponent<Light>().intensity = flickerIntensity; //lowers the light's intensity
+        yield return new WaitForSeconds(offTime);
+        this.gameObject.GetComponent<Light>().intensity = 10; //default intensity
         timeDelay = Random.Range(minValue, maxValue); //generates a random amount of time
         yield return new WaitForSeconds(timeDelay);
-        this.gameObject.GetComponent<Light>().enabled = true; //Enables the light
-        timeDelay = Random.Range(minValue, maxValue);
-        yield return new WaitForSeconds(timeDelay);
-        bFlicker = false; //causes the script to loop indefinitely, i belive
+        bFlicker = false;
     }
 }
