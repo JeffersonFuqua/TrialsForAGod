@@ -13,13 +13,16 @@ public class CheckList : MonoBehaviour
     private int x = 0;
     private int y = 0;
     private bool bLat, bHat, bDas, bChain;
-  //  private int chainVal;
     PlayerActions pActions;
     public ControllerImages keyboard;
     public ControllerImages control;
+    [HideInInspector]
+    public bool bFin, bPause;
 
     private void OnEnable()
     {
+        if (bFin)
+            return;
         pActions = new PlayerActions();
         pActions.Enable();
         pActions.PlayerControls.Dodge.started += Dodged;
@@ -37,6 +40,8 @@ public class CheckList : MonoBehaviour
 
     public void CheckOff(int item)
     {
+        if (x == toDoList.Length)
+            bFin = true;
       switch(item)
        {
             case 0:

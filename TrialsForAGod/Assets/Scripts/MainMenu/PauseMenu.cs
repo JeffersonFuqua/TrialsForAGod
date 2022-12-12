@@ -11,7 +11,7 @@ public class PauseMenu : MonoBehaviour
     public bool bInDialogue;
     PlayerActions pActions;
 
-    bool bIsPaused;
+    public bool bIsPaused;
     public GameObject eSystem;
     public GameObject continueButton;
     public GameObject nextButton;
