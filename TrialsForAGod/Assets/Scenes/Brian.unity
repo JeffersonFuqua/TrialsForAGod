@@ -1179,6 +1179,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3221182509725243818, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1013006867569979, guid: ebe4b2d93b75f8b4abb0597728e048f6, type: 3}
+    - target: {fileID: 3221182509725243819, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221182509725243819, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 5561349426305759274, guid: 7d54fe90a5e432d47b9a9e1494dd6af7, type: 3}
     - target: {fileID: 3221182509725243823, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
       propertyPath: m_Name
       value: BoneGater
@@ -1263,6 +1275,10 @@ PrefabInstance:
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 
       objectReference: {fileID: 866677058}
+    - target: {fileID: 3427206473860812636, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3798649706929908534, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -9126,17 +9142,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3433587830367504322, guid: 5bfad6167d6c6cd40a25f0df0422c1ba, type: 3}
   m_PrefabInstance: {fileID: 528100690}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &528100693 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3433587830367504326, guid: 5bfad6167d6c6cd40a25f0df0422c1ba, type: 3}
-  m_PrefabInstance: {fileID: 528100690}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528100691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd1698820ccd35e47b0539ac12a4b01a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &529663247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12666,17 +12671,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4079961026786740795, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
---- !u!114 &731682541 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1591242582917009727, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
-  m_PrefabInstance: {fileID: 731682540}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441491240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b015f340b465d34fa3dc336d6a2e5ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &734376040
 GameObject:
   m_ObjectHideFlags: 0
@@ -37135,8 +37129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 837c370a34971984b975554b24d6e9e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pMenu: {fileID: 731682541}
-  sCheck: {fileID: 528100693}
   checkList: {fileID: 528100691}
   gPauseMenu: {fileID: 441491240}
 --- !u!4 &2011582523
@@ -41162,6 +41154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   healthBar: {fileID: 686152490}
+  takeDamage: {fileID: 0}
 --- !u!114 &4832888059895557063
 MonoBehaviour:
   m_ObjectHideFlags: 0

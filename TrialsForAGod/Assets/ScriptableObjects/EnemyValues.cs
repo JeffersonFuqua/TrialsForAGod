@@ -7,6 +7,7 @@ public class EnemyValues : ScriptableObject
 {
     [Header("Enemy Info")]
     public string enemyName;
+    public Material baseMaterial;
 
     [Header("Enemy Base Stats")]
     public float enemyMaxHealth;

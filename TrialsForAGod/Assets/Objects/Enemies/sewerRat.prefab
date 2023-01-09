@@ -208,8 +208,8 @@ GameObject:
   - component: {fileID: 4832888060312888543}
   - component: {fileID: 4832888060312888528}
   - component: {fileID: 4832888060312888538}
-  - component: {fileID: 4832888060312888539}
   - component: {fileID: 4832888060312888537}
+  - component: {fileID: 8129954152556413251}
   - component: {fileID: 4832888060312888536}
   - component: {fileID: 7988368502181168138}
   - component: {fileID: 4398248669678094285}
@@ -332,20 +332,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyValues: {fileID: 11400000, guid: 5cbd66309cc2f6c498dc94c65d860f28, type: 2}
---- !u!114 &4832888060312888539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4832888060312888529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 681d913da94a0e245bf6ab5573ac8437, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 100
-  healthBar: {fileID: 5986313143007828331}
 --- !u!114 &4832888060312888537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +349,21 @@ MonoBehaviour:
   noticeObject: {fileID: 7867162240536215049}
   enemySpeed: 0
   bIsStunned: 0
+--- !u!114 &8129954152556413251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4832888060312888529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681d913da94a0e245bf6ab5573ac8437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  healthBar: {fileID: 5986313143007828331}
+  takeDamage: {fileID: 2100000, guid: 89ca8168d79a2474886d7445e2292b13, type: 2}
 --- !u!114 &4832888060312888536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8b81bb854aabb42abe8fbe084b421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleAttack: {fileID: 0}
   attackRange: {fileID: 4832888059930069920}
 --- !u!114 &7988368502181168138
 MonoBehaviour:

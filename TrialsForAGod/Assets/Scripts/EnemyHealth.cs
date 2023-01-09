@@ -14,6 +14,7 @@ public class EnemyHealth : MonoBehaviour
     private float stunTime = 0.5f;
     private bool bDead;
 
+    public Material takeDamage;
     private float recievedKnockback;
     private Vector3 difference;
     private Rigidbody rb;
@@ -56,6 +57,17 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    public void SwitchMaterial(bool redOn)
+    {
+        if (redOn)
+        {
+            GetComponent<MeshRenderer>().material = takeDamage;
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().material = enemyValues.baseMaterial;
+        }
+    }
     public void PlaySound(AudioClip currSound)
     {
         GetComponent<AudioSource>().clip = currSound;
@@ -82,7 +94,9 @@ public class EnemyHealth : MonoBehaviour
         bInvincible = true;
         StartCoroutine(stun(stunTime));
         rb.AddForce(difference, ForceMode.Impulse);
+        SwitchMaterial(true);
         yield return new WaitForSeconds(0.2f);
+        SwitchMaterial(false);
         rb.velocity = Vector2.zero;
         bInvincible = false;
     }
