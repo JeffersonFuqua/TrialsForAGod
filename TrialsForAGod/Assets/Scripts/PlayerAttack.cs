@@ -234,7 +234,7 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator hitStopTimer()
     {
         playerAnim.speed = 0;
-        hitStopAddition = 0.5f;
+        hitStopAddition = 0.3f;
         yield return new WaitForSeconds(0.1f);
         hitStopAddition = 0;
         playerAnim.speed = animDefaultSpeed;
