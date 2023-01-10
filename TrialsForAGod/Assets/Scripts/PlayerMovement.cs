@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     //private MeshRenderer playerColor;
 
     private float faceRotationSpeed = 8;
-    [HideInInspector]public bool bIsAttacking;
     [HideInInspector]public bool bIsRunning;
 
     private bool bLocked;
@@ -77,10 +76,11 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + desiredDirection * speed * Time.fixedDeltaTime);
         //rb.position += desiredDirection * speed * Time.fixedDeltaTime;
 
-        if ((desiredDirection.x != 0 || desiredDirection.z != 0) /*&& !bIsAttacking*/)
+        if ((desiredDirection.x != 0 || desiredDirection.z != 0)/* && !GetComponent<PlayerAttack>().bIsAttacking*/)
         {
+
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(desiredDirection.x, 0, desiredDirection.z)), Time.deltaTime * faceRotationSpeed);
-            if(!bIsRunning && !bDodge && !bIsAttacking)
+            if(!bIsRunning && !bDodge && !GetComponent<PlayerAttack>().bIsAttacking)
             {
                 playerAnim.SetTrigger("running");
                 bIsRunning = true;
@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (bIsRunning && !bIsAttacking)
+            if (bIsRunning && !GetComponent<PlayerAttack>().bIsAttacking)
             {
                 playerAnim.SetTrigger("timer");
                 bIsRunning = false;

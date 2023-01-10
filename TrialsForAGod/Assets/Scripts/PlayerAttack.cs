@@ -14,10 +14,12 @@ public class PlayerAttack : MonoBehaviour
     [HideInInspector]public int attackValue;
     //time if no buttons are pressed to reset the value to 0 to start chain over again
     private float attackValueReset;
-    private float attackChainTimer = 0.6f;
+    private float attackChainTimer = 0.5f;
+    [HideInInspector] public bool bIsAttacking;
     [HideInInspector] public bool bAttackChain;
     [HideInInspector] public float currentAttackDamage;
     [HideInInspector] public float currentAttackKnockback;
+    [HideInInspector] public float currentAttackCooldown;
     private float hitStopAddition = 0;
 
     //public Transform aimTool;
@@ -96,7 +98,7 @@ public class PlayerAttack : MonoBehaviour
     {
         pActions.PlayerControls.LightAttack.performed -= PlayerLightAttack;
         pActions.PlayerControls.HeavyAttack.performed -= PlayerHeavyAttack;
-        GetComponent<PlayerMovement>().bIsAttacking = true;
+        bIsAttacking = true;
 
         lineRender.SetActive(true);
         //reset timer when called
@@ -109,31 +111,34 @@ public class PlayerAttack : MonoBehaviour
             if (attackValue == 1)
             {
                 //light 1 anim
-                currentAttackDamage = weaponVal.lightAttackDamage1;
+                currentAttackDamage = weaponVal.lightDamage1;
                 currentAttackKnockback = weaponVal.lightKnockback1;
+                currentAttackCooldown = weaponVal.lightCooldown1;
                 playerAnim.SetTrigger("light1");
                 //Debug.Log(attackValue + " light");
             }
             else if (attackValue == 2)
             {
                 //light 2 anim
-                currentAttackDamage = weaponVal.lightAttackDamage2;
+                currentAttackDamage = weaponVal.lightDamage2;
                 currentAttackKnockback = weaponVal.lightKnockback2;
+                currentAttackCooldown = weaponVal.lightCooldown2;
                 playerAnim.SetTrigger("light2");
                 //Debug.Log(attackValue + " light");
             }
             else if (attackValue == 3)
             {
                 //light 3 anim
-                currentAttackDamage = weaponVal.lightAttackDamage3;
+                currentAttackDamage = weaponVal.lightDamage3;
                 currentAttackKnockback = weaponVal.lightKnockback3;
+                currentAttackCooldown = weaponVal.lightCooldown3;
                 playerAnim.SetTrigger("light3");
                 //Debug.Log(attackValue + " light");
             }
 
         }
 
-        yield return new WaitForSeconds(weaponVal.lightAttackStartUp + hitStopAddition);
+        yield return new WaitForSeconds(weaponVal.lightStartUp + hitStopAddition);
 
         StartCoroutine(lightAttackCooldown());
 
@@ -145,12 +150,12 @@ public class PlayerAttack : MonoBehaviour
 
     IEnumerator lightAttackCooldown()
     {
-        yield return new WaitForSeconds(weaponVal.lightAttackCooldown + hitStopAddition);
+        yield return new WaitForSeconds(currentAttackCooldown + hitStopAddition);
         //sets speed back to normal after attack is done
         GetComponent<PlayerMovement>().speed = playerVal.playerSpeed;
         lineRender.SetActive(false);
         bAttackChain = true;
-        GetComponent<PlayerMovement>().bIsAttacking = false;
+        bIsAttacking = false;
         pActions.PlayerControls.LightAttack.performed += PlayerLightAttack;
         pActions.PlayerControls.HeavyAttack.performed += PlayerHeavyAttack;
     }
@@ -159,7 +164,7 @@ public class PlayerAttack : MonoBehaviour
     {
         pActions.PlayerControls.LightAttack.performed -= PlayerLightAttack;
         pActions.PlayerControls.HeavyAttack.performed -= PlayerHeavyAttack;
-        GetComponent<PlayerMovement>().bIsAttacking = true;
+        bIsAttacking = true;
 
         lineRender.SetActive(true);
 
@@ -172,31 +177,34 @@ public class PlayerAttack : MonoBehaviour
             if (attackValue == 1)
             {
                 //heavy 1 anim
-                currentAttackDamage = weaponVal.heavyAttackDamage1;
+                currentAttackDamage = weaponVal.heavyDamage1;
                 currentAttackKnockback = weaponVal.heavyKnockback1;
+                currentAttackCooldown = weaponVal.heavyCooldown1;
                 playerAnim.SetTrigger("heavy1");
                 //Debug.Log(attackValue + " heavy");
             }
             else if (attackValue == 2)
             {
                 //heavy 2 anim
-                currentAttackDamage = weaponVal.heavyAttackDamage2;
+                currentAttackDamage = weaponVal.heavyDamage2;
                 currentAttackKnockback = weaponVal.heavyKnockback2;
+                currentAttackCooldown = weaponVal.heavyCooldown2;
                 playerAnim.SetTrigger("heavy2");
                 //Debug.Log(attackValue + " heavy");
             }
             else if (attackValue == 3)
             {
                 //heavy 3 anim
-                currentAttackDamage = weaponVal.heavyAttackDamage3;
+                currentAttackDamage = weaponVal.heavyDamage3;
                 currentAttackKnockback = weaponVal.heavyKnockback3;
+                currentAttackCooldown = weaponVal.heavyCooldown3;
                 playerAnim.SetTrigger("heavy3");
                 //Debug.Log(attackValue + " heavy");
             }
 
         }
 
-        yield return new WaitForSeconds(weaponVal.heavyAttackStartUp + hitStopAddition);
+        yield return new WaitForSeconds(weaponVal.heavyStartUp + hitStopAddition);
 
         StartCoroutine(heavyAttackCooldown());
 
@@ -209,12 +217,12 @@ public class PlayerAttack : MonoBehaviour
 
     IEnumerator heavyAttackCooldown()
     {
-        yield return new WaitForSeconds(weaponVal.heavyAttackCooldown + hitStopAddition);
+        yield return new WaitForSeconds(currentAttackCooldown + hitStopAddition);
         //sets speed back to normal after attack is done
         GetComponent<PlayerMovement>().speed = playerVal.playerSpeed;
         lineRender.SetActive(false);
         bAttackChain = true;
-        GetComponent<PlayerMovement>().bIsAttacking = false;
+        bIsAttacking = false;
         pActions.PlayerControls.HeavyAttack.performed += PlayerHeavyAttack;
         pActions.PlayerControls.LightAttack.performed += PlayerLightAttack;
     }

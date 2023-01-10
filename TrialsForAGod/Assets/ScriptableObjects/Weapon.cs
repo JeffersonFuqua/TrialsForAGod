@@ -9,23 +9,27 @@ public class Weapon : ScriptableObject
     public string weaponName;
 
     [Header("Weapon Light Attack Stats")]
-    public float lightAttackDamage1;
+    public float lightDamage1;
     public float lightKnockback1;
-    public float lightAttackDamage2;
+    public float lightCooldown1;
+    public float lightDamage2;
     public float lightKnockback2;
-    public float lightAttackDamage3;
+    public float lightCooldown2;
+    public float lightDamage3;
     public float lightKnockback3;
-    public float lightAttackStartUp;
-    public float lightAttackCooldown;
+    public float lightCooldown3;
+    public float lightStartUp;
 
     [Header("Weapon Heavy Attack Stats")]
-    public float heavyAttackDamage1;
+    public float heavyDamage1;
     public float heavyKnockback1;
-    public float heavyAttackDamage2;
+    public float heavyCooldown1;
+    public float heavyDamage2;
     public float heavyKnockback2;
-    public float heavyAttackDamage3;
+    public float heavyCooldown2;
+    public float heavyDamage3;
     public float heavyKnockback3;
-    public float heavyAttackStartUp;
-    public float heavyAttackCooldown;
+    public float heavyCooldown3;
+    public float heavyStartUp;
 
 }
