@@ -19,4 +19,7 @@ public class PlayerValues : ScriptableObject
     public float dodgeSpeed;
     public float dodgeCooldown;
 
+    [Header("Misc.")]
+    public AudioClip runningSFX;
+
 }

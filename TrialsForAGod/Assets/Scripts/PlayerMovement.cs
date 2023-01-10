@@ -82,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(desiredDirection.x, 0, desiredDirection.z)), Time.deltaTime * faceRotationSpeed);
             if(!bIsRunning && !bDodge && !GetComponent<PlayerAttack>().bIsAttacking)
             {
+                PlaySound(playerVal.runningSFX);
                 playerAnim.SetTrigger("running");
                 bIsRunning = true;
             }
@@ -124,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             playerAnim.SetTrigger("timer");
+            GetComponent<AudioSource>().Stop();
         }
         bDodge = false;
         speed = playerVal.playerSpeed;
@@ -137,6 +139,11 @@ public class PlayerMovement : MonoBehaviour
         pActions.PlayerControls.Dodge.started += Dodge;
     }
 
+    public void PlaySound(AudioClip currSound)
+    {
+        GetComponent<AudioSource>().clip = currSound;
+        GetComponent<AudioSource>().Play();
+    }
     //to lock and unlock player movement
     public void Lock()
     {

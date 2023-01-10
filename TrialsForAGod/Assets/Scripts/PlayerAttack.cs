@@ -116,6 +116,7 @@ public class PlayerAttack : MonoBehaviour
                 currentAttackCooldown = weaponVal.lightCooldown1;
                 playerAnim.SetTrigger("light1");
                 //Debug.Log(attackValue + " light");
+                PlaySound(weaponVal.lightSound1);
             }
             else if (attackValue == 2)
             {
@@ -125,6 +126,7 @@ public class PlayerAttack : MonoBehaviour
                 currentAttackCooldown = weaponVal.lightCooldown2;
                 playerAnim.SetTrigger("light2");
                 //Debug.Log(attackValue + " light");
+                PlaySound(weaponVal.lightSound2);
             }
             else if (attackValue == 3)
             {
@@ -134,6 +136,7 @@ public class PlayerAttack : MonoBehaviour
                 currentAttackCooldown = weaponVal.lightCooldown3;
                 playerAnim.SetTrigger("light3");
                 //Debug.Log(attackValue + " light");
+                PlaySound(weaponVal.lightSound3);
             }
 
         }
@@ -182,6 +185,7 @@ public class PlayerAttack : MonoBehaviour
                 currentAttackCooldown = weaponVal.heavyCooldown1;
                 playerAnim.SetTrigger("heavy1");
                 //Debug.Log(attackValue + " heavy");
+                PlaySound(weaponVal.heavySound1);
             }
             else if (attackValue == 2)
             {
@@ -191,6 +195,7 @@ public class PlayerAttack : MonoBehaviour
                 currentAttackCooldown = weaponVal.heavyCooldown2;
                 playerAnim.SetTrigger("heavy2");
                 //Debug.Log(attackValue + " heavy");
+                PlaySound(weaponVal.heavySound2);
             }
             else if (attackValue == 3)
             {
@@ -200,6 +205,7 @@ public class PlayerAttack : MonoBehaviour
                 currentAttackCooldown = weaponVal.heavyCooldown3;
                 playerAnim.SetTrigger("heavy3");
                 //Debug.Log(attackValue + " heavy");
+                PlaySound(weaponVal.heavySound3);
             }
 
         }
@@ -240,6 +246,11 @@ public class PlayerAttack : MonoBehaviour
         playerAnim.speed = animDefaultSpeed;
     }
 
+    public void PlaySound(AudioClip currSound)
+    {
+        GetComponent<AudioSource>().clip = currSound;
+        GetComponent<AudioSource>().Play();
+    }
     //to lock and unlock player attack
     public void Lock()
     {
