@@ -8,6 +8,7 @@ public class PlayerValues : ScriptableObject
     [Header ("Player Info")]
     public string playerName;
     public Color playerColor;
+    public Material playerBaseMaterial;
 
     [Header("Player Base Stats")]
     public float playerMaxHealth;

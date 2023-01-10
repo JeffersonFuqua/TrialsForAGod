@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
 
     private float maxHealth;
     public float currentHealth;
+    public SkinnedMeshRenderer playerSkin;
+    public Material takeDamage;
     public bool bInvincible;
     public bool bDead;
 
@@ -40,12 +42,26 @@ public class PlayerHealth : MonoBehaviour
 
         
     }
+    //recieved damage
+    public void SwitchMaterial(bool redOn)
+    {
+        if (redOn)
+        {
+            playerSkin.material = takeDamage;
+        }
+        else
+        {
+            playerSkin.material = playerVal.playerBaseMaterial;
+        }
+    }
     IEnumerator playerRecievedKnockback(Vector3 attackOrgin)
     {
         GetComponent<PlayerMovement>().Lock();
         GetComponent<PlayerAttack>().Lock();
         rb.AddForce(attackOrgin, ForceMode.Impulse);
+        SwitchMaterial(true);
         yield return new WaitForSeconds(0.4f);
+        SwitchMaterial(false);
         rb.velocity = Vector3.zero;
         GetComponent<PlayerMovement>().Unlock();
         GetComponent<PlayerAttack>().Unlock();

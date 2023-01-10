@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
     private Vector3 desiredDirection;
-    private float speed;
+    [HideInInspector]public float speed;
     //private MeshRenderer playerColor;
 
     private float faceRotationSpeed = 8;

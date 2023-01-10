@@ -79,6 +79,7 @@ public class EnemyHealth : MonoBehaviour
         if(other.gameObject.layer == LayerMask.NameToLayer("PlayerHitBox") && !bInvincible)
         {
             player = other.transform.root;
+            player.GetComponent<PlayerAttack>().PlayerHitStop();
             //applies knockback
             recievedKnockback = player.GetComponent<PlayerAttack>().currentAttackKnockback;
             difference = transform.position - player.position;
