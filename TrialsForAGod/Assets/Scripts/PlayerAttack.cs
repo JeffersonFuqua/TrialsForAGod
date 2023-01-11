@@ -238,11 +238,20 @@ public class PlayerAttack : MonoBehaviour
     }
     IEnumerator hitStopTimer()
     {
-        playerAnim.speed = 0;
-        hitStopAddition = 0.3f;
-        yield return new WaitForSeconds(0.07f);
-        hitStopAddition = 0;
-        playerAnim.speed = animDefaultSpeed;
+        float pauseLength = 0;
+
+        Time.timeScale = 0;
+        while(pauseLength < 0.1f)
+        {
+            yield return new WaitForEndOfFrame();
+            pauseLength += Time.unscaledDeltaTime;
+        }
+        Time.timeScale = 1;
+        //playerAnim.speed = 0;
+        //hitStopAddition = 0.3f;        
+        //yield return new WaitForSeconds(0.07f);
+        //hitStopAddition = 0;
+        //playerAnim.speed = animDefaultSpeed;
     }
 
     public void PlaySound(AudioClip currSound)
