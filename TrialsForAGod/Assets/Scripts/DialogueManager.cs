@@ -67,6 +67,9 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueSystem dialogue)
     {
+        //audioClip
+        GetComponent<AudioSource>().clip = dialogue.conversation[iName].audioEmotion;
+        GetComponent<AudioSource>().Play();
         //fills sb with the name and replaces it with the saved player name
         if(dialogue.conversation[iName].charName == "")
         {
