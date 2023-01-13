@@ -92,7 +92,8 @@ public class EnemyHealth : MonoBehaviour
             lookVector.y = GetComponent<EnemyAI>().aimTool.position.y;
             Quaternion rot = Quaternion.LookRotation(lookVector);
             GetComponent<EnemyAI>().aimTool.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
-            StartCoroutine(hitMarkerToggle());
+            hitMarker.GetComponent<ParticleSystem>().Play();
+            //StartCoroutine(hitMarkerToggle());
 
         }
 
