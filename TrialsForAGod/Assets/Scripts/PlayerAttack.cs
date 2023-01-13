@@ -9,12 +9,12 @@ public class PlayerAttack : MonoBehaviour
     PlayerActions pActions;
     private PlayerValues playerVal;
     private Weapon weaponVal;
-    public GameObject lineRender;
+    public TrailRenderer lineRender;
 
     [HideInInspector]public int attackValue;
     //time if no buttons are pressed to reset the value to 0 to start chain over again
     private float attackValueReset;
-    private float attackChainTimer = 0.5f;
+    private float attackChainTimer = 0.3f;
     [HideInInspector] public bool bIsAttacking;
     [HideInInspector] public bool bAttackChain;
     [HideInInspector] public float currentAttackDamage;
@@ -54,7 +54,7 @@ public class PlayerAttack : MonoBehaviour
         playerAnim = GetComponent<PlayerValueHolder>().playerAnim;
         animDefaultSpeed = playerAnim.speed;
 
-        lineRender.SetActive(false);
+        lineRender.enabled = false;
     }
 
     private void Update()
@@ -100,7 +100,6 @@ public class PlayerAttack : MonoBehaviour
         pActions.PlayerControls.HeavyAttack.performed -= PlayerHeavyAttack;
         bIsAttacking = true;
 
-        lineRender.SetActive(true);
         //reset timer when called
         bAttackChain = false;
         attackValueReset = attackChainTimer;
@@ -143,6 +142,7 @@ public class PlayerAttack : MonoBehaviour
 
         yield return new WaitForSeconds(weaponVal.lightStartUp + hitStopAddition);
 
+        lineRender.enabled = true;
         StartCoroutine(lightAttackCooldown());
 
         if (attackValue >= 3)
@@ -156,7 +156,7 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(currentAttackCooldown + hitStopAddition);
         //sets speed back to normal after attack is done
         GetComponent<PlayerMovement>().speed = playerVal.playerSpeed;
-        lineRender.SetActive(false);
+        lineRender.enabled = false;
         bAttackChain = true;
         bIsAttacking = false;
         pActions.PlayerControls.LightAttack.performed += PlayerLightAttack;
@@ -168,8 +168,6 @@ public class PlayerAttack : MonoBehaviour
         pActions.PlayerControls.LightAttack.performed -= PlayerLightAttack;
         pActions.PlayerControls.HeavyAttack.performed -= PlayerHeavyAttack;
         bIsAttacking = true;
-
-        lineRender.SetActive(true);
 
         bAttackChain = false;
         attackValueReset = attackChainTimer;
@@ -212,6 +210,7 @@ public class PlayerAttack : MonoBehaviour
 
         yield return new WaitForSeconds(weaponVal.heavyStartUp + hitStopAddition);
 
+        lineRender.enabled = true;
         StartCoroutine(heavyAttackCooldown());
 
         if (attackValue >= 3)
@@ -226,7 +225,7 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(currentAttackCooldown + hitStopAddition);
         //sets speed back to normal after attack is done
         GetComponent<PlayerMovement>().speed = playerVal.playerSpeed;
-        lineRender.SetActive(false);
+        lineRender.enabled = false;
         bAttackChain = true;
         bIsAttacking = false;
         pActions.PlayerControls.HeavyAttack.performed += PlayerHeavyAttack;
@@ -239,11 +238,20 @@ public class PlayerAttack : MonoBehaviour
     }
     IEnumerator hitStopTimer()
     {
-        playerAnim.speed = 0;
-        hitStopAddition = 0.3f;
-        yield return new WaitForSeconds(0.1f);
-        hitStopAddition = 0;
-        playerAnim.speed = animDefaultSpeed;
+        float pauseLength = 0;
+
+        Time.timeScale = 0;
+        while(pauseLength < 0.1f)
+        {
+            yield return new WaitForEndOfFrame();
+            pauseLength += Time.unscaledDeltaTime;
+        }
+        Time.timeScale = 1;
+        //playerAnim.speed = 0;
+        //hitStopAddition = 0.3f;        
+        //yield return new WaitForSeconds(0.07f);
+        //hitStopAddition = 0;
+        //playerAnim.speed = animDefaultSpeed;
     }
 
     public void PlaySound(AudioClip currSound)
