@@ -17,6 +17,7 @@ public class EnemyProjHealth : MonoBehaviour
     private float recievedKnockback;
     private Vector3 difference;
     private Rigidbody rb;
+    public GameObject hitMarker;
 
     private Transform player;
 
@@ -91,6 +92,12 @@ public class EnemyProjHealth : MonoBehaviour
             difference.y = 0;
             difference = difference.normalized * recievedKnockback;
             UpdateHealth(other.transform.root.GetComponent<PlayerAttack>().currentAttackDamage);
+
+            Vector3 lookVector = player.transform.position - GetComponent<EnemyAIProj>().aimTool.position;
+            lookVector.y = GetComponent<EnemyAIProj>().aimTool.position.y;
+            Quaternion rot = Quaternion.LookRotation(lookVector);
+            GetComponent<EnemyAIProj>().aimTool.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
+            hitMarker.GetComponent<ParticleSystem>().Play();
         }
 
     }

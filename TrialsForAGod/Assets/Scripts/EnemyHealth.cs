@@ -69,6 +69,7 @@ public class EnemyHealth : MonoBehaviour
             GetComponent<MeshRenderer>().material = enemyValues.baseMaterial;
         }
     }
+
     public void PlaySound(AudioClip currSound)
     {
         GetComponent<AudioSource>().clip = currSound;
