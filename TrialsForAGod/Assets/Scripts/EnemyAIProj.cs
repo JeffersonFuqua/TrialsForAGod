@@ -8,7 +8,7 @@ public class EnemyAIProj : MonoBehaviour
 
     private GameObject player;
     public GameObject noticeObject;
-
+    public Transform aimTool;
 
     public bool bNotice;
     //for exclimation mark
