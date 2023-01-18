@@ -18,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
     private float recievedKnockback;
     private Vector3 difference;
     private Rigidbody rb;
+    public GameObject hitMarker;
 
     private Transform player;
 
@@ -86,6 +87,14 @@ public class EnemyHealth : MonoBehaviour
             difference.y = 0;
             difference = difference.normalized * recievedKnockback;
             UpdateHealth(other.transform.root.GetComponent<PlayerAttack>().currentAttackDamage);
+
+            Vector3 lookVector = GetComponent<EnemyAI>().aimTool.position - player.transform.position;
+            lookVector.y = GetComponent<EnemyAI>().aimTool.position.y;
+            Quaternion rot = Quaternion.LookRotation(lookVector);
+            GetComponent<EnemyAI>().aimTool.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
+            hitMarker.GetComponent<ParticleSystem>().Play();
+            //StartCoroutine(hitMarkerToggle());
+
         }
 
     }
@@ -106,6 +115,13 @@ public class EnemyHealth : MonoBehaviour
         GetComponent<EnemyAI>().bIsStunned = true;
         yield return new WaitForSeconds(sTime);
         GetComponent<EnemyAI>().bIsStunned = false;
+    }
+
+    IEnumerator hitMarkerToggle()
+    {
+        hitMarker.SetActive(true);
+        yield return new WaitForSeconds(0.75f);
+        hitMarker.SetActive(false);
     }
 
     public void Die()

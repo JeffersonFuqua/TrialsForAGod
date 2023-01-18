@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dodge(InputAction.CallbackContext c)
     {
-        if ((pActions.PlayerControls.Movement.ReadValue<Vector2>().x != 0 || pActions.PlayerControls.Movement.ReadValue<Vector2>().y != 0))
+        if ((pActions.PlayerControls.Movement.ReadValue<Vector2>().x != 0 || pActions.PlayerControls.Movement.ReadValue<Vector2>().y != 0) && !GetComponent<PlayerAttack>().bIsAttacking)
         {
             bDodge = true;
             StartCoroutine(dodgeCooldown());

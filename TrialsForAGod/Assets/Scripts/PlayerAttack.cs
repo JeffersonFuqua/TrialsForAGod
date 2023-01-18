@@ -241,7 +241,7 @@ public class PlayerAttack : MonoBehaviour
         float pauseLength = 0;
 
         Time.timeScale = 0;
-        while(pauseLength < 0.1f)
+        while(pauseLength < 0.05f)
         {
             yield return new WaitForEndOfFrame();
             pauseLength += Time.unscaledDeltaTime;
