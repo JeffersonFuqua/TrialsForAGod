@@ -5,10 +5,10 @@ using UnityEngine;
 public class PickUps : MonoBehaviour
 {
     public float amount;
-    public float duration;
     public int type;
     public GameObject player;
     public PlayerHealth pHealth;
+    public Canvas hud;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,11 +29,11 @@ public class PickUps : MonoBehaviour
     }
     private void Heal(float gain)
     {
-        pHealth.GainHealth(gain);
-        Debug.Log("Healing");
+       // pHealth.GainHealth(gain);
+        Debug.Log("Healed");
     }
     private void Money(float income)
     {
-
+        Debug.Log("Earned");
     }
 }
