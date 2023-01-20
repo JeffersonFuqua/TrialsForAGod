@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PickUps : MonoBehaviour
 {
     public float amount;
     public int type;
     public GameObject player;
-    public PlayerHealth pHealth;
-    public Canvas hud;
+    private PlayerHealth pHealth;
+
+    public static Action<float> UpdateCash = delegate { };
+    public static Action<float> UpdateHealth = delegate { };
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,7 +24,7 @@ public class PickUps : MonoBehaviour
                     this.gameObject.SetActive(false);
                     break;
                 case 1:
-                    Money(amount);
+                    Money();
                     this.gameObject.SetActive(false);
                     break;
             }
@@ -29,11 +32,11 @@ public class PickUps : MonoBehaviour
     }
     private void Heal(float gain)
     {
-       // pHealth.GainHealth(gain);
-        Debug.Log("Healed");
+        
+        UpdateHealth(amount);
     }
-    private void Money(float income)
+    public void Money()
     {
-        Debug.Log("Earned");
+        UpdateCash(amount);
     }
 }

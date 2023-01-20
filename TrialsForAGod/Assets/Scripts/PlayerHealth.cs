@@ -28,6 +28,15 @@ public class PlayerHealth : MonoBehaviour
         playerHealthBar.value = currentHealth;
         rb = GetComponent<Rigidbody>();
     }
+    private void OnEnable()
+    {
+        PickUps.UpdateHealth += GainHealth;
+    }
+
+    private void OnDisable()
+    {
+        PickUps.UpdateHealth -= GainHealth;   
+    }
 
     public void TakeDamageAndKnockback(float damage, Vector3 attackOrigin)
     {
