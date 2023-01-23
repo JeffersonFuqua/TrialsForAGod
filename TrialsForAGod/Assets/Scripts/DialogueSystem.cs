@@ -12,7 +12,7 @@ public struct Dialogue
 {
     public string charName;
     public Color charColor;
-    public enum EmotionState { neutral, happy, dismissive, angry, flirty };
+    public enum EmotionState { neutral, happy, dismissive, angry, flirty, extra };
     public EmotionState emotionOne, emotionTwo;
     public AudioClip audioEmotion;
     [TextArea(5, 10)]
