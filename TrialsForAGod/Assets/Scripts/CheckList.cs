@@ -154,5 +154,10 @@ public class CheckList : MonoBehaviour
                 listImages[3].texture = control.chain;
             }
         }
+        if(x >= toDoList.Length)
+        {
+            listCanvas.SetActive(false);
+            bFin = true;
+        }
     }
 }

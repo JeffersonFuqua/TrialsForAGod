@@ -19,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
     private Vector3 difference;
     private Rigidbody rb;
     public GameObject hitMarker;
+    public GameObject overheadLight;
 
     private Transform player;
 
@@ -133,6 +134,7 @@ public class EnemyHealth : MonoBehaviour
     IEnumerator deathDelay()
     {
         PlaySound(enemyValues.deathSound);
+        
         if (TryGetComponent<EnemyAI>(out var enemyAI))
         {
             GetComponent<EnemyAI>().enabled = false;
@@ -141,12 +143,14 @@ public class EnemyHealth : MonoBehaviour
         {
             GetComponent<EnemyAIProj>().enabled = false;
         }
-        
-        
+
+        overheadLight.SetActive(false);
+        /*
         for(int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }
+        */
         yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
 

@@ -10,5 +10,5 @@ public class SpeakerValues : ScriptableObject
     public Color speakerColor;
 
     [Header("Images")]
-    public Texture angry, flirty, happy, neutral, dismissive;
+    public Texture angry, flirty, happy, neutral, dismissive, extra;
 }

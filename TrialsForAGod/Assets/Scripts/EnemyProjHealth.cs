@@ -18,6 +18,7 @@ public class EnemyProjHealth : MonoBehaviour
     private Vector3 difference;
     private Rigidbody rb;
     public GameObject hitMarker;
+    public GameObject overheadLight;
 
     private Transform player;
 
@@ -140,11 +141,13 @@ public class EnemyProjHealth : MonoBehaviour
             GetComponent<EnemyAIProj>().enabled = false;
         }
 
-
+        overheadLight.SetActive(false);
+        /*
         for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }
+        */
         yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
 
