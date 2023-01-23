@@ -268,6 +268,13 @@ public class DialogueManager : MonoBehaviour
             if (dialogue.conversation[iName].speakerCount == 2)
                 leftPortrait.texture = speakerOneSO.flirty;
         }
+        else if (dialogue.conversation[iName].emotionOne == Dialogue.EmotionState.extra)
+        {
+            if (dialogue.conversation[iName].speakerCount == 1)
+                middlePortrait.texture = speakerOneSO.extra;
+            if (dialogue.conversation[iName].speakerCount == 2)
+                leftPortrait.texture = speakerOneSO.extra;
+        }
         if(dialogue.conversation[iName].speakerCount == 2)
         {
             if (dialogue.conversation[iName].emotionTwo == Dialogue.EmotionState.happy)
@@ -289,6 +296,10 @@ public class DialogueManager : MonoBehaviour
             else if (dialogue.conversation[iName].emotionTwo == Dialogue.EmotionState.flirty)
             {
                 rightPortrait.texture = speakerTwoSo.flirty;
+            }
+            else if (dialogue.conversation[iName].emotionTwo == Dialogue.EmotionState.extra)
+            {
+                rightPortrait.texture = speakerTwoSo.extra;
             }
         }
 

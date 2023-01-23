@@ -37,6 +37,7 @@ public class PickUps : MonoBehaviour
     }
     public void Money()
     {
+        Debug.Log("Money");
         UpdateCash(amount);
     }
 }
