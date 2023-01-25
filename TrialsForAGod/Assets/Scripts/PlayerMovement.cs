@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator playerAnim;
     private bool bDodge;
+    public GameObject dodgeIcon;
 
 
     private void Start()
@@ -108,6 +109,8 @@ public class PlayerMovement : MonoBehaviour
     }
     IEnumerator dodgeAction()
     {
+        dodgeIcon.SetActive(false);
+
         speed = playerVal.dodgeSpeed;
         gameObject.layer = LayerMask.NameToLayer("Dodge");
         GetComponent<PlayerHealth>().bInvincible = true;
@@ -136,6 +139,7 @@ public class PlayerMovement : MonoBehaviour
     {
         pActions.PlayerControls.Dodge.started -= Dodge;
         yield return new WaitForSeconds(playerVal.dodgeCooldown);
+        dodgeIcon.SetActive(true);
         pActions.PlayerControls.Dodge.started += Dodge;
     }
 
