@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject continueButton;
     public GameObject nextButton;
 
+    public Volume volume;
 
     private void OnEnable()
     {
@@ -48,6 +51,12 @@ public class PauseMenu : MonoBehaviour
             {
                 GetComponent<DisableDialogue>().DisableDiaCanvas();
             }
+
+            if(volume.profile.TryGet<DepthOfField>(out DepthOfField dof))
+            {
+                dof.focalLength.Override(300);
+            }
+
             pauseMenu.SetActive(true);
             bIsPaused = true;
             Time.timeScale = 0;
@@ -58,6 +67,11 @@ public class PauseMenu : MonoBehaviour
             {
                 GetComponent<DisableDialogue>().EnableDialogue();
                 eSystem.GetComponent<EventSystem>().SetSelectedGameObject(nextButton, null);
+            }
+
+            if (volume.profile.TryGet<DepthOfField>(out DepthOfField dof))
+            {
+                dof.focalLength.Override(1);
             }
             Time.timeScale = 1;
             pauseMenu.SetActive(false);
