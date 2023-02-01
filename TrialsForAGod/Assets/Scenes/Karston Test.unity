@@ -1067,11 +1067,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
---- !u!1 &868525364 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7993033399419085724, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
-  m_PrefabInstance: {fileID: 868525363}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &868525365 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3602310240307559905, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
@@ -3221,7 +3216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f2c733833072ab4e824240393aaef73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 868525364}
+  pauseMenu: {fileID: 0}
   playerHealthBar: {fileID: 868525365}
   currentHealth: 100
   playerSkin: {fileID: 0}
