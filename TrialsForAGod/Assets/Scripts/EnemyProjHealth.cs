@@ -59,7 +59,10 @@ public class EnemyProjHealth : MonoBehaviour
         }
         else
         {
-            PlaySound(enemyProjVal.tookDamageSound);
+            int i;
+            i = Random.Range(0, enemyProjVal.tookDamageSound.Count);
+            
+            PlaySound(enemyProjVal.tookDamageSound[i]);
         }
     }
 

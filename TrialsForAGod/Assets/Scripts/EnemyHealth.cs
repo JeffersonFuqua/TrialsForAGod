@@ -55,7 +55,9 @@ public class EnemyHealth : MonoBehaviour
         }
         else
         {
-            PlaySound(enemyValues.tookDamageSound);
+            int i;
+            i = Random.Range(0, enemyValues.tookDamageSound.Count);
+            PlaySound(enemyValues.tookDamageSound[i]);
         }
     }
 
