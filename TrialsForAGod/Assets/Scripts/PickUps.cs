@@ -10,6 +10,9 @@ public class PickUps : MonoBehaviour
     public GameObject player;
     private PlayerHealth pHealth;
 
+    public AudioClip[] aPickup;
+    private int irand;
+
     public static Action<float> UpdateCash = delegate { };
     public static Action<float> UpdateHealth = delegate { };
 
@@ -17,19 +20,20 @@ public class PickUps : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            switch(type)
+            irand = UnityEngine.Random.Range(0, aPickup.Length);
+            GetComponent<AudioSource>().clip = aPickup[irand];
+            GetComponent<AudioSource>().Play();
+            new WaitForSeconds(1);
+            switch (type)
             {
                 case 0:
                     Heal(amount);
-                    //this.gameObject.SetActive(false);
-                    Destroy(this.gameObject);
                     break;
                 case 1:
                     Money();
-                    //this.gameObject.SetActive(false);
-                    Destroy(this.gameObject);
                     break;
             }
+            StartCoroutine(nameof(PickupDelay));
         }
     }
     private void Heal(float gain)
@@ -39,5 +43,12 @@ public class PickUps : MonoBehaviour
     public void Money()
     {
         UpdateCash(amount);
+    }
+
+    IEnumerator PickupDelay()
+    {
+        this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        yield return new WaitForSeconds(1);
+        Destroy(this.gameObject);
     }
 }
