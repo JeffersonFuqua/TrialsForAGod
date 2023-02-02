@@ -21,23 +21,23 @@ public class PickUps : MonoBehaviour
             {
                 case 0:
                     Heal(amount);
-                    this.gameObject.SetActive(false);
+                    //this.gameObject.SetActive(false);
+                    Destroy(this.gameObject);
                     break;
                 case 1:
                     Money();
-                    this.gameObject.SetActive(false);
+                    //this.gameObject.SetActive(false);
+                    Destroy(this.gameObject);
                     break;
             }
         }
     }
     private void Heal(float gain)
     {
-        
         UpdateHealth(amount);
     }
     public void Money()
     {
-        Debug.Log("Money");
         UpdateCash(amount);
     }
 }
