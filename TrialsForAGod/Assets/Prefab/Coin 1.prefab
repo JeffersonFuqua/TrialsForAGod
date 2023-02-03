@@ -151,6 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871e97f6b6898274ab158ba7547918eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fLocalRot: 90
+  rotSpeed: 10
 --- !u!114 &4966742532240826675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,10 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d42e31588fb0f449cc2806b6aa59a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aPickup:
-  - {fileID: 8300000, guid: e57650ceb7d58a14bbfa1d0de1d9e9dc, type: 3}
-  - {fileID: 8300000, guid: 209bcc78a3099a943b57819113a9dab6, type: 3}
-  - {fileID: 8300000, guid: 5ba92862f7308c347b1d1b093a2256f3, type: 3}
 --- !u!82 &7590033449564623050
 AudioSource:
   m_ObjectHideFlags: 0
