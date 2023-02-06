@@ -23,6 +23,7 @@ public class DialogueManager : MonoBehaviour
     public SpeakerValues speakerOneSO, speakerTwoSo;
     public EventSystem ES;
     public GameObject player;
+    public AudioSource aMainAudio, aOtherAudio;
 
     //speaker value
     [HideInInspector]
@@ -68,8 +69,12 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(DialogueSystem dialogue)
     {
         //audioClip
-        GetComponent<AudioSource>().clip = dialogue.conversation[iName].audioEmotion;
-        GetComponent<AudioSource>().Play();
+       // GetComponent<AudioSource>().clip = dialogue.conversation[iName].audioEmotion;
+        aMainAudio.clip = dialogue.conversation[iName].audioEmotion;
+        aOtherAudio.clip = dialogue.conversation[iName].audioEmotionOther;
+      //  GetComponent<AudioSource>().Play();
+        aMainAudio.Play();
+        aOtherAudio.Play();
         //fills sb with the name and replaces it with the saved player name
         if(dialogue.conversation[iName].charName == "")
         {
