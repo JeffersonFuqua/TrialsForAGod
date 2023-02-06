@@ -38,13 +38,20 @@ public class PlayerHealth : MonoBehaviour
         PickUps.UpdateHealth -= GainHealth;   
     }
 
-    public void TakeDamageAndKnockback(float damage, Vector3 attackOrigin)
+    public void TakeDamageAndKnockback(float damage, Vector3 attackOrigin, bool bNoKnockback)
     {
         if (bInvincible || bDead)
             return;
 
-        StartCoroutine(invincible(1));
-        StartCoroutine(playerRecievedKnockback(attackOrigin));
+        if(!bNoKnockback)
+        {
+            StartCoroutine(invincible(1));
+            StartCoroutine(playerRecievedKnockback(attackOrigin));
+        }
+        else
+        {
+            StartCoroutine(invincible(0.1f));
+        }
 
         currentHealth -= damage;
         playerHealthBar.value = currentHealth;

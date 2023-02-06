@@ -116,7 +116,7 @@ public class EnemyAI : MonoBehaviour
             difference = player.transform.position - transform.position;
             difference.y = player.transform.position.y;
             difference = difference.normalized * enemyValues.attackKnockback;
-            other.GetComponent<PlayerHealth>().TakeDamageAndKnockback(enemyValues.attackDamage, difference);
+            other.GetComponent<PlayerHealth>().TakeDamageAndKnockback(enemyValues.attackDamage, difference, false);
         }
     }
 

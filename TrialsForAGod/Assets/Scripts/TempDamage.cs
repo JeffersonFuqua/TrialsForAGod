@@ -15,7 +15,7 @@ public class TempDamage : MonoBehaviour
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            other.gameObject.GetComponent<PlayerHealth>().TakeDamageAndKnockback(damage, new Vector3(20, 0, 20));
+            other.gameObject.GetComponent<PlayerHealth>().TakeDamageAndKnockback(damage, new Vector3(20, 0, 20), false);
         }
     }
 }

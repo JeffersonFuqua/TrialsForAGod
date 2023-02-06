@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Slime
   baseMaterial: {fileID: 5561349426305759274, guid: 4821642f1f0150844bdaa8ae7f416ee0, type: 3}
-  enemyMaxHealth: 50
-  enemySpeed: 3
+  enemyMaxHealth: 100
+  enemySpeed: 2
   attackDamage: 10
   attackStartUp: 0.3
   attackEndLag: 0.7
@@ -23,6 +23,7 @@ MonoBehaviour:
   attackKnockback: 5
   tempHitBoxDuration: 0.2
   doesNotAttack: 0
+  hasDeathAttack: 1
   idleSound: {fileID: 8300000, guid: fda0b67c109d3a049883924d21a65fd2, type: 3}
   attackSound: {fileID: 8300000, guid: fda0b67c109d3a049883924d21a65fd2, type: 3}
   tookDamageSound:
