@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3606750229187431506}
   - component: {fileID: 5619454318519242663}
   - component: {fileID: 2848788001830269602}
+  - component: {fileID: 5506761517278468305}
   m_Layer: 0
   m_Name: Heal
   m_TagString: Untagged
@@ -101,7 +102,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &3606750229187431506
 BoxCollider:
@@ -231,3 +232,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5506761517278468305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619454318519242662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871e97f6b6898274ab158ba7547918eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fLocalRot: 15
+  rotSpeed: 2

@@ -43,6 +43,7 @@ public class PickUps : MonoBehaviour
     public void Money()
     {
         UpdateCash(amount);
+        this.gameObject.GetComponent<Collider>().enabled = false;
     }
 
     IEnumerator PickupDelay()

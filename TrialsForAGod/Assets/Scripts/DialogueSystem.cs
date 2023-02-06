@@ -14,7 +14,7 @@ public struct Dialogue
     public Color charColor;
     public enum EmotionState { neutral, happy, dismissive, angry, flirty, extra };
     public EmotionState emotionOne, emotionTwo;
-    public AudioClip audioEmotion;
+    public AudioClip audioEmotion, audioEmotionOther;
     [TextArea(5, 10)]
     public string[] sentences;
     public bool choice;

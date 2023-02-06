@@ -5,10 +5,12 @@ using UnityEngine;
 public class CoinSpin : MonoBehaviour
 {
     private float rotRate;
+    public float fLocalRot;
+    public float rotSpeed;
 
     void FixedUpdate()
     {
-        rotRate += 10;
-        transform.rotation = Quaternion.Euler(new Vector3(90, rotRate, 0));
+        rotRate += rotSpeed;
+        transform.rotation = Quaternion.Euler(new Vector3(fLocalRot, rotRate, 0));
     }
 }
