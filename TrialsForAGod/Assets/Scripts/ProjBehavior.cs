@@ -27,7 +27,7 @@ public class ProjBehavior : MonoBehaviour
             difference = difference.normalized * projVal.projKnocback;
             if (!other.GetComponent<PlayerHealth>().bInvincible)
             {
-                other.GetComponent<PlayerHealth>().TakeDamageAndKnockback(projVal.projDamage, difference);
+                other.GetComponent<PlayerHealth>().TakeDamageAndKnockback(projVal.projDamage, difference, false);
                 //i like to delete things at the end of the frame to prevent any inconsistancies with deleting things at the same time as funtions running
                 StartCoroutine(deleteProj());
 

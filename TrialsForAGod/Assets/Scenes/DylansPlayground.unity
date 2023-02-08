@@ -794,7 +794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4832888060312888540, guid: f3ea3df6e9384be4a8d62488399bdd7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.126125
+      value: 22.57
       objectReference: {fileID: 0}
     - target: {fileID: 4832888060312888540, guid: f3ea3df6e9384be4a8d62488399bdd7a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -802,7 +802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4832888060312888540, guid: f3ea3df6e9384be4a8d62488399bdd7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.2065835
+      value: 3.33
       objectReference: {fileID: 0}
     - target: {fileID: 4832888060312888540, guid: f3ea3df6e9384be4a8d62488399bdd7a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1084,6 +1084,7 @@ GameObject:
   - component: {fileID: 1845427453}
   - component: {fileID: 1845427452}
   - component: {fileID: 1845427458}
+  - component: {fileID: 1845427459}
   m_Layer: 8
   m_Name: Slime
   m_TagString: Untagged
@@ -1162,7 +1163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845427447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.56, y: 0.5911509, z: -2.32}
+  m_LocalPosition: {x: 18.003874, y: 0.5911509, z: 1.2165835}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1359,6 +1360,20 @@ MonoBehaviour:
   noticeObject: {fileID: 1661633490}
   enemySpeed: 0
   bIsStunned: 0
+--- !u!114 &1845427459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845427447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3303d58f9ab904bbbe83df810b60e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slimeDeath: 1
+  slimeObject: {fileID: 1239060596128066817, guid: 6b32f478cc05bbb4e99531195b547143, type: 3}
 --- !u!96 &1851337780 stripped
 TrailRenderer:
   m_CorrespondingSourceObject: {fileID: 6252631900322090912, guid: 9d8db0bfe1f189a4a8067f4bbe7f5daf, type: 3}

@@ -153,6 +153,10 @@ public class EnemyHealth : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(false);
         }
         */
+        if(enemyValues.hasDeathAttack)
+        {
+            GetComponent<DeathAttack>().HasDied();
+        }
         yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
 
