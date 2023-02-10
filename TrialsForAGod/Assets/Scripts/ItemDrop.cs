@@ -21,8 +21,11 @@ public class ItemDrop : MonoBehaviour
 
     public void DropItem()
     {
-        Instantiate(itemToDrop);
-        itemToDrop.transform.position = this.transform.position;
-        Debug.Log("Drop");
+        if(Random.Range(0, 100) < dropRate)
+        {
+            Instantiate(itemToDrop);
+            itemToDrop.transform.position = this.transform.position;
+            Debug.Log("Drop");
+        }
     }
 }
