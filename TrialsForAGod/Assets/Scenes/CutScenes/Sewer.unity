@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1432,6 +1432,10 @@ PrefabInstance:
       propertyPath: nextButton
       value: 
       objectReference: {fileID: 1232376517}
+    - target: {fileID: 4699376239120618117, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: aOtherAudio
+      value: 
+      objectReference: {fileID: 964282666}
     - target: {fileID: 4991364102837029355, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: blackScreen
       value: 
@@ -1569,6 +1573,11 @@ PrefabInstance:
 --- !u!1 &964282664 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7603230904559517079, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+  m_PrefabInstance: {fileID: 932852396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &964282666 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5178624432655518777, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
   m_PrefabInstance: {fileID: 932852396}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1232376517 stripped
