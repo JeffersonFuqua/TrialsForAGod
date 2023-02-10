@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -19,6 +21,8 @@ public class PlayerHealth : MonoBehaviour
     public bool bInvincible;
     public bool bDead;
 
+    public Volume volume;
+
     private void Start()
     {
         playerVal = GetComponent<PlayerValueHolder>().playerVal;
@@ -31,6 +35,13 @@ public class PlayerHealth : MonoBehaviour
     private void OnEnable()
     {
         PickUps.UpdateHealth += GainHealth;
+        if (currentHealth > 30)
+        {
+            if (volume.profile.TryGet<Vignette>(out Vignette vig))
+            {
+                vig.intensity.Override(0f);
+            }
+        }
     }
 
     private void OnDisable()
@@ -81,6 +92,13 @@ public class PlayerHealth : MonoBehaviour
         rb.velocity = Vector3.zero;
         GetComponent<PlayerMovement>().Unlock();
         GetComponent<PlayerAttack>().Unlock();
+        if(currentHealth <= 30)
+        {
+            if (volume.profile.TryGet<Vignette>(out Vignette vig))
+            {
+                vig.intensity.Override(0.5f);
+            }
+        }
         if (currentHealth <= 0)
         {
             bDead = true;
@@ -90,6 +108,12 @@ public class PlayerHealth : MonoBehaviour
     }
     IEnumerator playerDies()
     {
+       
+        if (volume.profile.TryGet<Vignette>(out Vignette vig))
+        {
+            vig.intensity.Override(0f);
+        }
+        
         GetComponent<Animator>().SetTrigger("dead");
 
         GetComponent<PlayerMovement>().Lock();
@@ -116,6 +140,13 @@ public class PlayerHealth : MonoBehaviour
         currentHealth += heal;
         playerHealthBar.value = currentHealth;
         Debug.Log("yum");
+        if (currentHealth > 30)
+        {
+            if (volume.profile.TryGet<Vignette>(out Vignette vig))
+            {
+                vig.intensity.Override(0f);
+            }
+        }
     }
 
 

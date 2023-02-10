@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class EnemyHealth : MonoBehaviour
     public GameObject overheadLight;
 
     private Transform player;
+
+    public static Action DropItem = delegate { };
 
     private void Start()
     {
@@ -56,7 +59,7 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             int i;
-            i = Random.Range(0, enemyValues.tookDamageSound.Count);
+            i = UnityEngine.Random.Range(0, enemyValues.tookDamageSound.Count);
             PlaySound(enemyValues.tookDamageSound[i]);
         }
     }
@@ -130,6 +133,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
+        DropItem();
         bDead = true;
         StartCoroutine(deathDelay());
     }
