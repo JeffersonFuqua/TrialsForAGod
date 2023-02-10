@@ -36049,6 +36049,10 @@ PrefabInstance:
       value: -89.880005
       objectReference: {fileID: 0}
     - target: {fileID: 2112716061759798168, guid: 9d8db0bfe1f189a4a8067f4bbe7f5daf, type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 1508585641}
+    - target: {fileID: 2112716061759798168, guid: 9d8db0bfe1f189a4a8067f4bbe7f5daf, type: 3}
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 2010451287}
@@ -40177,6 +40181,7 @@ MonoBehaviour:
     emotionOne: 0
     emotionTwo: 0
     audioEmotion: {fileID: 0}
+    audioEmotionOther: {fileID: 0}
     sentences:
     - How are you feeling?
     choice: 0
@@ -40191,6 +40196,7 @@ MonoBehaviour:
     emotionOne: 0
     emotionTwo: 0
     audioEmotion: {fileID: 0}
+    audioEmotionOther: {fileID: 0}
     sentences:
     - ...
     choice: 0
@@ -40205,6 +40211,7 @@ MonoBehaviour:
     emotionOne: 0
     emotionTwo: 0
     audioEmotion: {fileID: 0}
+    audioEmotionOther: {fileID: 0}
     sentences:
     - 'Who''s been feeding these rats? They get bigger every time. '
     choice: 0
@@ -40219,6 +40226,7 @@ MonoBehaviour:
     emotionOne: 0
     emotionTwo: 0
     audioEmotion: {fileID: 0}
+    audioEmotionOther: {fileID: 0}
     sentences:
     - This is the end of the game. Thanks for playing!
     - Please take our survey!
@@ -40871,6 +40879,8 @@ MonoBehaviour:
   speakerTwoSo: {fileID: 11400000, guid: bb6663bb9e2d3234092b3b0fa79462e3, type: 2}
   ES: {fileID: 2012057380}
   player: {fileID: 2142202081}
+  aMainAudio: {fileID: 0}
+  aOtherAudio: {fileID: 0}
   iName: 0
   afterChoiceVal: 0
   typeSpeed: 8.52
