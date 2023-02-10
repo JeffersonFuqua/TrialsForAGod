@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -305,7 +305,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2370376754193120582, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: m_Volume
-      value: 0.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.size
@@ -856,6 +856,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[9].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 895161e680802244190528ed612a96fa, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[9].speakerCount
       value: 1
       objectReference: {fileID: 0}
@@ -900,6 +904,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[17].audioEmotion
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[17].speakerCount
       value: 1
       objectReference: {fileID: 0}
@@ -911,6 +919,10 @@ PrefabInstance:
       propertyPath: conversation.Array.data[18].speakerCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[19].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 33099f750b2133c45bb0883284d45eab, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[19].speakerCount
       value: 1
@@ -944,6 +956,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[25].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 77b5b37ec6263914a9f577406aed09a8, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[25].speakerCount
       value: 1
       objectReference: {fileID: 0}
@@ -967,6 +983,34 @@ PrefabInstance:
       propertyPath: conversation.Array.data[28].speakerCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[4].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: 45b1a270b6c861e489b07812656e04fe, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[7].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: 77b5b37ec6263914a9f577406aed09a8, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[13].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: c9ea82d39772a1c4eac4a107426e5669, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[15].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: b4710a42026426c4abd35a414d6894c8, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[21].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: c07c2d94a2811ba43a050ad5ea2c0cf3, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[26].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: a7cbb0abda6464a4a81a00e369194d4e, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[28].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d3fcdd22e2f2244ebbf863022108c08, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[3].choices.Array.size
       value: 0
@@ -1707,7 +1751,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 51084f6da885c874385fd56815e96443, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
