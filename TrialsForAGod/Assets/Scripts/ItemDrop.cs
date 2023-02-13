@@ -8,7 +8,7 @@ public class ItemDrop : MonoBehaviour
 
     [Range (0, 100)]
     public float dropRate;
-
+    /*
     public void OnEnable()
     {
         EnemyHealth.DropItem += DropItem;
@@ -18,12 +18,12 @@ public class ItemDrop : MonoBehaviour
     {
         EnemyHealth.DropItem -= DropItem;
     }
-
+    */
     public void DropItem()
     {
         if(Random.Range(0, 100) < dropRate)
         {
-            GameObject g = Instantiate(itemToDrop);
+            Instantiate(itemToDrop);
             itemToDrop.transform.position = this.transform.position;
             if (itemToDrop != enabled)
                 itemToDrop.SetActive(true);
