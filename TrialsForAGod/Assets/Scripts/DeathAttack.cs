@@ -18,6 +18,6 @@ public class DeathAttack : MonoBehaviour
     public void SlimeDeath()
     {
         GameObject g = Instantiate(slimeObject);
-        g.transform.position = new Vector3(transform.position.x, -0.5f, transform.position.z);
+        g.transform.position = new Vector3(transform.position.x, 0.1f, transform.position.z);
     }
 }
