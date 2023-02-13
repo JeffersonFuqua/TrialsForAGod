@@ -62,6 +62,19 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             StartCoroutine(invincible(0.1f));
+            if (currentHealth <= 30)
+            {
+                if (volume.profile.TryGet<Vignette>(out Vignette vig))
+                {
+                    vig.intensity.Override(0.5f);
+                }
+            }
+            if (currentHealth <= 0)
+            {
+                bDead = true;
+                //StopAllCoroutines();
+                StartCoroutine(playerDies());
+            }
         }
 
         currentHealth -= damage;
