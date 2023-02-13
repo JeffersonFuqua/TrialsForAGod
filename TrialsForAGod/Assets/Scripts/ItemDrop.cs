@@ -23,8 +23,11 @@ public class ItemDrop : MonoBehaviour
     {
         if(Random.Range(0, 100) < dropRate)
         {
-            Instantiate(itemToDrop);
+            GameObject g = Instantiate(itemToDrop);
             itemToDrop.transform.position = this.transform.position;
+            if (itemToDrop != enabled)
+                itemToDrop.SetActive(true);
+
             Debug.Log("Drop");
         }
     }
