@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 9157266089425073978}
   - component: {fileID: 654355232475949209}
   - component: {fileID: 4951488890380540871}
+  - component: {fileID: 7486541413766197511}
   m_Layer: 0
   m_Name: BoneGater
   m_TagString: Untagged
@@ -425,6 +426,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7486541413766197511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221182509725243823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e935a5586ec744698adc615b5d95bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemToDrop: {fileID: 526066147689157335, guid: 4e80accc4672f6b4f9fbe1917386ed8d, type: 3}
+  dropRate: 75
 --- !u!1 &3227506649965851488
 GameObject:
   m_ObjectHideFlags: 0

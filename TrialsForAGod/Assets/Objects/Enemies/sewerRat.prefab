@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 4832888060312888536}
   - component: {fileID: 7988368502181168138}
   - component: {fileID: 4398248669678094285}
+  - component: {fileID: 1735972413947304082}
   m_Layer: 8
   m_Name: sewerRat
   m_TagString: Untagged
@@ -489,6 +490,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1735972413947304082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4832888060312888529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e935a5586ec744698adc615b5d95bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemToDrop: {fileID: 526066147689157335, guid: 4e80accc4672f6b4f9fbe1917386ed8d, type: 3}
+  dropRate: 75
 --- !u!1 &4832888060917569928
 GameObject:
   m_ObjectHideFlags: 0
