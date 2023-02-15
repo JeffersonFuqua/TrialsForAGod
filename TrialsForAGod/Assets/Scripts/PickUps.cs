@@ -39,6 +39,7 @@ public class PickUps : MonoBehaviour
     private void Heal(float gain)
     {
         UpdateHealth(amount);
+        this.gameObject.GetComponent<Collider>().enabled = false;
     }
     public void Money()
     {
@@ -48,6 +49,7 @@ public class PickUps : MonoBehaviour
 
     IEnumerator PickupDelay()
     {
+        Debug.Log("delayed");
         this.gameObject.GetComponent<MeshRenderer>().enabled = false;
         yield return new WaitForSeconds(1);
         Destroy(this.gameObject);

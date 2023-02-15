@@ -5135,6 +5135,7 @@ GameObject:
   - component: {fileID: 4420221952375788543}
   - component: {fileID: 7663221161838278924}
   - component: {fileID: 2249567455843319461}
+  - component: {fileID: 4210333719913297537}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -5341,6 +5342,7 @@ MonoBehaviour:
   takeDamage: {fileID: 2100000, guid: 89ca8168d79a2474886d7445e2292b13, type: 2}
   bInvincible: 0
   bDead: 0
+  volume: {fileID: 0}
 --- !u!114 &4217542179781184789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5460,6 +5462,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactVal: 0
+--- !u!114 &4210333719913297537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182824044689401265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c8e3fe73cd043449c9e285922c2885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5832621880323868971
 PrefabInstance:
   m_ObjectHideFlags: 0

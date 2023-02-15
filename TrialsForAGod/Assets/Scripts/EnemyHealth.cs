@@ -24,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
 
     private Transform player;
 
-    public static Action DropItem = delegate { };
+   // public static Action DropItem = delegate { };
 
     private void Start()
     {
@@ -133,7 +133,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        DropItem();
+        //DropItem();
+        this.gameObject.GetComponent<ItemDrop>().DropItem();
         bDead = true;
         StartCoroutine(deathDelay());
     }
