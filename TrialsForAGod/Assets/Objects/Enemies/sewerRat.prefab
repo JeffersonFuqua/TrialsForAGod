@@ -502,8 +502,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e935a5586ec744698adc615b5d95bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemToDrop: {fileID: 526066147689157335, guid: 4e80accc4672f6b4f9fbe1917386ed8d, type: 3}
-  dropRate: 100
+  commonDrop: {fileID: 526066147689157335, guid: 4e80accc4672f6b4f9fbe1917386ed8d, type: 3}
+  rareDrop: {fileID: 526066147689157335, guid: 4e80accc4672f6b4f9fbe1917386ed8d, type: 3}
+  dropAmountLow: 1
+  dropAmountHigh: 2
+  rareDropRate: 50
 --- !u!1 &4832888060917569928
 GameObject:
   m_ObjectHideFlags: 0

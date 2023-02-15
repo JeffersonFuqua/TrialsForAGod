@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class ItemDrop : MonoBehaviour
 {
-    public GameObject itemToDrop;
+    public GameObject commonDrop;
+    public GameObject rareDrop;
+
+    public int dropAmountLow, dropAmountHigh;
 
     [Range (0, 100)]
-    public float dropRate;
-    /*
-    public void OnEnable()
-    {
-        EnemyHealth.DropItem += DropItem;
-    }
-
-    public void OnDisable()
-    {
-        EnemyHealth.DropItem -= DropItem;
-    }
-    */
+    public float rareDropRate;
     public void DropItem()
     {
-        if(Random.Range(0, 100) < dropRate)
+        for(int dropLoop = 0; dropLoop < Random.Range(dropAmountLow, dropAmountHigh); dropLoop++)
         {
-            Instantiate(itemToDrop);
-            itemToDrop.transform.position = this.transform.position;
-            if (itemToDrop != enabled)
-                itemToDrop.SetActive(true);
-
-            Debug.Log("Drop");
+            Instantiate(commonDrop);
+            commonDrop.transform.position = this.transform.position;
+            commonDrop.transform.position = new Vector3(commonDrop.transform.position.x + Random.Range(-0.5f, 0.5f), commonDrop.transform.position.y, commonDrop.transform.position.z + Random.Range(-0.5f, 0.5f));
+            Debug.Log("We be droppin");
+            if (commonDrop != enabled)
+                commonDrop.SetActive(true);
+        }
+        if(Random.Range(0, 100) < rareDropRate)
+        {
+            Instantiate(rareDrop);
+            rareDrop.transform.position = this.transform.position;
+            if (rareDrop != enabled)
+                rareDrop.SetActive(true);
+            Debug.Log("Rare!");
         }
     }
 }
