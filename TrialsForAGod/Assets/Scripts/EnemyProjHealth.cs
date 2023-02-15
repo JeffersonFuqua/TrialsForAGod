@@ -129,6 +129,7 @@ public class EnemyProjHealth : MonoBehaviour
     {
         StopAllCoroutines();
         bDead = true;
+        this.gameObject.GetComponent<ItemDrop>().DropItem();
         StartCoroutine(deathDelay());
     }
 

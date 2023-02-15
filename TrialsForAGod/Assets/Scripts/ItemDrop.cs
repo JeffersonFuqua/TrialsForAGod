@@ -13,12 +13,13 @@ public class ItemDrop : MonoBehaviour
     public float rareDropRate;
     public void DropItem()
     {
-        for(int dropLoop = 0; dropLoop < Random.Range(dropAmountLow, dropAmountHigh); dropLoop++)
+        Debug.Log("We be droppin");
+        for (int dropLoop = 0; dropLoop < Random.Range(dropAmountLow, dropAmountHigh); dropLoop++)
         {
             Instantiate(commonDrop);
             commonDrop.transform.position = this.transform.position;
             commonDrop.transform.position = new Vector3(commonDrop.transform.position.x + Random.Range(-0.5f, 0.5f), commonDrop.transform.position.y, commonDrop.transform.position.z + Random.Range(-0.5f, 0.5f));
-            Debug.Log("We be droppin");
+            Debug.Log("Commoon...");
             if (commonDrop != enabled)
                 commonDrop.SetActive(true);
         }

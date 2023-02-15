@@ -24,8 +24,6 @@ public class EnemyHealth : MonoBehaviour
 
     private Transform player;
 
-   // public static Action DropItem = delegate { };
-
     private void Start()
     {
         enemyValues = GetComponent<EnemyValueHolder>().enemyValues;
