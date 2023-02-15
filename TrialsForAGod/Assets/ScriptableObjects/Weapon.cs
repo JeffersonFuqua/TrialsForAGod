@@ -33,10 +33,10 @@ public class Weapon : ScriptableObject
     public float heavyStartUp;
 
     [Header("Weopon Sounds")]
-    public AudioClip lightSound1;
-    public AudioClip lightSound2;
-    public AudioClip lightSound3;
-    public AudioClip heavySound1;
-    public AudioClip heavySound2;
-    public AudioClip heavySound3;
+    public List<AudioClip> lightSound1;
+    public List<AudioClip> lightSound2;
+    public List<AudioClip> lightSound3;
+    public List<AudioClip> heavySound1;
+    public List<AudioClip> heavySound2;
+    public List<AudioClip> heavySound3;
 }

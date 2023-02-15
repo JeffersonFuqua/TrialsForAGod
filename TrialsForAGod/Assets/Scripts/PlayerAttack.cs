@@ -115,7 +115,7 @@ public class PlayerAttack : MonoBehaviour
                 currentAttackCooldown = weaponVal.lightCooldown1;
                 playerAnim.SetTrigger("light1");
                 //Debug.Log(attackValue + " light");
-                PlaySound(weaponVal.lightSound1);
+                PlaySound(weaponVal.lightSound1[Random.Range(0, weaponVal.lightSound1.Count)]);
             }
             else if (attackValue == 2)
             {
@@ -125,7 +125,7 @@ public class PlayerAttack : MonoBehaviour
                 currentAttackCooldown = weaponVal.lightCooldown2;
                 playerAnim.SetTrigger("light2");
                 //Debug.Log(attackValue + " light");
-                PlaySound(weaponVal.lightSound2);
+                PlaySound(weaponVal.lightSound2[Random.Range(0, weaponVal.lightSound2.Count)]);
             }
             else if (attackValue == 3)
             {
@@ -135,7 +135,7 @@ public class PlayerAttack : MonoBehaviour
                 currentAttackCooldown = weaponVal.lightCooldown3;
                 playerAnim.SetTrigger("light3");
                 //Debug.Log(attackValue + " light");
-                PlaySound(weaponVal.lightSound3);
+                PlaySound(weaponVal.lightSound3[Random.Range(0, weaponVal.lightSound3.Count)]);
             }
 
         }
@@ -183,7 +183,7 @@ public class PlayerAttack : MonoBehaviour
                 currentAttackCooldown = weaponVal.heavyCooldown1;
                 playerAnim.SetTrigger("heavy1");
                 //Debug.Log(attackValue + " heavy");
-                PlaySound(weaponVal.heavySound1);
+                PlaySound(weaponVal.heavySound1[Random.Range(0, weaponVal.heavySound1.Count)]);
             }
             else if (attackValue == 2)
             {
@@ -193,7 +193,7 @@ public class PlayerAttack : MonoBehaviour
                 currentAttackCooldown = weaponVal.heavyCooldown2;
                 playerAnim.SetTrigger("heavy2");
                 //Debug.Log(attackValue + " heavy");
-                PlaySound(weaponVal.heavySound2);
+                PlaySound(weaponVal.heavySound2[Random.Range(0, weaponVal.heavySound1.Count)]);
             }
             else if (attackValue == 3)
             {
@@ -203,7 +203,7 @@ public class PlayerAttack : MonoBehaviour
                 currentAttackCooldown = weaponVal.heavyCooldown3;
                 playerAnim.SetTrigger("heavy3");
                 //Debug.Log(attackValue + " heavy");
-                PlaySound(weaponVal.heavySound3);
+                PlaySound(weaponVal.heavySound3[Random.Range(0, weaponVal.heavySound1.Count)]);
             }
 
         }
