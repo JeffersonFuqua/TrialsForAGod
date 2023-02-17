@@ -43,7 +43,7 @@ public class NameInput : MonoBehaviour
     private void Update()
     {
         //allows fake keyboard to type unless real keyboard does
-        if(typedName.text != "")
+        if(typedName.text != "" && typedName.text.Length < 8)
         {
             playerName.text = typedName.text;
             playerSign.text = playerName.text;
