@@ -1506,6 +1506,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5249219106680252427, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f38a028bc5600c64d88a2994c57e0c9f, type: 2}
     - target: {fileID: 6891398054288582070, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -44299,6 +44303,7 @@ MonoBehaviour:
   takeDamage: {fileID: 2100000, guid: 89ca8168d79a2474886d7445e2292b13, type: 2}
   hitMarker: {fileID: 1106949793}
   overheadLight: {fileID: 1045258867}
+  deathEffect: {fileID: 0}
 --- !u!114 &4832888059895557063
 MonoBehaviour:
   m_ObjectHideFlags: 0

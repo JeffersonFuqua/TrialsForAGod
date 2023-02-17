@@ -19,6 +19,7 @@ public class EnemyProjHealth : MonoBehaviour
     private Rigidbody rb;
     public GameObject hitMarker;
     public GameObject overheadLight;
+    public GameObject deathEffect;
 
     private Transform player;
 
@@ -129,6 +130,8 @@ public class EnemyProjHealth : MonoBehaviour
     {
         StopAllCoroutines();
         bDead = true;
+        this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        deathEffect.SetActive(true);
         this.gameObject.GetComponent<ItemDrop>().DropItem();
         StartCoroutine(deathDelay());
     }
