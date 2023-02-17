@@ -21,6 +21,7 @@ public class EnemyHealth : MonoBehaviour
     private Rigidbody rb;
     public GameObject hitMarker;
     public GameObject overheadLight;
+    public GameObject deathEffect;
 
     private Transform player;
 
@@ -132,7 +133,9 @@ public class EnemyHealth : MonoBehaviour
     public void Die()
     {
         //DropItem();
+        this.gameObject.GetComponent<MeshRenderer>().enabled = false;
         this.gameObject.GetComponent<ItemDrop>().DropItem();
+        deathEffect.SetActive(true);
         bDead = true;
         StartCoroutine(deathDelay());
     }
