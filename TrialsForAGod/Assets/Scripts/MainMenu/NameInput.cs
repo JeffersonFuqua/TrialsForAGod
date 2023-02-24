@@ -12,6 +12,7 @@ public class NameInput : MonoBehaviour
     private Label playerName;
     private Label playerSign;
     private Button backspace;
+    private Button space;
 
     private void OnEnable()
     {
@@ -20,6 +21,7 @@ public class NameInput : MonoBehaviour
         playerName = rootElement.Q<Label>("NameInput");
         playerSign = rootElement.Q<Label>("signature");
         backspace = rootElement.Q<Button>("backspace");
+        space = rootElement.Q<Button>("space");
 
         char capitalAlphabet = 'A';
         for(int i = 0; i < 26; i++)
@@ -34,10 +36,15 @@ public class NameInput : MonoBehaviour
             AssignButton(lowerAlphabet.ToString());
             lowerAlphabet = (char)((int)(lowerAlphabet) + 1);
         }
+
+        backspace.clicked += () => DeleteCharacter();
+        space.clicked += () => AddSpace();
     }
     private void OnDisable()
     {
         backspace.clicked -= () => DeleteCharacter();
+        backspace.clicked -= () => DeleteCharacter();
+        space.clicked -= () => AddSpace();
     }
 
     private void Update()
@@ -58,14 +65,13 @@ public class NameInput : MonoBehaviour
         {
             button.clicked += () => AddCharacter(button.name);
         }
-
-        backspace.clicked += () => DeleteCharacter();
     }
 
     private void RemoveAssignment(Button button)
     {
         button.clicked -= () => AddCharacter(button.name);
         backspace.clicked -= () => DeleteCharacter();
+        space.clicked -= () => AddSpace();
     }
 
     private void AddCharacter(string value)
@@ -73,8 +79,8 @@ public class NameInput : MonoBehaviour
         if(playerName.text.Length < 8)
         {
             playerName.text += value;
-            playerSign.text += value;
         }
+        playerSign.text = playerName.text;
     }
     private void DeleteCharacter()
     {
@@ -82,6 +88,16 @@ public class NameInput : MonoBehaviour
         if(playerName.text.Length != 0)
         {
             playerName.text = playerName.text.Remove(playerName.text.Length - 1);
+        }
+        playerSign.text = playerName.text;
+    }
+
+    private void AddSpace()
+    {
+        string spaceChar = " ";
+        if (playerName.text.Length < 8)
+        {
+            playerName.text += spaceChar;
         }
         playerSign.text = playerName.text;
     }
