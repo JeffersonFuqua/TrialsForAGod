@@ -22,6 +22,8 @@ public class EnemyHealth : MonoBehaviour
     public GameObject hitMarker;
     public GameObject overheadLight;
 
+    public GameObject deathEffect;
+
     private Transform player;
 
    // public static Action DropItem = delegate { };
@@ -135,6 +137,9 @@ public class EnemyHealth : MonoBehaviour
     {
         //DropItem();
         this.gameObject.GetComponent<ItemDrop>().DropItem();
+        this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        deathEffect.SetActive(true);
+
         bDead = true;
         StartCoroutine(deathDelay());
     }
