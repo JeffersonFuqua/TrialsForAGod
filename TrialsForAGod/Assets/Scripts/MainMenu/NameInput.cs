@@ -13,6 +13,7 @@ public class NameInput : MonoBehaviour
     private Label playerSign;
     private Button backspace;
     private Button space;
+    private Button finish;
 
     private void OnEnable()
     {
@@ -22,6 +23,7 @@ public class NameInput : MonoBehaviour
         playerSign = rootElement.Q<Label>("signature");
         backspace = rootElement.Q<Button>("backspace");
         space = rootElement.Q<Button>("space");
+        finish = rootElement.Q<Button>("finish");
 
         char capitalAlphabet = 'A';
         for(int i = 0; i < 26; i++)
@@ -39,12 +41,13 @@ public class NameInput : MonoBehaviour
 
         backspace.clicked += () => DeleteCharacter();
         space.clicked += () => AddSpace();
+        finish.clicked += () => Finish();
     }
     private void OnDisable()
     {
         backspace.clicked -= () => DeleteCharacter();
-        backspace.clicked -= () => DeleteCharacter();
         space.clicked -= () => AddSpace();
+        finish.clicked -= () => Finish();
     }
 
     private void Update()
@@ -100,6 +103,11 @@ public class NameInput : MonoBehaviour
             playerName.text += spaceChar;
         }
         playerSign.text = playerName.text;
+    }
+
+    private void Finish()
+    {
+        Debug.Log("finish");
     }
 
 }
