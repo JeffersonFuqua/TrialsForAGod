@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class NameInput : MonoBehaviour
 {
+    public PlayerValues playerVal;
+    public GameObject mainMenu;
     public UIDocument uiDoc;
+    public GameObject fadeOut;
     private VisualElement rootElement;
     public List<Button> alphaNumericButtons = new List<Button>();
     private TextField typedName;
@@ -14,6 +18,8 @@ public class NameInput : MonoBehaviour
     private Button backspace;
     private Button space;
     private Button finish;
+    private Label noNameWarning;
+    private Button back;
 
     private void OnEnable()
     {
@@ -24,6 +30,8 @@ public class NameInput : MonoBehaviour
         backspace = rootElement.Q<Button>("backspace");
         space = rootElement.Q<Button>("space");
         finish = rootElement.Q<Button>("finish");
+        noNameWarning = rootElement.Q<Label>("noName");
+        back = rootElement.Q<Button>("return");
 
         char capitalAlphabet = 'A';
         for(int i = 0; i < 26; i++)
@@ -42,12 +50,14 @@ public class NameInput : MonoBehaviour
         backspace.clicked += () => DeleteCharacter();
         space.clicked += () => AddSpace();
         finish.clicked += () => Finish();
+        back.clicked += () => Return();
     }
     private void OnDisable()
     {
         backspace.clicked -= () => DeleteCharacter();
         space.clicked -= () => AddSpace();
         finish.clicked -= () => Finish();
+        back.clicked -= () => Return();
     }
 
     private void Update()
@@ -67,6 +77,7 @@ public class NameInput : MonoBehaviour
         if(button != null)
         {
             button.clicked += () => AddCharacter(button.name);
+            //button.
         }
     }
 
@@ -107,7 +118,31 @@ public class NameInput : MonoBehaviour
 
     private void Finish()
     {
-        Debug.Log("finish");
+        if(playerName.text != "")
+        {
+            finish.clicked -= () => Finish();
+            finish.visible = false;
+            fadeOut.GetComponent<Animator>().speed = 0.5f;
+            fadeOut.GetComponent<Animator>().SetTrigger("fadeOut");
+
+            playerVal.playerName = playerSign.text;
+            StartCoroutine(loadNextScene());
+        }
+        else
+        {
+            noNameWarning.visible = true;
+        }
+    }
+    IEnumerator loadNextScene()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(1);
+    }
+
+    private void Return()
+    {
+        mainMenu.SetActive(true);
+        gameObject.SetActive(false);
     }
 
 }

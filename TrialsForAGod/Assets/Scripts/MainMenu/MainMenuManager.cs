@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
+    public GameObject nameMenu;
     public void StartGame()
     {
-        Debug.Log("start");
-        SceneManager.LoadScene(1);
+        nameMenu.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     public void Gallary()
