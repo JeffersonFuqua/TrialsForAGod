@@ -122,8 +122,9 @@ public class NameInput : MonoBehaviour
         {
             finish.clicked -= () => Finish();
             finish.visible = false;
-            fadeOut.GetComponent<Animator>().speed = 0.5f;
+            fadeOut.GetComponent<Animator>().speed = 0.25f;
             fadeOut.GetComponent<Animator>().SetTrigger("fadeOut");
+            GetComponent<AudioSource>().Play();
 
             playerVal.playerName = playerSign.text;
             StartCoroutine(loadNextScene());
@@ -135,7 +136,7 @@ public class NameInput : MonoBehaviour
     }
     IEnumerator loadNextScene()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(1);
     }
 
