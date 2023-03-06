@@ -7,10 +7,11 @@ public class GalleryScript : MonoBehaviour
 {
     public UIDocument addUI;
     private VisualElement rootElement;
-    private Button tester;
-    private Button testerTwo;
+    private Button bDisplay;
     public GalleryImages gPics;
+    private List<Button> bImages = new List<Button>();
     private int x = 0;
+    public int picCount;
     /*
      * Make new scriptable object to hold all images X
      * See speakervalues ares pics for how to reference it
@@ -20,37 +21,51 @@ public class GalleryScript : MonoBehaviour
     public void OnEnable()
     {
         rootElement = addUI.rootVisualElement;
-        tester = rootElement.Q<Button>("AresAngry");
-       // Debug.Log(tester.style.backgroundImage.value.sprite.name);
-        testerTwo = rootElement.Q<Button>("Display");
-        Debug.Log("Enabled");
+        bDisplay = rootElement.Q<Button>("Display");
+
+        for(int i = 0; i < picCount; i++)
+        {
+            buttonMaker(x.ToString(), x);
+            x++;
+        }
+
         Startup();
+    }
+
+    public void buttonMaker(string name, int a)
+    {
+        Button newButton;
+        newButton = rootElement.Q<Button>(name);
+        newButton.clicked += () => Enlarge(a);
+    }
+
+    public void unAssign(Button button, int num)
+    {
+        button.clicked -= () => Enlarge(num);
     }
 
     public void Startup()
     {
         Debug.Log("Started");
-        tester.clicked += () => Enlarge();
-        testerTwo.clicked += () => HideLarge();
+        bDisplay.clicked += () => HideLarge();
     }
-    public void Enlarge()
+    public void Enlarge(int image)
     { 
-        testerTwo.style.backgroundImage = gPics.imageList[0];
-       // testerTwo.style.backgroundColor = Color.black;
-        testerTwo.BringToFront();
-        testerTwo.SetEnabled(true);
+        //fix this to use not just gPics.imageList[0]
+        bDisplay.style.backgroundImage = gPics.imageList[image];
+        bDisplay.BringToFront();
+        bDisplay.SetEnabled(true);
     }
     public void HideLarge()
     {
         Debug.Log("Hide");
-        testerTwo.style.backgroundImage = null;
-        testerTwo.style.backgroundColor = Color.clear;
-        testerTwo.SendToBack();
-        testerTwo.SetEnabled(false);
+        bDisplay.style.backgroundImage = null;
+        bDisplay.style.backgroundColor = Color.clear;
+        bDisplay.SendToBack();
+        bDisplay.SetEnabled(false);
     }
     public void OnDisable()
     {
-        tester.clicked -= () => Enlarge();
-        testerTwo.clicked -= () => HideLarge();
+        bDisplay.clicked -= () => HideLarge();
     }
 }
