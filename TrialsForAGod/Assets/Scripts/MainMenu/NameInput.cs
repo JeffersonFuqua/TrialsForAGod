@@ -51,6 +51,9 @@ public class NameInput : MonoBehaviour
         space.clicked += () => AddSpace();
         finish.clicked += () => Finish();
         back.clicked += () => Return();
+
+        StartCoroutine(nameof(DelayFocus));
+       
     }
     private void OnDisable()
     {
@@ -74,11 +77,12 @@ public class NameInput : MonoBehaviour
     {
         Button button;
         button = rootElement.Q<Button>(characterName);
+        alphaNumericButtons.Add(button);
         if(button != null)
         {
             button.clicked += () => AddCharacter(button.name);
             //button.
-        }
+        }       
     }
 
     private void RemoveAssignment(Button button)
@@ -145,5 +149,9 @@ public class NameInput : MonoBehaviour
         mainMenu.SetActive(true);
         gameObject.SetActive(false);
     }
-
+    IEnumerator DelayFocus()
+    {
+        yield return new WaitForSeconds(1);
+        alphaNumericButtons[0].Focus();
+    }
 }
