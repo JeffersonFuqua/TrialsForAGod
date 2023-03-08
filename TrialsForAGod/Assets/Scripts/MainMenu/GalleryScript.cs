@@ -46,13 +46,15 @@ public class GalleryScript : MonoBehaviour
 
     public void Startup()
     {
-        Debug.Log("Started");
         bDisplay.clicked += () => HideLarge();
     }
     public void Enlarge(int image)
     { 
-        //fix this to use not just gPics.imageList[0]
         bDisplay.style.backgroundImage = gPics.imageList[image];
+        for(int i = 0; i < picCount; i++)
+        {
+            rootElement.Q<Button>(i.ToString()).style.backgroundImage = null;
+        }
         bDisplay.BringToFront();
         bDisplay.SetEnabled(true);
     }
@@ -61,6 +63,10 @@ public class GalleryScript : MonoBehaviour
         Debug.Log("Hide");
         bDisplay.style.backgroundImage = null;
         bDisplay.style.backgroundColor = Color.clear;
+        for (int i = 0; i < picCount; i++)
+        {
+            rootElement.Q<Button>(i.ToString()).style.backgroundImage = gPics.imageList[i];
+        }
         bDisplay.SendToBack();
         bDisplay.SetEnabled(false);
     }
