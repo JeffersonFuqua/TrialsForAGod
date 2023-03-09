@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator playerAnim;
     private bool bDodge;
     public GameObject dodgeIcon;
+    [HideInInspector]public bool lockDodge;
 
 
     private void Start()
@@ -100,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dodge(InputAction.CallbackContext c)
     {
-        if ((pActions.PlayerControls.Movement.ReadValue<Vector2>().x != 0 || pActions.PlayerControls.Movement.ReadValue<Vector2>().y != 0) && !GetComponent<PlayerAttack>().bIsAttacking)
+        if ((pActions.PlayerControls.Movement.ReadValue<Vector2>().x != 0 || pActions.PlayerControls.Movement.ReadValue<Vector2>().y != 0) && !GetComponent<PlayerAttack>().bIsAttacking && !lockDodge)
         {
             bDodge = true;
             StartCoroutine(dodgeCooldown());
