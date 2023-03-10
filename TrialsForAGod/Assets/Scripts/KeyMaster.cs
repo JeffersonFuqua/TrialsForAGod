@@ -35,6 +35,7 @@ public class KeyMaster : MonoBehaviour
         doorOrKey.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(0.5f);
         Destroy(doorOrKey);
+        GetComponent<PlayerMovement>().lockDodge = false;
     }
 
 }
