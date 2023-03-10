@@ -8,6 +8,7 @@ public class MainMenuManager : MonoBehaviour
     public GameObject nameMenu;
     public EventSystem ES;
     public GameObject bLetter;
+    public GameObject galleryMenu;
     public void StartGame()
     {
         nameMenu.SetActive(true);
@@ -15,9 +16,11 @@ public class MainMenuManager : MonoBehaviour
         ES.GetComponent<EventSystem>().SetSelectedGameObject(bLetter, null);
     }
 
-    public void Gallary()
+    public void Gallery()
     {
-        Debug.Log("gallary");
+        Debug.Log("gallery");
+        galleryMenu.SetActive(true);
+        gameObject.SetActive(false);
     }
     public void Options()
     {

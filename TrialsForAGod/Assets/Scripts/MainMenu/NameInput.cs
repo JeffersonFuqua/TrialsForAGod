@@ -151,7 +151,7 @@ public class NameInput : MonoBehaviour
     }
     IEnumerator DelayFocus()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.3f);
         alphaNumericButtons[0].Focus();
     }
 }

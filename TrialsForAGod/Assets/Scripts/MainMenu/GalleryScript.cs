@@ -2,27 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.EventSystems;
 
 public class GalleryScript : MonoBehaviour
 {
     public UIDocument addUI;
     private VisualElement rootElement;
-    private Button bDisplay;
+    private Button bDisplay, bBack;
     public GalleryImages gPics;
     private List<Button> bImages = new List<Button>();
+    public GameObject mainMenu, start;
+    public EventSystem ES;
     private int x = 0;
     public int picCount;
-    /*
-     * Make new scriptable object to hold all images X
-     * See speakervalues ares pics for how to reference it
-     * make multiple buttons and assign them a value for the reference in the all image list
-     * probably should use a foreach loop if possible but I don't think it is 
-     */
     public void OnEnable()
     {
         rootElement = addUI.rootVisualElement;
         bDisplay = rootElement.Q<Button>("Display");
-
+        bBack = rootElement.Q<Button>("Back");
         for(int i = 0; i < picCount; i++)
         {
             buttonMaker(x.ToString(), x);
@@ -30,6 +27,7 @@ public class GalleryScript : MonoBehaviour
         }
 
         Startup();
+        rootElement.Q<Button>(0.ToString()).Focus();        
     }
 
     public void buttonMaker(string name, int a)
@@ -47,6 +45,13 @@ public class GalleryScript : MonoBehaviour
     public void Startup()
     {
         bDisplay.clicked += () => HideLarge();
+        bBack.clicked += () => Return();
+    }
+    public void Return()
+    {
+        mainMenu.SetActive(true);
+        gameObject.SetActive(false);
+        ES.GetComponent<EventSystem>().SetSelectedGameObject(start, null);
     }
     public void Enlarge(int image)
     { 
@@ -60,7 +65,6 @@ public class GalleryScript : MonoBehaviour
     }
     public void HideLarge()
     {
-        Debug.Log("Hide");
         bDisplay.style.backgroundImage = null;
         bDisplay.style.backgroundColor = Color.clear;
         for (int i = 0; i < picCount; i++)
@@ -69,6 +73,7 @@ public class GalleryScript : MonoBehaviour
         }
         bDisplay.SendToBack();
         bDisplay.SetEnabled(false);
+        rootElement.Q<Button>(0.ToString()).Focus();
     }
     public void OnDisable()
     {

@@ -456,18 +456,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &595583340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,7 +821,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: (coming soon)
+  m_text: Gallery
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a40edb8a0c4c13a4c862378be0f3086f, type: 2}
   m_sharedMaterial: {fileID: 3986218989661208700, guid: a40edb8a0c4c13a4c862378be0f3086f, type: 2}
@@ -1418,6 +1406,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715a598eb116fff43b60d827c7690e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &989958250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 989958253}
+  - component: {fileID: 989958252}
+  - component: {fileID: 989958254}
+  m_Layer: 0
+  m_Name: GalleryMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &989958252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989958250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: f2a5c65ad0192a449b97c78ec0ca35ce, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 6ada40bd6fa65df4095b001d10be3de5, type: 3}
+  m_SortingOrder: 0
+--- !u!4 &989958253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989958250}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1011.9451, y: 579.9324, z: 159.18039}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &989958254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989958250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc19792f08687494abcd442ebc28286f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addUI: {fileID: 989958252}
+  gPics: {fileID: 11400000, guid: 4f7568b4a984b3d4d962e82c95966bd7, type: 2}
+  mainMenu: {fileID: 1404955164}
+  start: {fileID: 595583337}
+  ES: {fileID: 1127454573}
+  picCount: 6
 --- !u!1 &1108202492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,6 +2008,7 @@ MonoBehaviour:
   nameMenu: {fileID: 953505434}
   ES: {fileID: 1127454573}
   bLetter: {fileID: 0}
+  galleryMenu: {fileID: 989958250}
 --- !u!1 &1821748730
 GameObject:
   m_ObjectHideFlags: 0
@@ -2157,7 +2213,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1404955169}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: Gallary
+        m_MethodName: Gallery
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
