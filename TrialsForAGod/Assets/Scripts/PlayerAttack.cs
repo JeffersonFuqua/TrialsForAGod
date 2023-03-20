@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
     PlayerActions pActions;
     private PlayerValues playerVal;
     private Weapon weaponVal;
+    public Transform swordObject;
     public TrailRenderer lineRender;
 
     [HideInInspector]public int attackValue;
@@ -61,6 +62,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (bAttackChain && attackValueReset > 0)
         {
+            swordObject.localScale = new Vector3(0.8f, 0.8f, 0.8f);
             attackValueReset -= Time.deltaTime;
         }
         if(attackValueReset <= 0)
@@ -68,6 +70,7 @@ public class PlayerAttack : MonoBehaviour
             bAttackChain = false;
             attackValueReset = attackChainTimer;
             attackValue = 0;
+            swordObject.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
             if (GetComponent<PlayerMovement>().bIsRunning)
             {

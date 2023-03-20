@@ -5338,7 +5338,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   playerHealthBar: {fileID: 0}
   currentHealth: 100
-  playerSkin: {fileID: 0}
+  playerSkin: {fileID: 7989958636002710550}
   takeDamage: {fileID: 2100000, guid: 89ca8168d79a2474886d7445e2292b13, type: 2}
   bInvincible: 0
   bDead: 0
@@ -5358,6 +5358,7 @@ MonoBehaviour:
   speed: 0
   bIsRunning: 0
   dodgeIcon: {fileID: 0}
+  lockDodge: 0
 --- !u!114 &5320641254476332318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5370,7 +5371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd87f306f0cb23c4ca0692670aa9da04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineRender: {fileID: 0}
+  swordObject: {fileID: 6437723952886255041}
+  lineRender: {fileID: 6252631900322090912}
   attackValue: 0
   bIsAttacking: 0
   bAttackChain: 0
@@ -5474,6 +5476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c8e3fe73cd043449c9e285922c2885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyUI: {fileID: 0}
 --- !u!1001 &5832621880323868971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5499,15 +5502,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 695455814968607978, guid: 34f3c0fb1de456f4d8ec00151219789c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 695455814968607978, guid: 34f3c0fb1de456f4d8ec00151219789c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 695455814968607978, guid: 34f3c0fb1de456f4d8ec00151219789c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 695455814968607978, guid: 34f3c0fb1de456f4d8ec00151219789c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5603,6 +5606,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34f3c0fb1de456f4d8ec00151219789c, type: 3}
+--- !u!96 &6252631900322090912 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 447102279235487371, guid: 34f3c0fb1de456f4d8ec00151219789c, type: 3}
+  m_PrefabInstance: {fileID: 5832621880323868971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6437723952886255041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 695455814968607978, guid: 34f3c0fb1de456f4d8ec00151219789c, type: 3}
