@@ -55,7 +55,7 @@ public class GalleryScript : MonoBehaviour
     }
     public void Enlarge(int image)
     { 
-        bDisplay.style.backgroundImage = gPics.imageList[image];
+       // bDisplay.style.backgroundImage = gPics.imageList[image];
         for(int i = 0; i < picCount; i++)
         {
             rootElement.Q<Button>(i.ToString()).style.backgroundImage = null;
@@ -69,7 +69,7 @@ public class GalleryScript : MonoBehaviour
         bDisplay.style.backgroundColor = Color.clear;
         for (int i = 0; i < picCount; i++)
         {
-            rootElement.Q<Button>(i.ToString()).style.backgroundImage = gPics.imageList[i];
+           // rootElement.Q<Button>(i.ToString()).style.backgroundImage = gPics.imageList[i];
         }
         bDisplay.SendToBack();
         bDisplay.SetEnabled(false);
