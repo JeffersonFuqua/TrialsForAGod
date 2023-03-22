@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu]
 public class GalleryImages : ScriptableObject
 {
-    public List<Sprite> imageList;
+    public List<Texture2D> imageList;
 }
