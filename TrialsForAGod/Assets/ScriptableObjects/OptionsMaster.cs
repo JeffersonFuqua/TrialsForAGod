@@ -11,6 +11,6 @@ public class OptionsMaster : ScriptableObject
     public float musicVol = 1;
     [Range(0, 1)]
     public float sFXVol = 1;
-    [Range(0, 1)]
-    public float vCVol = 1;
+    //[Range(0, 1)]
+    //public float vCVol = 1;
 }

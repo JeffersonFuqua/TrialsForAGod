@@ -1218,6 +1218,7 @@ GameObject:
   - component: {fileID: 7603230904559517073}
   - component: {fileID: 7603230904559517072}
   - component: {fileID: 5178624432655518777}
+  - component: {fileID: 2386145167194193827}
   m_Layer: 5
   m_Name: DialogueCanvas
   m_TagString: Untagged
@@ -1409,6 +1410,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2386145167194193827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7603230904559517079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f27fdfc3b0e41458506a1d381b321e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionsVal: {fileID: 11400000, guid: 9e9b321a92a56fc409cf073f25c978e2, type: 2}
+  audioType: 1
 --- !u!1 &7603230904876915179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,6 +1512,7 @@ GameObject:
   - component: {fileID: 4699376239120618117}
   - component: {fileID: 4991364102837029355}
   - component: {fileID: 2370376754193120582}
+  - component: {fileID: 1282165438958581533}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -1681,7 +1697,7 @@ MonoBehaviour:
   ES: {fileID: 0}
   player: {fileID: 0}
   aMainAudio: {fileID: 2370376754193120582}
-  aOtherAudio: {fileID: 2370376754193120582}
+  aOtherAudio: {fileID: 5178624432655518777}
   iName: 0
   afterChoiceVal: 0
   typeSpeed: 3
@@ -1800,6 +1816,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1282165438958581533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7603230904990839966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f27fdfc3b0e41458506a1d381b321e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionsVal: {fileID: 11400000, guid: 9e9b321a92a56fc409cf073f25c978e2, type: 2}
+  audioType: 1
 --- !u!1 &7635746438588999057
 GameObject:
   m_ObjectHideFlags: 0
