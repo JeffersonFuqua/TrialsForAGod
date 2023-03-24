@@ -8,7 +8,8 @@ public class GalleryScript : MonoBehaviour
 {
     public UIDocument addUI;
     private VisualElement rootElement;
-    private Button bDisplay, bBack;
+    private Button bBack, bDisplay;
+    private VisualElement vDisplayT, vDisplayW;
     public GalleryImages gPics;
     private List<Button> bImages = new List<Button>();
     public GameObject mainMenu, start;
@@ -55,24 +56,37 @@ public class GalleryScript : MonoBehaviour
     }
     public void Enlarge(int image)
     { 
-        bDisplay.style.backgroundImage = gPics.imageList[image];
         for(int i = 0; i < picCount; i++)
         {
             rootElement.Q<Button>(i.ToString()).style.backgroundImage = null;
         }
-        bDisplay.BringToFront();
-        bDisplay.SetEnabled(true);
+        if(image >= 13)
+        {
+            vDisplayW.style.backgroundImage = gPics.imageList[image];
+            vDisplayW.BringToFront();
+            vDisplayW.SetEnabled(true);
+        }
+        else
+        {
+            vDisplayT.style.backgroundImage = gPics.imageList[image];
+            vDisplayT.BringToFront();
+            vDisplayT.SetEnabled(true);
+        }
     }
     public void HideLarge()
     {
-        bDisplay.style.backgroundImage = null;
-        bDisplay.style.backgroundColor = Color.clear;
+        vDisplayT.style.backgroundImage = null;
+        vDisplayW.style.backgroundImage = null;
+        vDisplayT.style.backgroundColor = Color.clear;
+        vDisplayW.style.backgroundColor = Color.clear;
         for (int i = 0; i < picCount; i++)
         {
             rootElement.Q<Button>(i.ToString()).style.backgroundImage = gPics.imageList[i];
         }
-        bDisplay.SendToBack();
-        bDisplay.SetEnabled(false);
+        vDisplayT.SendToBack();
+        vDisplayW.SendToBack();
+        vDisplayT.SetEnabled(false);
+        vDisplayW.SetEnabled(false);
         rootElement.Q<Button>(0.ToString()).Focus();
     }
     public void OnDisable()
