@@ -21,6 +21,8 @@ public class GalleryScript : MonoBehaviour
         rootElement = addUI.rootVisualElement;
         bDisplay = rootElement.Q<Button>("Display");
         bBack = rootElement.Q<Button>("Back");
+        vDisplayT = rootElement.Q<VisualElement>("DisplayT");
+        vDisplayW = rootElement.Q<VisualElement>("DisplayW");
         for(int i = 0; i < picCount; i++)
         {
             buttonMaker(x.ToString(), x);
@@ -63,15 +65,14 @@ public class GalleryScript : MonoBehaviour
         if(image >= 13)
         {
             vDisplayW.style.backgroundImage = gPics.imageList[image];
-            vDisplayW.BringToFront();
             vDisplayW.SetEnabled(true);
         }
         else
         {
             vDisplayT.style.backgroundImage = gPics.imageList[image];
-            vDisplayT.BringToFront();
             vDisplayT.SetEnabled(true);
         }
+        bDisplay.BringToFront();
     }
     public void HideLarge()
     {
@@ -85,6 +86,7 @@ public class GalleryScript : MonoBehaviour
         }
         vDisplayT.SendToBack();
         vDisplayW.SendToBack();
+        bDisplay.SendToBack();
         vDisplayT.SetEnabled(false);
         vDisplayW.SetEnabled(false);
         rootElement.Q<Button>(0.ToString()).Focus();
