@@ -6,11 +6,11 @@ using UnityEngine;
 public class OptionsMaster : ScriptableObject
 {
     [Range( 0, 1)]
-    public float masterVol;
+    public float masterVol = 1;
     [Range(0, 1)]
-    public float musicVol;
+    public float musicVol = 1;
     [Range(0, 1)]
-    public float sFXVol;
+    public float sFXVol = 1;
     [Range(0, 1)]
-    public float vCVol;
+    public float vCVol = 1;
 }

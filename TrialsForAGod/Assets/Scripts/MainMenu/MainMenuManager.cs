@@ -7,13 +7,12 @@ public class MainMenuManager : MonoBehaviour
 {
     public GameObject nameMenu;
     public EventSystem ES;
-    public GameObject bLetter;
     public GameObject galleryMenu;
+    public GameObject optionsMenu;
     public void StartGame()
     {
         nameMenu.SetActive(true);
         gameObject.SetActive(false);
-        ES.GetComponent<EventSystem>().SetSelectedGameObject(bLetter, null);
     }
 
     public void Gallery()
@@ -25,6 +24,8 @@ public class MainMenuManager : MonoBehaviour
     public void Options()
     {
         Debug.Log("options");
+        optionsMenu.SetActive(true);
+        gameObject.SetActive(false);
     }
     public void Quit()
     {
