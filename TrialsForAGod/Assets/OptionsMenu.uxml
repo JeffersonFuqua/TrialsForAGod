@@ -1,7 +1,11 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Label text="Options" display-tooltip-when-elided="true" name="options" style="position: absolute; height: 191px; width: 882px; top: 64px; left: 572px; font-size: 120px; -unity-text-align: upper-center;" />
+    <ui:Label text="Options" display-tooltip-when-elided="true" name="options" style="position: absolute; height: 191px; width: 882px; top: 64px; left: 572px; font-size: 120px; -unity-text-align: upper-center; -unity-font: url(&apos;project://database/Assets/Fonts/dream%20orphans.otf?fileID=12800000&amp;guid=92588b000cfaaa44cba100c970ac4cdf&amp;type=3#dream orphans&apos;);" />
     <ui:Label text="Master Volume" display-tooltip-when-elided="true" name="masterVolume" style="position: absolute; height: 111px; width: 561px; top: 304px; left: 440px; font-size: 64px; -unity-text-align: upper-center;" />
     <ui:Slider picking-mode="Ignore" value="1" high-value="1" name="masterVolumeSlider" style="position: absolute; height: 28px; top: 332px; left: 1004px; width: 441px;" />
     <ui:Label text="Music Volume" display-tooltip-when-elided="true" name="musicVolume" style="position: absolute; height: 111px; width: 561px; top: 423px; left: 440px; font-size: 64px; -unity-text-align: upper-center;" />
     <ui:Slider picking-mode="Ignore" value="1" high-value="1" name="musicVolumeSlider" style="position: absolute; height: 28px; top: 455px; left: 1004px; width: 441px;" />
+    <ui:Label text="SFX Volume" display-tooltip-when-elided="true" name="sFXVolume" style="position: absolute; height: 111px; width: 561px; top: 563px; left: 440px; font-size: 64px; -unity-text-align: upper-center;" />
+    <ui:Slider picking-mode="Ignore" value="1" high-value="1" name="sFXVolumeSlider" style="position: absolute; height: 28px; top: 597px; left: 1004px; width: 441px;" />
+    <ui:Label text="VC Volume" display-tooltip-when-elided="true" name="vCVolume" style="position: absolute; height: 111px; width: 561px; top: 720px; left: 440px; font-size: 64px; -unity-text-align: upper-center;" />
+    <ui:Slider picking-mode="Ignore" value="1" high-value="1" name="vCVolumeSlider" style="position: absolute; height: 28px; top: 766px; left: 1004px; width: 441px;" />
 </ui:UXML>
