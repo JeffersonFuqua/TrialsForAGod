@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 127
+  controlID: 120
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 128
+  controlID: 121
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 129
+  controlID: 122
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 130
+  controlID: 123
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: LightingWindow
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -295,14 +295,14 @@ MonoBehaviour:
     y: 0
     width: 422.40002
     height: 740.4
-  m_MinSize: {x: 391, y: 411}
+  m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
   - {fileID: 13}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -719,24 +719,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 2256}
+      scrollPos: {x: 0, y: 2344.4}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b2e3ffffe0faffffd67500006e7600006877000084770000de7700006a790000d47a0000
+      m_ExpandedIDs: 70e7ffffaefaffffc0690000ce6a0000386b0000086c00001a6c0000946c00007e6d0000966d0000ee6d00005a6f00008c71000038720000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: lightWall
-        m_OriginalName: lightWall
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 46624
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -790,9 +790,9 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 100, y: 0}
+      snapOffset: {x: -141, y: 149}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 1
       id: unity-grid-and-snap-toolbar
       index: 1
       layout: 1
@@ -971,9 +971,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 10.876144, y: 2.8317876, z: 47.63811}
+    m_Target: {x: -16.615454, y: -28.00184, z: 52.543533}
     speed: 2
-    m_Value: {x: 10.876144, y: 2.8317876, z: 47.63811}
+    m_Value: {x: -16.615454, y: -28.00184, z: 52.543533}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1020,13 +1020,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.04334005, y: -0.94770855, z: 0.13957782, w: 0.28512767}
+    m_Target: {x: 0.2598246, y: -0.1627579, z: 0.042573992, w: 0.95132536}
     speed: 2
-    m_Value: {x: 0.041443177, y: -0.9504744, z: 0.1385428, w: 0.27511227}
+    m_Value: {x: 0.25965253, y: -0.1641165, z: 0.042945832, w: 0.9506851}
   m_Size:
-    m_Target: 2.93296
+    m_Target: 39.700024
     speed: 2
-    m_Value: 3.0711622
+    m_Value: 41.570705
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1114,7 +1114,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -1626,22 +1626,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Prefabs/Props (Sewer)
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 65
   m_LastFolders:
-  - Assets
+  - Assets/Prefabs/Props (Sewer)
   m_LastFoldersGridSize: 65
   m_LastProjectPath: C:\Users\DSU Student\Desktop\ProgrammingTools\TrialsForAGod\TrialsForAGod
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 386e0000
-    m_LastClickedID: 28216
-    m_ExpandedIDs: 00000000386e00003a6e000000ca9a3b
+    scrollPos: {x: 0, y: 234.19995}
+    m_SelectedIDs: 28820000
+    m_LastClickedID: 33320
+    m_ExpandedIDs: 0000000006810000088100003481000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1669,7 +1669,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000386e00003a6e0000
+    m_ExpandedIDs: 000000000681000008810000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1721,7 +1721,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 238.19995}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 65
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 187
