@@ -46,7 +46,7 @@ public class OptionsMenu : MonoBehaviour
         sFXVolSlider.value = optionsVal.sFXVol;
 
         fullscreen.value = optionsVal.fullscreen;
-        resolution.index = (int)optionsVal.resoSize;
+        resolution.index = optionsVal.resoValue;
     }
     private void OnDisable()
     {
@@ -74,12 +74,6 @@ public class OptionsMenu : MonoBehaviour
             bResoVal = true;
             x = 1980;
             y = 1080;
-            //TODO come make this work
-            if((int)optionsVal.resoSize > 0)
-            {
-                optionsVal.resoSize = optionsVal.resoSize - resolution.index;
-            }
-            
             FullscreenAndResolution(x, y, fullscreen.value);
         }
         //1280x720
@@ -89,7 +83,15 @@ public class OptionsMenu : MonoBehaviour
             bResoVal = true;
             x = 1280;
             y = 720;
-
+            FullscreenAndResolution(x, y, fullscreen.value);
+        }
+        //640x480
+        else if(resolution.index == 2 && !bResoVal)
+        {
+            Debug.Log("640x480");
+            bResoVal = true;
+            x = 640;
+            y = 480;
             FullscreenAndResolution(x, y, fullscreen.value);
         }
 
@@ -113,6 +115,7 @@ public class OptionsMenu : MonoBehaviour
         //sets screen settings
         Screen.SetResolution(x, y, ifFullscreen);
         optionsVal.fullscreen = fullscreen.value;
+        optionsVal.resoValue = resolution.index;
     }
 
     void Return()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Resolutions {full = 0, notFull = 1};
+
 [CreateAssetMenu]
 public class OptionsMaster : ScriptableObject
 {
@@ -16,6 +16,6 @@ public class OptionsMaster : ScriptableObject
     //public float vCVol = 1;
 
     public bool fullscreen = true;
-    [SerializeField]
-    public Resolutions resoSize = new Resolutions();
+    [Header("Resolution Value: 0 = 1980x1080 1 = 1280x720 2 = 640x480")]
+    public int resoValue = 0;
 }
