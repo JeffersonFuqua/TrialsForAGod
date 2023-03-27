@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.EventSystems;
 
 public class OptionsMenu : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class OptionsMenu : MonoBehaviour
 
     private Button back;
 
+    public EventSystem eS;
+    public GameObject startButton;
 
     private void OnEnable()
     {
@@ -46,6 +49,7 @@ public class OptionsMenu : MonoBehaviour
 
     void Return()
     {
+        eS.GetComponent<EventSystem>().SetSelectedGameObject(startButton, null);
         mainMenu.SetActive(true);
         gameObject.SetActive(false);
     }

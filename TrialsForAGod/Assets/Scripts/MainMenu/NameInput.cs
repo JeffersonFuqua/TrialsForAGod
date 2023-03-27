@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class NameInput : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class NameInput : MonoBehaviour
     private Button finish;
     private Label noNameWarning;
     private Button back;
+
+    public EventSystem eS;
+    public GameObject startButton;
 
     private void OnEnable()
     {
@@ -146,6 +150,7 @@ public class NameInput : MonoBehaviour
 
     private void Return()
     {
+        eS.GetComponent<EventSystem>().SetSelectedGameObject(startButton, null);
         mainMenu.SetActive(true);
         gameObject.SetActive(false);
     }
