@@ -7,5 +7,6 @@
     <ui:Label text="SFX Volume" display-tooltip-when-elided="true" name="sFXVolume" style="position: absolute; height: 111px; width: 561px; top: 542px; left: 440px; font-size: 64px; -unity-text-align: upper-center;" />
     <ui:Slider picking-mode="Ignore" value="1" high-value="1" name="sFXVolumeSlider" style="position: absolute; height: 28px; top: 578px; left: 1004px; width: 441px;" />
     <ui:Button text="&lt;--return" display-tooltip-when-elided="true" name="return" class="highlight" style="position: absolute; height: 61px; width: 232px; top: 1000px; left: 26px; font-size: 24px; background-color: rgb(135, 44, 44); color: rgb(255, 255, 255);" />
-    <ui:Toggle label="Fullscreen" name="fullScreen" style="position: absolute; height: 135px; width: 526px; top: 662px; left: 546px; font-size: 64px;" />
+    <ui:Toggle label="Fullscreen" name="fullscreen" value="true" style="position: absolute; height: 135px; width: 526px; top: 662px; left: 546px; font-size: 64px; -unity-text-outline-color: rgba(0, 0, 0, 255); color: rgba(0, 0, 0, 255);" />
+    <ui:DropdownField label="Resolution" index="0" choices="1980x1080, 1280x720" name="resolution" style="position: absolute; height: 63px; width: 530px; top: 746px; left: 632px; font-size: 48px;" />
 </ui:UXML>
