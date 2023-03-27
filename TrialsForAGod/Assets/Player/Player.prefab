@@ -1375,7 +1375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 440615239995796630}
   - component: {fileID: 7989958636002710550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2972,7 +2972,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3573927422782270992
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2989,7 +2989,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6466955741740227679
 GameObject:
   m_ObjectHideFlags: 0
@@ -5194,7 +5195,7 @@ CapsuleCollider:
   m_Center: {x: 0, y: 0.858101, z: 0}
 --- !u!95 &2512505103514960244
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5211,7 +5212,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!82 &5803645092567876455
 AudioSource:
   m_ObjectHideFlags: 0
