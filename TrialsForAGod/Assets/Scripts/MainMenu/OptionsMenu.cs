@@ -47,6 +47,8 @@ public class OptionsMenu : MonoBehaviour
 
         fullscreen.value = optionsVal.fullscreen;
         resolution.index = optionsVal.resoValue;
+
+        masterVolSlider.Focus();
     }
     private void OnDisable()
     {

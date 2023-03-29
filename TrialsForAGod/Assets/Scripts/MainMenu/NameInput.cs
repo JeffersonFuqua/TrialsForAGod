@@ -85,7 +85,6 @@ public class NameInput : MonoBehaviour
         if(button != null)
         {
             button.clicked += () => AddCharacter(button.name);
-            //button.
         }       
     }
 
