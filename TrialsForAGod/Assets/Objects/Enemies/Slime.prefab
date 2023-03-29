@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 2983587960491645530}
   - component: {fileID: 2983587960491645528}
   - component: {fileID: 902772901582958792}
+  - component: {fileID: 6749100019948257785}
   m_Layer: 8
   m_Name: Slime
   m_TagString: Untagged
@@ -474,9 +475,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commonDrop: {fileID: 526066147689157335, guid: 4e80accc4672f6b4f9fbe1917386ed8d, type: 3}
   rareDrop: {fileID: 5619454318519242662, guid: 58456e143fd50784cbdf336029df38cc, type: 3}
+  dropSpot: {x: 0, y: 0, z: 0}
   dropAmountLow: 2
   dropAmountHigh: 3
   rareDropRate: 50
+--- !u!114 &6749100019948257785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2983587960491645532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f27fdfc3b0e41458506a1d381b321e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionsVal: {fileID: 11400000, guid: 9e9b321a92a56fc409cf073f25c978e2, type: 2}
+  audioType: 1
 --- !u!1 &2983587960907114800
 GameObject:
   m_ObjectHideFlags: 0
