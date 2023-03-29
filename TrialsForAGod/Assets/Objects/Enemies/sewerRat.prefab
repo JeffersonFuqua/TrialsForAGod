@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 7988368502181168138}
   - component: {fileID: 4398248669678094285}
   - component: {fileID: 1735972413947304082}
+  - component: {fileID: 6073388969985188883}
   m_Layer: 8
   m_Name: sewerRat
   m_TagString: Untagged
@@ -506,9 +507,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commonDrop: {fileID: 526066147689157335, guid: 4e80accc4672f6b4f9fbe1917386ed8d, type: 3}
   rareDrop: {fileID: 526066147689157335, guid: 4e80accc4672f6b4f9fbe1917386ed8d, type: 3}
+  dropSpot: {x: 0, y: 0, z: 0}
   dropAmountLow: 1
   dropAmountHigh: 2
   rareDropRate: 50
+--- !u!114 &6073388969985188883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4832888060312888529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f27fdfc3b0e41458506a1d381b321e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionsVal: {fileID: 11400000, guid: 9e9b321a92a56fc409cf073f25c978e2, type: 2}
+  audioType: 1
 --- !u!1 &4832888060917569928
 GameObject:
   m_ObjectHideFlags: 0
