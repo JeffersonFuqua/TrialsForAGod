@@ -20,7 +20,7 @@ public class GalleryScript : MonoBehaviour
     {
         rootElement = addUI.rootVisualElement;
         bDisplay = rootElement.Q<Button>("Display");
-        bBack = rootElement.Q<Button>("Back");
+        bBack = rootElement.Q<Button>("return");
         vDisplayT = rootElement.Q<VisualElement>("DisplayT");
         vDisplayW = rootElement.Q<VisualElement>("DisplayW");
         for(int i = 0; i < picCount; i++)
@@ -38,13 +38,16 @@ public class GalleryScript : MonoBehaviour
         Button newButton;
         newButton = rootElement.Q<Button>(name);
         newButton.clicked += () => Enlarge(a);
+        newButton.style.borderBottomColor = Color.clear;
+        newButton.style.borderTopColor = Color.clear;
+        newButton.style.borderLeftColor = Color.clear;
+        newButton.style.borderRightColor = Color.clear;
     }
 
     public void unAssign(Button button, int num)
     {
         button.clicked -= () => Enlarge(num);
     }
-
     public void Startup()
     {
         bDisplay.clicked += () => HideLarge();
@@ -62,15 +65,17 @@ public class GalleryScript : MonoBehaviour
         {
             rootElement.Q<Button>(i.ToString()).style.backgroundImage = null;
         }
-        if(image >= 13)
+        if(image >= 12)
         {
             vDisplayW.style.backgroundImage = gPics.imageList[image];
             vDisplayW.SetEnabled(true);
+            vDisplayT.SetEnabled(false);
         }
         else
         {
             vDisplayT.style.backgroundImage = gPics.imageList[image];
             vDisplayT.SetEnabled(true);
+            vDisplayW.SetEnabled(false);
         }
         bDisplay.BringToFront();
     }
