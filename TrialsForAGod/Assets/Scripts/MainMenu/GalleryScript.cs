@@ -14,7 +14,7 @@ public class GalleryScript : MonoBehaviour
     private List<Button> bImages = new List<Button>();
     public GameObject mainMenu, start;
     public EventSystem ES;
-    private int x = 0;
+    private int x = 0, h = 0;
     public int picCount;
     public void OnEnable()
     {
@@ -35,7 +35,10 @@ public class GalleryScript : MonoBehaviour
 
     public void buttonMaker(string name, int a)
     {
-        Button newButton;
+        Button newButton = new Button();
+        newButton.AddToClassList("button");
+        newButton.AddToClassList("button:hover");
+        newButton.AddToClassList("button:focus");
         newButton = rootElement.Q<Button>(name);
         newButton.clicked += () => Enlarge(a);
         newButton.style.borderBottomColor = Color.clear;
@@ -52,6 +55,57 @@ public class GalleryScript : MonoBehaviour
     {
         bDisplay.clicked += () => HideLarge();
         bBack.clicked += () => Return();
+        for(int i = 0; i < picCount; i++)
+            rootElement.Q<Button>(i.ToString()).RegisterCallback<NavigationMoveEvent>(e =>
+            {
+                Debug.Log(h);
+                if(h > 0 && h != picCount-1)
+                {
+                    switch (e.direction)
+                    {
+                        //case NavigationMoveEvent.Direction.Up: rootElement.Q<Button>((i-1).ToString()).Focus(); break;
+                        // case NavigationMoveEvent.Direction.Down: D.Focus(); break;
+                        case NavigationMoveEvent.Direction.Left:
+                            rootElement.Q<Button>((h - 1).ToString()).Focus();
+                            h--;
+                            break;
+                        case NavigationMoveEvent.Direction.Right:
+                            rootElement.Q<Button>((h + 1).ToString()).Focus();
+                            h++;
+                            break;
+                    }
+                }
+                else if (h == 0)
+                {
+                    switch (e.direction)
+                    {
+                    case NavigationMoveEvent.Direction.Right: 
+                            rootElement.Q<Button>((h + 1).ToString()).Focus();
+                            h++;
+                            break;
+                    case NavigationMoveEvent.Direction.Left:
+                            rootElement.Q<Button>((picCount-1).ToString()).Focus();
+                            h = picCount-1;
+                            break;
+                    }
+
+                }
+                else
+                {
+                    switch (e.direction)
+                    {
+                    case NavigationMoveEvent.Direction.Left:
+                            rootElement.Q<Button>((h - 1).ToString()).Focus();
+                            h--;
+                            break;
+                    case NavigationMoveEvent.Direction.Right:
+                            rootElement.Q<Button>((0).ToString()).Focus();
+                            h = 0;
+                            break;
+                    }
+                }
+            e.PreventDefault();
+        });
     }
     public void Return()
     {
