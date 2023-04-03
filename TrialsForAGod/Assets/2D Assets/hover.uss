@@ -1,8 +1,8 @@
 .highlight:hover {
-    border-left-color: rgba(0, 255, 4, 255);
-    border-right-color: rgba(0, 255, 4, 255);
-    border-top-color: rgba(0, 255, 4, 255);
-    border-bottom-color: rgba(0, 255, 4, 255);
+    border-left-color: rgb(0, 255, 4);
+    border-right-color: rgb(0, 255, 4);
+    border-top-color: rgb(0, 255, 4);
+    border-bottom-color: rgb(0, 255, 4);
     border-left-width: 3px;
     border-right-width: 3px;
     border-top-width: 3px;
@@ -32,4 +32,6 @@
     border-bottom-right-radius: 3px;
     scale: 1.2 1.2;
     -unity-font-style: bold;
+    position: relative;
+    flex-wrap: wrap;
 }
