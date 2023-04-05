@@ -16,7 +16,6 @@ public class GalleryScript : MonoBehaviour
     public EventSystem ES;
     private int x = 0, h = 0;
     public int picCount;
-    private bool bMade = false;
     public void OnEnable()
     {
             rootElement = addUI.rootVisualElement;
@@ -25,25 +24,29 @@ public class GalleryScript : MonoBehaviour
             vDisplayT = rootElement.Q<VisualElement>("DisplayT");
             vDisplayW = rootElement.Q<VisualElement>("DisplayW");
 
-        if(!bMade)
             for(int i = 0; i < picCount; i++)
             {
                 buttonMaker(x.ToString(), x);
                 x++;
             }
-        else
-        {
-            for(int i = 0; i < picCount; i++)
-            {
-                rootElement.Q<Button>(i.ToString()).style.borderBottomColor = Color.clear;
-                rootElement.Q<Button>(i.ToString()).style.borderTopColor = Color.clear;
-                rootElement.Q<Button>(i.ToString()).style.borderLeftColor = Color.clear;
-                rootElement.Q<Button>(i.ToString()).style.borderRightColor = Color.clear;
-            }
-        }
-        bMade = true;
+        x = 0;
         Startup();
-        rootElement.Q<Button>(0.ToString()).Focus();        
+        rootElement.Q<Button>("Display").RegisterCallback<NavigationMoveEvent>(e =>
+        {
+            switch (e.direction)
+            {
+                //case NavigationMoveEvent.Direction.Up: rootElement.Q<Button>((i-1).ToString()).Focus(); break;
+                case NavigationMoveEvent.Direction.Down:
+                    bBack.Focus();
+                    break;
+                case NavigationMoveEvent.Direction.Left:
+                    break;
+                case NavigationMoveEvent.Direction.Right:
+                    break;
+            }
+            e.PreventDefault();
+        });
+                rootElement.Q<Button>(0.ToString()).Focus();        
     }
 
     public void buttonMaker(string name, int a)
@@ -130,8 +133,8 @@ public class GalleryScript : MonoBehaviour
     public void Return()
     {
         mainMenu.SetActive(true);
-        gameObject.SetActive(false);
         ES.GetComponent<EventSystem>().SetSelectedGameObject(start, null);
+        gameObject.SetActive(false);
     }
     public void Enlarge(int image)
     { 
@@ -150,12 +153,14 @@ public class GalleryScript : MonoBehaviour
             vDisplayT.style.backgroundImage = gPics.imageList[image];
             vDisplayT.SetEnabled(true);
             vDisplayW.SetEnabled(false);
-            Debug.Log("displaying");
         }
         bDisplay.BringToFront();
+        rootElement.Q<Button>("Display").Focus();
+
     }
     public void HideLarge()
     {
+        Debug.Log("hiding");
         vDisplayT.style.backgroundImage = null;
         vDisplayW.style.backgroundImage = null;
         vDisplayT.style.backgroundColor = Color.clear;
@@ -176,8 +181,9 @@ public class GalleryScript : MonoBehaviour
         bDisplay.clicked -= () => HideLarge();
         for (int d = 0; d < picCount; d++)
         {
-            unAssign(rootElement.Q<Button>(d.ToString()), d);
-            rootElement.Q<Button>(d.ToString()).clicked -= () => Enlarge(d);
+               unAssign(rootElement.Q<Button>(d.ToString()), d);
+            //   rootElement.Q<Button>(d.ToString()).clicked -= () => Enlarge(d);
+            rootElement.Q<Button>(d.ToString()).RemoveFromClassList("button");
         }
     }
 }
