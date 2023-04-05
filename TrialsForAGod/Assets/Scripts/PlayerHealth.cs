@@ -5,10 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public Animator fade;
     public Slider playerHealthBar;
     private PlayerValues playerVal;
 
@@ -54,7 +56,10 @@ public class PlayerHealth : MonoBehaviour
         if (bInvincible || bDead)
             return;
 
-        if(!bNoKnockback)
+        currentHealth -= damage;
+        playerHealthBar.value = currentHealth;
+
+        if (!bNoKnockback)
         {
             StartCoroutine(invincible(1));
             StartCoroutine(playerRecievedKnockback(attackOrigin));
@@ -75,12 +80,7 @@ public class PlayerHealth : MonoBehaviour
                 //StopAllCoroutines();
                 StartCoroutine(playerDies());
             }
-        }
-
-        currentHealth -= damage;
-        playerHealthBar.value = currentHealth;
-
-        
+        }        
     }
     //recieved damage
     public void SwitchMaterial(bool redOn)
@@ -131,14 +131,13 @@ public class PlayerHealth : MonoBehaviour
 
         GetComponent<PlayerMovement>().Lock();
         GetComponent<PlayerAttack>().Lock();
-        yield return new WaitForSeconds(2);
+        fade.speed = 0.2f;
+        fade.SetTrigger("fadeOut");
+        yield return new WaitForSeconds(6);
         Debug.Log("dead");
-        bDead = false;
-        GetComponent<ResetDelegate>().bcallReset = true;
-        GetComponent<PlayerAttack>().Unlock();
-        GetComponent<PlayerMovement>().Unlock();
-
-        GetComponent<Animator>().SetTrigger("timer");
+        SceneManager.LoadScene(4);
+        
+        
     }
     //Invincibility and knockback are seperate unlike with enemys as this will give the player a chance to escape
     IEnumerator invincible(float c)

@@ -62,8 +62,8 @@ public class OptionsMenu : MonoBehaviour
         optionsVal.musicVol = masterVolSlider.value * musicVolSlider.value;
         optionsVal.sFXVol = masterVolSlider.value * sFXVolSlider.value;
 
-        //reso val prevents it from being updated each frame
-        if(resoVal != resolution.index)
+            //reso val prevents it from being updated each frame
+            if (resoVal != resolution.index)
         {
             resoVal = resolution.index;
             bResoVal = false;
@@ -118,6 +118,7 @@ public class OptionsMenu : MonoBehaviour
         Screen.SetResolution(x, y, ifFullscreen);
         optionsVal.fullscreen = fullscreen.value;
         optionsVal.resoValue = resolution.index;
+        masterVolSlider.Focus();
     }
 
     void Return()
