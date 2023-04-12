@@ -29,7 +29,8 @@ public class NextScene : MonoBehaviour
         //blackScreen.SetActive(true);
         blackScreen.GetComponent<Animator>().SetTrigger("fadeOut");
         yield return new WaitForSeconds(1);
-        if(SceneManager.sceneCount == currentScene + 1)
+
+        if(SceneManager.sceneCountInBuildSettings <= currentScene + 1)
         {
             SceneManager.LoadScene(0);
 
