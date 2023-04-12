@@ -135,8 +135,6 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        //DropItem();
-        //this.gameObject.GetComponent<ItemDrop>().SetDrop(this.transform.position);
         this.gameObject.GetComponent<ItemDrop>().DropItem(transform.position);
         this.gameObject.GetComponent<MeshRenderer>().enabled = false;
         deathEffect.SetActive(true);

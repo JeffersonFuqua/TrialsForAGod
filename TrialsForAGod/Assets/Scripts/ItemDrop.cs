@@ -29,7 +29,7 @@ public class ItemDrop : MonoBehaviour
 
     public void DropItem(Vector3 deathSpot)
     {
-        dropSpot.x = deathSpot.x + Random.Range(-0.2f, 0.2f);
+        dropSpot.x = deathSpot.x+ Random.Range(-0.2f, 0.2f);
         dropSpot.y = commonDrop.transform.position.y;
         dropSpot.z = deathSpot.z + Random.Range(-0.2f, 0.2f);
 
@@ -49,7 +49,7 @@ public class ItemDrop : MonoBehaviour
             Instantiate(rareDrop);
            // rareDrop.transform.position = this.transform.position;
            // commonDrop.transform.position = new Vector3(commonDrop.transform.position.x + Random.Range(-0.2f, 0.2f), commonDrop.transform.position.y, commonDrop.transform.position.z + Random.Range(-0.2f, 0.2f));
-            commonDrop.transform.position = dropSpot;
+            rareDrop.transform.position = dropSpot;
             if (rareDrop != enabled)
                 rareDrop.SetActive(true);
             Debug.Log("Rare!");
