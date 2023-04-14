@@ -62,8 +62,8 @@ public class OptionsMenu : MonoBehaviour
         optionsVal.musicVol = masterVolSlider.value * musicVolSlider.value;
         optionsVal.sFXVol = masterVolSlider.value * sFXVolSlider.value;
 
-            //reso val prevents it from being updated each frame
-            if (resoVal != resolution.index)
+        //reso val prevents it from being updated each frame
+        if (resoVal != resolution.index)
         {
             resoVal = resolution.index;
             bResoVal = false;
