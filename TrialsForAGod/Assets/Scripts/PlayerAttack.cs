@@ -26,7 +26,7 @@ public class PlayerAttack : MonoBehaviour
     //public Transform aimTool;
     //private Vector3 aimDirection;
 
-    private bool bLocked;
+    public bool bLocked;
     private Animator playerAnim;
     private float animDefaultSpeed;
 
