@@ -21453,6 +21453,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3490979071219384177, guid: 51f4f1827bbaa8740ad96f2ec0ca6660, type: 3}
   m_PrefabInstance: {fileID: 1038812787}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1039071929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 570241581988019865, guid: 26fc2f237a23a2a49b0392674fc6a379, type: 3}
+  m_PrefabInstance: {fileID: 1835164845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1039455245 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7210515258328694830, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
@@ -32316,6 +32321,10 @@ PrefabInstance:
     - target: {fileID: 3602310240018756585, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602310240307559905, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
+      propertyPath: m_Value
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3602310240307559906, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
       propertyPath: m_Pivot.x
@@ -44364,6 +44373,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 512731678}
     m_Modifications:
+    - target: {fileID: 386444830, guid: 7fbfbe55f097d0c41af57586c14da069, type: 3}
+      propertyPath: blackScreen
+      value: 
+      objectReference: {fileID: 1039071929}
     - target: {fileID: 2240124500485585004, guid: 7fbfbe55f097d0c41af57586c14da069, type: 3}
       propertyPath: m_Name
       value: elevator
@@ -47533,6 +47546,10 @@ PrefabInstance:
       propertyPath: playerSkin
       value: 
       objectReference: {fileID: 1351233229}
+    - target: {fileID: 2112716061759798168, guid: 9d8db0bfe1f189a4a8067f4bbe7f5daf, type: 3}
+      propertyPath: bisTutorial
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2112716061759798168, guid: 9d8db0bfe1f189a4a8067f4bbe7f5daf, type: 3}
       propertyPath: playerHealthBar
       value: 

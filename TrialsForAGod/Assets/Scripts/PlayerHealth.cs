@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
 
     private float maxHealth;
     public float currentHealth;
+    private static float savedHealth;
     public SkinnedMeshRenderer playerSkin;
     public Material takeDamage;
     public bool bInvincible;
@@ -25,11 +26,14 @@ public class PlayerHealth : MonoBehaviour
 
     public Volume volume;
 
+    //checks if is tutorial
+    public bool bisTutorial;
+
     private void Start()
     {
         playerVal = GetComponent<PlayerValueHolder>().playerVal;
         maxHealth = playerVal.playerMaxHealth;
-        currentHealth = maxHealth;
+        currentHealth = savedHealth;
         playerHealthBar.maxValue = maxHealth;
         playerHealthBar.value = currentHealth;
         rb = GetComponent<Rigidbody>();
@@ -37,6 +41,10 @@ public class PlayerHealth : MonoBehaviour
     private void OnEnable()
     {
         PickUps.UpdateHealth += GainHealth;
+        if(SceneManager.GetActiveScene().buildIndex == 3 || SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            savedHealth = 100;
+        }
         if (currentHealth > 30)
         {
             if (volume.profile.TryGet<Vignette>(out Vignette vig))
@@ -48,7 +56,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnDisable()
     {
-        PickUps.UpdateHealth -= GainHealth;   
+        PickUps.UpdateHealth -= GainHealth;
+        savedHealth = currentHealth;
     }
 
     public void TakeDamageAndKnockback(float damage, Vector3 attackOrigin, bool bNoKnockback)
@@ -135,7 +144,17 @@ public class PlayerHealth : MonoBehaviour
         fade.SetTrigger("fadeOut");
         yield return new WaitForSeconds(6);
         Debug.Log("dead");
-        SceneManager.LoadScene(4);
+        if(bisTutorial)
+        {
+            //first death cutscene
+            SceneManager.LoadScene(4);
+        }
+        else
+        {
+            //hub area
+            SceneManager.LoadScene(6);
+        }
+        
         
         
     }
