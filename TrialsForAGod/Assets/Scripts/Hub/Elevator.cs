@@ -44,7 +44,6 @@ public class Elevator : MonoBehaviour
     public void Interact(InputAction.CallbackContext c)
     {
         player.GetComponent<PlayerMovement>().Lock();
-        player.GetComponent<PlayerAttack>().Lock();
         GetComponent<NextScene>().ChangeScene();
         pActions.PlayerControls.Interact.started -= Interact;
     }
