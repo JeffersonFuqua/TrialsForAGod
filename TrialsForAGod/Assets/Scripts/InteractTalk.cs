@@ -25,6 +25,7 @@ public class InteractTalk : MonoBehaviour
     }
     public void Interacting(int style)
     {
+        Debug.Log("We are interacting");
         switch(style)
         {
             case 1:
@@ -44,6 +45,7 @@ public class InteractTalk : MonoBehaviour
     }
     public void Talk()
     {
+        Debug.Log("Trying to Talk");
         bhasTalked = true;
         keyboardText.SetActive(false);
         xboxText.SetActive(false);
@@ -74,10 +76,12 @@ public class InteractTalk : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+       // Debug.Log("Player Has entered Collider");
         if ((bsingle && !bhasTalked) || !bsingle)
         {
             if (other.CompareTag("Player"))
             {
+                Debug.Log("We can talk");
                 string[] controller = Input.GetJoystickNames();
 
                 if (controller.Length == 0)
