@@ -168,7 +168,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void GainHealth(float heal)
     {
-        currentHealth += heal;
+        currentHealth = Mathf.Clamp(currentHealth += heal, 0, maxHealth);
         playerHealthBar.value = currentHealth;
         Debug.Log("yum");
         if (currentHealth > 30)
