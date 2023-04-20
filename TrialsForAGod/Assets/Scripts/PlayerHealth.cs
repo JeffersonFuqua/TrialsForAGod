@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
 
     private Rigidbody rb;
 
-    private float maxHealth;
+    public float maxHealth;
     public float currentHealth;
     private static float savedHealth;
     public SkinnedMeshRenderer playerSkin;

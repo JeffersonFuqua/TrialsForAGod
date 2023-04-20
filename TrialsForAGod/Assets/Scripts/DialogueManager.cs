@@ -41,6 +41,7 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject skipButton, nextButton;
     PlayerActions pActions;
+    public bool bNoFight;
 
     private void Start()
     {
@@ -360,7 +361,8 @@ public class DialogueManager : MonoBehaviour
            if(dialogue.conversation[iName].bCutscene == false)
             {
                 player.GetComponent<PlayerMovement>().Unlock();
-                player.GetComponent<PlayerAttack>().Unlock();
+                if (!bNoFight)
+                    player.GetComponent<PlayerAttack>().Unlock();
                 player.GetComponent<PlayerHealth>().bInvincible = false;
                 heatlhCanvas.SetActive(true);
             }

@@ -13,6 +13,7 @@ public class InteractTalk : MonoBehaviour
     public GameObject canTalk;
     public bool bsingle;
     public bool bhasTalked;
+    public bool bHeal;
     public GameObject dots;
 
     public void Start()
@@ -25,7 +26,6 @@ public class InteractTalk : MonoBehaviour
     }
     public void Interacting(int style)
     {
-        Debug.Log("We are interacting");
         switch(style)
         {
             case 1:
@@ -45,7 +45,6 @@ public class InteractTalk : MonoBehaviour
     }
     public void Talk()
     {
-        Debug.Log("Trying to Talk");
         bhasTalked = true;
         keyboardText.SetActive(false);
         xboxText.SetActive(false);
@@ -53,7 +52,8 @@ public class InteractTalk : MonoBehaviour
         player.GetComponent<PlayerAttack>().Lock();
         healthCanvas.SetActive(false);
         dialogueCanvas.SetActive(true);
-
+        if (bHeal)
+            Heal();
         if (bsingle && bhasTalked)
         {
             canTalk.SetActive(false);
@@ -67,7 +67,8 @@ public class InteractTalk : MonoBehaviour
     }
     public void Heal()
     {
-        Debug.Log("heal");
+        //Debug.Log("heal");
+        player.GetComponent<PlayerHealth>().GainHealth(999);
     }
     public void Door()
     {
@@ -76,12 +77,10 @@ public class InteractTalk : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       // Debug.Log("Player Has entered Collider");
         if ((bsingle && !bhasTalked) || !bsingle)
         {
             if (other.CompareTag("Player"))
             {
-                Debug.Log("We can talk");
                 string[] controller = Input.GetJoystickNames();
 
                 if (controller.Length == 0)
