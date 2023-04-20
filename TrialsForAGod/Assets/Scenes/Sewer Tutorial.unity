@@ -2722,7 +2722,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31616
+  m_Name: pb_Mesh68444
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15295,6 +15295,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1000137808972433430, guid: c3f7cac7df4b64046a6d67d1de711c01, type: 3}
   m_PrefabInstance: {fileID: 669979833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &671010118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6380116310973118262, guid: c90407e08df376e4bbd7645cc8e855c5, type: 3}
+  m_PrefabInstance: {fileID: 165305363654101804}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &678460827
 GameObject:
@@ -31785,11 +31790,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59a98c953eb2463439afca845a8fc681, type: 3}
---- !u!1 &1471135072 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 165305364588164684, guid: c90407e08df376e4bbd7645cc8e855c5, type: 3}
-  m_PrefabInstance: {fileID: 165305363654101804}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1473160461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50664,7 +50664,7 @@ MonoBehaviour:
   canTalk: {fileID: 2114907221}
   bsingle: 1
   bhasTalked: 0
-  dots: {fileID: 1471135072}
+  dots: {fileID: 671010118}
 --- !u!65 &2114907223
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51426,6 +51426,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 882369233}
     m_Modifications:
+    - target: {fileID: 165305364588164684, guid: c90407e08df376e4bbd7645cc8e855c5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3589514278319719985, guid: c90407e08df376e4bbd7645cc8e855c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -51513,6 +51517,10 @@ PrefabInstance:
     - target: {fileID: 6380116310973118262, guid: c90407e08df376e4bbd7645cc8e855c5, type: 3}
       propertyPath: m_Name
       value: TalkUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6380116310973118262, guid: c90407e08df376e4bbd7645cc8e855c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c90407e08df376e4bbd7645cc8e855c5, type: 3}
