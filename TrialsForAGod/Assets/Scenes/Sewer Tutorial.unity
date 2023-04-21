@@ -1896,6 +1896,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doorway (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2652356044241036678, guid: 62b8b2eb0e253c143acb146118c96b8b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3424107256095489852, guid: 62b8b2eb0e253c143acb146118c96b8b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1958,7 +1962,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3221182509725243819, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221182509725243819, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 5561349426305759274, guid: 706dee7b56d572e4bbddee48b0c77099, type: 3}
+    - target: {fileID: 3221182509725243819, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
+      propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 5561349426305759274, guid: 7d54fe90a5e432d47b9a9e1494dd6af7, type: 3}
     - target: {fileID: 3221182509725243823, guid: 74234e620bc75d34a827f8c3e19ea1df, type: 3}
@@ -2724,7 +2736,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31036
+  m_Name: pb_Mesh65598
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18045,7 +18057,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878711057}
   m_LocalRotation: {x: 0.70105743, y: 0.09229581, z: 0.70105743, w: -0.092295766}
-  m_LocalPosition: {x: -4.471902, y: 1.1897701, z: -3.247099}
+  m_LocalPosition: {x: -3.505976, y: 1.4485887, z: -3.247099}
   m_LocalScale: {x: 0.68615, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
