@@ -36,7 +36,7 @@ public class NameInput : MonoBehaviour
         finish = rootElement.Q<Button>("finish");
         noNameWarning = rootElement.Q<Label>("noName");
         back = rootElement.Q<Button>("return");
-
+        
         char capitalAlphabet = 'A';
         for(int i = 0; i < 26; i++)
         {
@@ -57,7 +57,6 @@ public class NameInput : MonoBehaviour
         back.clicked += () => Return();
 
         StartCoroutine(nameof(DelayFocus));
-       
     }
     private void OnDisable()
     {
@@ -65,12 +64,13 @@ public class NameInput : MonoBehaviour
         space.clicked -= () => AddSpace();
         finish.clicked -= () => Finish();
         back.clicked -= () => Return();
+        alphaNumericButtons.Clear();
     }
 
     private void Update()
     {
         //allows fake keyboard to type unless real keyboard does
-        if(typedName.text != "" && typedName.text.Length < 8)
+        if(typedName.text.Length < 8 && typedName.text != "")
         {
             playerName.text = typedName.text;
             playerSign.text = playerName.text;
