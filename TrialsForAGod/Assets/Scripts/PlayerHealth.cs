@@ -147,12 +147,12 @@ public class PlayerHealth : MonoBehaviour
         if(bisTutorial)
         {
             //first death cutscene
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene("FirstDeath");
         }
         else
         {
             //hub area
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene("Hub_Breakroom");
         }
         
         
