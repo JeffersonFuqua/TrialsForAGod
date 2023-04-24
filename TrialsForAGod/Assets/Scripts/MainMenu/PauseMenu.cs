@@ -40,6 +40,7 @@ public class PauseMenu : MonoBehaviour
     private void CallPause(InputAction.CallbackContext c)
     {
         //just another way to pause and unpause, the buttons can only call Pause();
+        Debug.Log("selecting");
         eSystem.GetComponent<EventSystem>().SetSelectedGameObject(continueButton, null);
         Pause();
     }
@@ -51,7 +52,7 @@ public class PauseMenu : MonoBehaviour
             {
                 GetComponent<DisableDialogue>().DisableDiaCanvas();
             }
-
+            Debug.Log(volume.name);
             if(!bInDialogue && volume.profile.TryGet<DepthOfField>(out DepthOfField dof))
             {
                 dof.focalLength.Override(300);
