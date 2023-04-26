@@ -23,6 +23,7 @@ public class EnemyProjHealth : MonoBehaviour
     public GameObject deathEffect;
 
     private Transform player;
+    public GameObject idleHitBox;
 
     private void Start()
     {
@@ -133,6 +134,7 @@ public class EnemyProjHealth : MonoBehaviour
         //this.gameObject.GetComponent<ItemDrop>().SetDrop(this.transform.position);
         this.gameObject.GetComponent<ItemDrop>().DropItem(transform.position);
         this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        idleHitBox.SetActive(false);
         deathEffect.SetActive(true);
 
         bDead = true;

@@ -25,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
     public GameObject deathEffect;
 
     private Transform player;
-
+    public GameObject idleHitBox;
    // public static Action DropItem = delegate { };
 
     private void Start()
@@ -137,6 +137,8 @@ public class EnemyHealth : MonoBehaviour
     {
         this.gameObject.GetComponent<ItemDrop>().DropItem(transform.position);
         this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        this.gameObject.GetComponent<Collider>().enabled = false;
+        idleHitBox.SetActive(false);
         deathEffect.SetActive(true);
 
         bDead = true;
