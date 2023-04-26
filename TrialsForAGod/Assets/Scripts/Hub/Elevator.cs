@@ -7,6 +7,7 @@ public class Elevator : MonoBehaviour
 {
     PlayerActions pActions;
     public GameObject e;
+    public GameObject a;
 
     private GameObject player;
 
@@ -27,7 +28,20 @@ public class Elevator : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             player = other.gameObject;
-            e.SetActive(true);
+            string[] controller = Input.GetJoystickNames();
+            for (int j = 0; j < controller.Length; j++)
+            {
+                if (controller[j].Length == 0)
+                {
+                    e.SetActive(true);
+                    a.SetActive(false);
+                }
+                else
+                {
+                    a.SetActive(true);
+                    e.SetActive(false);
+                }
+            }
             pActions.PlayerControls.Interact.started += Interact;
         }
     }
@@ -37,6 +51,7 @@ public class Elevator : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             e.SetActive(false);
+            a.SetActive(false);
             pActions.PlayerControls.Interact.started -= Interact;
         }
     }
