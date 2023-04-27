@@ -28,7 +28,6 @@ public class PauseMenu : MonoBehaviour
         pActions.PlayerControls.Pause.started += CallPause;
 
         eSystem.GetComponent<EventSystem>().SetSelectedGameObject(continueButton, null);
-        Debug.Log(continueButton);
     }
 
     private void OnDisable()
@@ -53,7 +52,7 @@ public class PauseMenu : MonoBehaviour
             {
                 GetComponent<DisableDialogue>().DisableDiaCanvas();
             }
-            Debug.Log(volume.name);
+            //Debug.Log(volume.name);
             if(!bInDialogue && volume.profile.TryGet<DepthOfField>(out DepthOfField dof))
             {
                 dof.focalLength.Override(300);
