@@ -53,11 +53,10 @@ public class PauseMenu : MonoBehaviour
                 GetComponent<DisableDialogue>().DisableDiaCanvas();
             }
             //Debug.Log(volume.name);
-            if(!bInDialogue && volume.profile.TryGet<DepthOfField>(out DepthOfField dof))
+            if (!bInDialogue && volume.profile.TryGet<DepthOfField>(out DepthOfField dof))
             {
                 dof.focalLength.Override(300);
             }
-
             pauseMenu.SetActive(true);
             bIsPaused = true;
             Time.timeScale = 0;
@@ -69,7 +68,6 @@ public class PauseMenu : MonoBehaviour
                 GetComponent<DisableDialogue>().EnableDialogue();
                 eSystem.GetComponent<EventSystem>().SetSelectedGameObject(nextButton, null);
             }
-
             if (!bInDialogue && volume.profile.TryGet<DepthOfField>(out DepthOfField dof))
             {
                 dof.focalLength.Override(1);
@@ -89,5 +87,4 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         Application.Quit();
     }
-
 }

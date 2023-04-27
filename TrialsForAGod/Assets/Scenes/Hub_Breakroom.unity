@@ -2769,6 +2769,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2123709527}
     - target: {fileID: 1591242582917009727, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
+      propertyPath: bSkipFade
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591242582917009727, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
       propertyPath: continueButton
       value: 
       objectReference: {fileID: 1472200653}
@@ -2891,7 +2895,7 @@ PrefabInstance:
     - target: {fileID: 7210515258223239400, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1591242582917009727, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
+      objectReference: {fileID: 879382842}
     - target: {fileID: 7210515258223239400, guid: 1a9277c1c2736f64284576eaea7c29b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Pause
