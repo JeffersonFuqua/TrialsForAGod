@@ -28,6 +28,7 @@ public class PauseMenu : MonoBehaviour
         pActions.PlayerControls.Pause.started += CallPause;
 
         eSystem.GetComponent<EventSystem>().SetSelectedGameObject(continueButton, null);
+        Debug.Log(continueButton);
     }
 
     private void OnDisable()
