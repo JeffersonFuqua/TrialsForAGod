@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -433,7 +433,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.size
-      value: 49
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[5].choice
@@ -449,11 +449,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[14].choice
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[15].choice
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[0].charName
@@ -505,15 +505,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[12].charName
-      value: Aphrodite
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[13].charName
       value: /name
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[14].charName
+      propertyPath: conversation.Array.data[13].charName
       value: Ares
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[14].charName
+      value: Aphrodite
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[15].charName
@@ -521,43 +521,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[16].charName
-      value: Aphrodite
+      value: Ares
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[17].charName
-      value: Ares
+      value: Aphrodite
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[18].charName
-      value: Aphrodite
+      value: Ares
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[19].charName
-      value: Ares
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[20].charName
       value: /name
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[21].charName
+      propertyPath: conversation.Array.data[20].charName
       value: Ares
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[21].charName
+      value: Aphrodite
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[22].charName
-      value: Aphrodite
+      value: Ares
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[23].charName
-      value: Ares
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[24].charName
       value: Aphrodite
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[25].charName
+      propertyPath: conversation.Array.data[24].charName
       value: Ares
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[25].charName
+      value: Aphrodite
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[26].charName
@@ -569,7 +569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[28].charName
-      value: Aphrodite
+      value: /name
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[29].charName
@@ -577,19 +577,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[30].charName
-      value: /name
+      value: Ares
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[31].charName
-      value: Ares
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[32].charName
       value: /name
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[33].charName
+      propertyPath: conversation.Array.data[32].charName
       value: Ares
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[33].charName
+      value: Aphrodite
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[34].charName
@@ -597,7 +597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[35].charName
-      value: Aphrodite
+      value: Ares
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[36].charName
@@ -609,11 +609,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[38].charName
-      value: Ares
+      value: Aphrodite
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[39].charName
-      value: Aphrodite
+      value: /name
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[40].charName
@@ -621,7 +621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[41].charName
-      value: /name
+      value: Aphrodite
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[42].charName
@@ -629,7 +629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[43].charName
-      value: Aphrodite
+      value: Ares
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[44].charName
@@ -637,7 +637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[45].charName
-      value: Ares
+      value: Aphrodite
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[46].charName
@@ -857,11 +857,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[13].emotionOne
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[13].emotionTwo
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[14].background
@@ -873,11 +873,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[14].emotionOne
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[14].emotionTwo
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[15].background
@@ -885,15 +885,15 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[15].choicePath
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[15].emotionOne
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[15].emotionTwo
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[16].background
@@ -905,11 +905,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[16].emotionOne
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[16].emotionTwo
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[17].background
@@ -917,11 +917,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[17].choicePath
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[17].emotionOne
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[17].emotionTwo
@@ -937,11 +937,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[18].emotionOne
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[18].emotionTwo
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[19].background
@@ -949,11 +949,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[19].choicePath
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[19].emotionOne
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[19].emotionTwo
@@ -965,11 +965,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[20].emotionOne
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[20].emotionTwo
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[21].background
@@ -977,11 +977,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[21].emotionOne
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[21].emotionTwo
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[22].background
@@ -989,11 +989,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[22].emotionOne
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[22].emotionTwo
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[23].background
@@ -1001,11 +1001,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[23].emotionOne
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[23].emotionTwo
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[24].background
@@ -1013,11 +1013,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[24].emotionOne
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[24].emotionTwo
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[25].background
@@ -1037,7 +1037,7 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[26].emotionOne
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[26].emotionTwo
@@ -1049,11 +1049,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[27].emotionOne
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[27].emotionTwo
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[28].background
@@ -1061,11 +1061,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[28].emotionOne
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[28].emotionTwo
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[29].background
@@ -1073,11 +1073,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[29].emotionOne
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[29].emotionTwo
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[30].background
@@ -1085,11 +1085,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[30].emotionOne
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[30].emotionTwo
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[31].background
@@ -1101,7 +1101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[31].emotionTwo
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[32].background
@@ -1109,11 +1109,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[32].emotionOne
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[32].emotionTwo
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[33].background
@@ -1121,11 +1121,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[33].emotionOne
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[33].emotionTwo
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[34].background
@@ -1137,7 +1137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[34].emotionTwo
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[35].background
@@ -1145,7 +1145,7 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[35].emotionOne
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[35].emotionTwo
@@ -1157,11 +1157,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[36].emotionOne
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[36].emotionTwo
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[37].background
@@ -1169,11 +1169,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[37].emotionOne
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[37].emotionTwo
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[38].background
@@ -1181,11 +1181,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[38].emotionOne
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[38].emotionTwo
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[39].background
@@ -1193,11 +1193,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[39].emotionOne
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[39].emotionTwo
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[40].background
@@ -1205,11 +1205,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[40].emotionOne
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[40].emotionTwo
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[41].background
@@ -1217,11 +1217,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[41].emotionOne
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[41].emotionTwo
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[42].background
@@ -1229,11 +1229,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[42].emotionOne
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[42].emotionTwo
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[43].background
@@ -1241,11 +1241,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[43].emotionOne
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[43].emotionTwo
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[44].background
@@ -1253,11 +1253,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[44].emotionOne
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[44].emotionTwo
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[45].background
@@ -1269,7 +1269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[45].emotionTwo
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[46].background
@@ -1277,11 +1277,15 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[46].emotionOne
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[46].emotionTwo
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[47].bNextScene
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[47].background
@@ -1289,11 +1293,11 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a573b75f9691f0242bcf105c46b4feb4, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[47].emotionOne
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[47].emotionTwo
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[48].bNextScene
@@ -1604,13 +1608,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[12].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[12].speakerCount
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[13].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
+      objectReference: {fileID: 8300000, guid: 3d900531cdeccd4499a709bc61020094, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[13].speakerCount
       value: 2
@@ -1618,7 +1626,7 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[14].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 3d900531cdeccd4499a709bc61020094, type: 3}
+      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[14].speakerCount
       value: 2
@@ -1626,11 +1634,15 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[15].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[15].speakerCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[16].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c416f09525ae6c43bfda67bb46f3d3e, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[16].speakerCount
       value: 2
@@ -1638,11 +1650,15 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[17].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 7c416f09525ae6c43bfda67bb46f3d3e, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[17].speakerCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[18].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 33099f750b2133c45bb0883284d45eab, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[18].speakerCount
       value: 2
@@ -1650,11 +1666,15 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[19].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 33099f750b2133c45bb0883284d45eab, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[19].speakerCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[20].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: f0c939b49408cf74591fb518a1dae683, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[20].speakerCount
       value: 2
@@ -1662,11 +1682,15 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[21].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: f0c939b49408cf74591fb518a1dae683, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[21].speakerCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[22].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[22].speakerCount
       value: 2
@@ -1674,11 +1698,15 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[23].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[23].speakerCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[24].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[24].speakerCount
       value: 2
@@ -1686,7 +1714,7 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[25].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[25].speakerCount
       value: 2
@@ -1696,17 +1724,25 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[27].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[27].speakerCount
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[28].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[28].speakerCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[29].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[29].speakerCount
       value: 2
@@ -1714,7 +1750,7 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[30].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
+      objectReference: {fileID: 8300000, guid: 895161e680802244190528ed612a96fa, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[30].speakerCount
       value: 2
@@ -1722,11 +1758,15 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[31].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 895161e680802244190528ed612a96fa, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[31].speakerCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[32].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[32].speakerCount
       value: 2
@@ -1734,7 +1774,7 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[33].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[33].speakerCount
       value: 2
@@ -1744,13 +1784,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[35].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[35].speakerCount
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[36].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
+      objectReference: {fileID: 8300000, guid: f0c939b49408cf74591fb518a1dae683, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[36].speakerCount
       value: 2
@@ -1758,15 +1802,23 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[37].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: f0c939b49408cf74591fb518a1dae683, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[37].speakerCount
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[38].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ec3abb1b324bef4b998feafac3ec3da, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[38].speakerCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[39].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[39].speakerCount
       value: 2
@@ -1774,11 +1826,15 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[40].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[40].speakerCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[41].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[41].speakerCount
       value: 2
@@ -1786,7 +1842,7 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[42].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
+      objectReference: {fileID: 8300000, guid: 41da0d1019ea1d04c9ea1441f0fbc72d, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[42].speakerCount
       value: 2
@@ -1794,11 +1850,15 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[43].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 41da0d1019ea1d04c9ea1441f0fbc72d, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[43].speakerCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[44].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 77b5b37ec6263914a9f577406aed09a8, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[44].speakerCount
       value: 2
@@ -1806,11 +1866,15 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[45].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 77b5b37ec6263914a9f577406aed09a8, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[45].speakerCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[46].audioEmotion
+      value: 
+      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[46].speakerCount
       value: 2
@@ -1818,7 +1882,7 @@ PrefabInstance:
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[47].audioEmotion
       value: 
-      objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
+      objectReference: {fileID: 8300000, guid: 41da0d1019ea1d04c9ea1441f0fbc72d, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[47].speakerCount
       value: 2
@@ -1884,17 +1948,81 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[19].audioEmotionOther
+      propertyPath: conversation.Array.data[11].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: dfd124ea82c23f94ea29602a2e0f72e8, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[14].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: 008222abb3835e24ca2c7f59b210ee07, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[15].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: db77cc275852aa44493b1b066093c034, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[17].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: c67f182ddb63b27419633b0fe2286734, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[18].audioEmotionOther
       value: 
       objectReference: {fileID: 8300000, guid: 8284903633e68a743ad7e45583fb893f, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[19].audioEmotionOther
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[20].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: 41da0d1019ea1d04c9ea1441f0fbc72d, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[21].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: 489520579364d45479aeb1631172ceae, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[23].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: a3510ebad7502974d87166f6d13d98c5, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[25].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: 89aaf0c4180cad9448260c16f6607edf, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[26].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: 657ec0db168459f4cb42aa3d3adfd675, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[33].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: 489520579364d45479aeb1631172ceae, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[34].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: 474dd1abc3dc70845b6faf93274d606f, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[36].audioEmotionOther
       value: 
       objectReference: {fileID: 8300000, guid: 41da0d1019ea1d04c9ea1441f0fbc72d, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[37].audioEmotionOther
       value: 
-      objectReference: {fileID: 8300000, guid: 41da0d1019ea1d04c9ea1441f0fbc72d, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[41].audioEmotionOther
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[42].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: dcda3676b27e6314a84907be1beac806, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[45].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: a3510ebad7502974d87166f6d13d98c5, type: 3}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[47].audioEmotionOther
+      value: 
+      objectReference: {fileID: 8300000, guid: d69375eb248d5a4479b902c78386b7d8, type: 3}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[5].choices.Array.size
       value: 0
@@ -1909,11 +2037,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[14].choices.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[15].choices.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[0].sentences.Array.size
@@ -2025,11 +2153,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[28].sentences.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[29].sentences.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[30].sentences.Array.size
@@ -2037,11 +2165,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[31].sentences.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[32].sentences.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[33].sentences.Array.size
@@ -2263,56 +2391,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[11].sentences.Array.data[0]
-      value: Now who is this?
+      value: Now who is this? Ares, did you invite someone without mentioning anything?
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[12].sentences.Array.data[0]
-      value: Ares, did you invite someone without mentioning anything?
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[13].sentences.Array.data[0]
       value: I'm...
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[14].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[13].sentences.Array.data[0]
       value: They're my most recent hire that's agreed to defeat Kronos for us.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[15].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[14].sentences.Array.data[0]
       value: Is that so? And tell me, how much have you been told?
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[16].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[15].sentences.Array.data[0]
       value: Oh Ares, is violence the only way you know how to convince people?
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[17].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[16].sentences.Array.data[0]
       value: It's been effective thus far, why change a winning hand?
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[18].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[17].sentences.Array.data[0]
       value: That doesn't surprise me. He doesn't like providing all the information.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[19].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[18].sentences.Array.data[0]
       value: They don't need to know everything. They've been hired to do a job and
         that's all that matters.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[20].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[19].sentences.Array.data[0]
       value: Can you just tell me everything?
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[21].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[20].sentences.Array.data[0]
       value: No!
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[22].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[21].sentences.Array.data[0]
       value: Oh, don't be so harsh. They should know, even if a little.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[23].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[22].sentences.Array.data[0]
       value: They already know enough.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[23].sentences.Array.data[0]
+      value: Evidently not, considering they're here.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[23].sentences.Array.data[1]
@@ -2321,16 +2449,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[24].sentences.Array.data[0]
-      value: Evidently not, considering they're here.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[25].sentences.Array.data[0]
       value: ...
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[26].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[25].sentences.Array.data[0]
       value: Kronos is wanting to break out of Tartarus, brining his titan army with
         him if he does.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[26].sentences.Array.data[0]
+      value: If this were to happen, the world you know would cease to exist.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[26].sentences.Array.data[1]
@@ -2339,7 +2467,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[27].sentences.Array.data[0]
-      value: If this were to happen, the world you know would cease to exist.
+      value: The world would become a barren wasteland inhabited by only fights between
+        the gods and the titans.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[27].sentences.Array.data[1]
@@ -2348,8 +2477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[28].sentences.Array.data[0]
-      value: The world would become a barren wasteland inhabited by only fights between
-        the gods and the titans.
+      value: Seriously?
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[28].sentences.Array.data[1]
@@ -2358,7 +2486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[29].sentences.Array.data[0]
-      value: Seriously?
+      value: You're all insane!
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[29].sentences.Array.data[1]
@@ -2367,7 +2495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[30].sentences.Array.data[0]
-      value: You're all insane!
+      value: We could always feed you to the horrors of Hades and find someone else.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[30].sentences.Array.data[1]
@@ -2375,7 +2503,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[31].sentences.Array.data[0]
-      value: We could always feed you to the horrors of Hades and find someone else.
+      value: Ah, so I can either fight a titan and die, or refuse and be thrown to
+        Hades.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[31].sentences.Array.data[1]
@@ -2383,8 +2512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[32].sentences.Array.data[0]
-      value: Ah, so I can either fight a titan and die, or refuse and be thrown to
-        Hades.
+      value: They're better ones than the last guy got.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[32].sentences.Array.data[1]
@@ -2392,66 +2520,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[33].sentences.Array.data[0]
-      value: They're better ones than the last guy got.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[34].sentences.Array.data[0]
       value: Anyways...
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[35].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[34].sentences.Array.data[0]
       value: I see you hold a weapon belonging to Ares here. If you wish for a more
         refined weapon, let me know and I'll offer up my whip.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[36].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[35].sentences.Array.data[0]
       value: Ha, like they'd take you...
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[37].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[36].sentences.Array.data[0]
       value: Wait! What?! Whip?
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[38].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[37].sentences.Array.data[0]
       value: Since when do you have a whip as a weapon?
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[39].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[38].sentences.Array.data[0]
       value: There's much you don't know about me Ares.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[40].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[39].sentences.Array.data[0]
       value: 'Why would I choose a whip over a sword? '
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[41].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[40].sentences.Array.data[0]
       value: Wouldn't the sword be stronger?
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[42].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[41].sentences.Array.data[0]
       value: If you choose to use my whip and help it grow stronger, I'm sure I could
         find a way...
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[43].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[42].sentences.Array.data[0]
       value: to reward you.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[44].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[43].sentences.Array.data[0]
       value: Will you just leave Aphrodite?
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[45].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[44].sentences.Array.data[0]
       value: And you, get back out there and get to Kronos or I'll throw you into
         a pool of lava.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[46].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[45].sentences.Array.data[0]
       value: You're such a brute at times Ares.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
-      propertyPath: conversation.Array.data[47].sentences.Array.data[0]
+      propertyPath: conversation.Array.data[46].sentences.Array.data[0]
       value: You should probably go, but remember this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
+      propertyPath: conversation.Array.data[47].sentences.Array.data[0]
+      value: I'm willing to reward you if you help me.
       objectReference: {fileID: 0}
     - target: {fileID: 2674066677730054584, guid: 0e0b4e0493d804f46997c380782ab857, type: 3}
       propertyPath: conversation.Array.data[48].sentences.Array.data[0]
