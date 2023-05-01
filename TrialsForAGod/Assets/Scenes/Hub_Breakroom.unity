@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7286963, g: 0.7888134, b: 0.8504044, a: 1}
+  m_IndirectSpecularColor: {r: 0.7286625, g: 0.78887, b: 0.85040927, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6945,6 +6945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6450042247711671280}
   - component: {fileID: 4369155977552202574}
+  - component: {fileID: 6450042247711671281}
   m_Layer: 0
   m_Name: pSphere2
   m_TagString: Untagged
@@ -7452,13 +7453,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5043544130266969197}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.014320586, y: -0.15, z: 0.38098377}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2247256972732673265}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &6450042247711671281
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043544130266969197}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3709766
+  m_Height: 2.000596
+  m_Direction: 1
+  m_Center: {x: 0.00228787, y: 0.87793875, z: -0.3990446}
 --- !u!4 &6452705232615493429
 Transform:
   m_ObjectHideFlags: 0
